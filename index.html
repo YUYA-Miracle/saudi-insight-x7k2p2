@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAUDI INSIGHT | Desert Bamboo Global</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<meta name="bingbot" content="noindex, nofollow">
+<meta http-equiv="X-Robots-Tag" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TOKENS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root {
+  --ivory:   #F7F2EA;
+  --ivory2:  #EDE6D6;
+  --ivory3:  #E0D6C2;
+  --sand:    #B8975A;
+  --sand2:   #D4B06A;
+  --black:   #0D0C0A;
+  --black2:  #181510;
+  --black3:  #221E18;
+  --charcoal:#3A3530;
+  --mist:    rgba(247,242,234,0.07);
+  --border:  rgba(184,151,90,0.22);
+  --border2: rgba(247,242,234,0.12);
+
+  --fd: 'Cormorant', 'Noto Serif JP', Georgia, serif;   /* display */
+  --fb: 'Libre Baskerville', 'Noto Serif JP', serif;    /* body serif */
+  --fs: 'Jost', 'Noto Sans JP', sans-serif;             /* sans utility */
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+
+body {
+  background: var(--black);
+  color: var(--ivory);
+  font-family: var(--fs);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom cursor */
+#cursor {
+  position: fixed;
+  width: 8px; height: 8px;
+  background: var(--sand);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: transform 0.1s, width 0.3s, height 0.3s, opacity 0.3s;
+  mix-blend-mode: normal;
+}
+#cursor-ring {
+  position: fixed;
+  width: 36px; height: 36px;
+  border: 1px solid rgba(184,151,90,0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: transform 0.18s ease, width 0.3s, height 0.3s, opacity 0.3s;
+}
+a, button, [onclick] { cursor: none; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--sand); opacity:.4; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NAV
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 900;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  transition: background 0.5s, border-color 0.5s;
+  border-bottom: 1px solid transparent;
+}
+#nav.scrolled {
+  background: rgba(13,12,10,0.94);
+  backdrop-filter: blur(24px);
+  border-bottom-color: var(--border);
+}
+.nav-logo {
+  font-family: var(--fd);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  color: var(--ivory);
+  cursor: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.nav-logo small {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .45em;
+  color: var(--sand);
+  font-weight: 300;
+  margin-top: 2px;
+}
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  font-family: var(--fs);
+  font-size: 10.5px;
+  letter-spacing: .25em;
+  color: rgba(247,242,234,.65);
+  text-decoration: none;
+  font-weight: 300;
+  transition: color .3s;
+  text-transform: uppercase;
+}
+.nav-links a:hover { color: var(--sand); }
+.nav-apply {
+  font-family: var(--fs);
+  font-size: 9.5px;
+  letter-spacing: .3em;
+  color: var(--black);
+  background: var(--sand);
+  padding: 9px 24px;
+  font-weight: 400;
+  border: none;
+  text-transform: uppercase;
+  transition: background .3s, transform .2s;
+}
+.nav-apply:hover { background: var(--sand2); transform: translateY(-1px); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PAGE SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HERO — FULL BLEED IMAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Unsplash images via URL — NEOM/Saudi aerial/desert */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.06);
+  animation: heroZoom 18s ease-out forwards;
+}
+@keyframes heroZoom {
+  to { transform: scale(1); }
+}
+
+/* Rich gradient overlay — bottom heavy so text is readable */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top,  rgba(13,12,10,.96) 0%, rgba(13,12,10,.5) 38%, rgba(13,12,10,.1) 65%, transparent 100%),
+    linear-gradient(to right, rgba(13,12,10,.35) 0%, transparent 60%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 64px 80px;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  font-family: var(--fs);
+  font-size: 9.5px;
+  letter-spacing: .55em;
+  color: var(--sand);
+  font-weight: 400;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  animation: riseIn .9s .3s ease forwards;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 48px; height: 1px;
+  background: var(--sand);
+}
+
+.hero-title {
+  font-family: var(--fd);
+  font-size: clamp(60px, 7.5vw, 112px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -.01em;
+  color: var(--ivory);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: riseIn 1.1s .55s ease forwards;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--sand2);
+  display: block;
+}
+
+.hero-sub {
+  font-family: var(--fb);
+  font-size: 15px;
+  color: rgba(247,242,234,.72);
+  max-width: 540px;
+  line-height: 1.85;
+  margin-bottom: 44px;
+  font-weight: 400;
+  opacity: 0;
+  animation: riseIn .9s .85s ease forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  opacity: 0;
+  animation: riseIn .9s 1.05s ease forwards;
+}
+
+.btn-gold {
+  font-family: var(--fs);
+  font-size: 10px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--sand);
+  padding: 15px 40px;
+  border: none;
+  font-weight: 400;
+  transition: background .3s, transform .2s;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-gold:hover { background: var(--sand2); transform: translateY(-2px); }
+
+.btn-ghost {
+  font-family: var(--fs);
+  font-size: 10px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  background: transparent;
+  padding: 14px 40px;
+  border: 1px solid rgba(247,242,234,.3);
+  font-weight: 300;
+  transition: border-color .3s, color .3s;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-ghost:hover { border-color: var(--sand); color: var(--sand); }
+
+/* Scroll indicator */
+.scroll-ind {
+  position: absolute;
+  bottom: 36px;
+  right: 56px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: riseIn .8s 1.4s ease forwards;
+}
+.scroll-ind span {
+  font-family: var(--fs);
+  font-size: 8px;
+  letter-spacing: .5em;
+  color: rgba(247,242,234,.4);
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--sand), transparent);
+  animation: scrollPulse 2s 2s infinite;
+}
+@keyframes scrollPulse {
+  0%,100% { opacity:.3; transform: scaleY(1); }
+  50% { opacity:1; transform: scaleY(1.2); }
+}
+
+@keyframes riseIn {
+  from { opacity:0; transform: translateY(28px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   STATS BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.stats-bar {
+  background: var(--black2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+.stat-cell {
+  padding: 40px 48px;
+  border-right: 1px solid var(--border);
+  transition: background .4s;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-cell:hover { background: var(--mist); }
+.stat-n {
+  font-family: var(--fd);
+  font-size: 52px;
+  font-weight: 300;
+  color: var(--sand);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.stat-l {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .4em;
+  color: rgba(247,242,234,.4);
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+.stat-d {
+  font-family: var(--fb);
+  font-size: 13px;
+  color: rgba(247,242,234,.62);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FULL-BLEED IMAGE SECTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.img-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+}
+.img-split.reverse { direction: rtl; }
+.img-split.reverse > * { direction: ltr; }
+
+.img-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+}
+.img-panel img, .img-panel .img-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .8s ease;
+}
+.img-panel:hover .img-bg { transform: scale(1.04); }
+.img-panel .img-bg {
+  background-size: cover;
+  background-position: center;
+}
+.img-panel-caption {
+  position: absolute;
+  bottom: 24px; left: 28px;
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .35em;
+  color: rgba(247,242,234,.5);
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.text-panel {
+  background: var(--black2);
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TYPOGRAPHY UTILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.eyebrow {
+  font-family: var(--fs);
+  font-size: 9.5px;
+  letter-spacing: .5em;
+  color: var(--sand);
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.eyebrow::before { content:''; width:36px; height:1px; background:var(--sand); }
+
+.display {
+  font-family: var(--fd);
+  font-size: clamp(38px, 4vw, 60px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+}
+.display em { font-style: italic; color: var(--sand2); }
+
+.lead {
+  font-family: var(--fb);
+  font-size: 16px;
+  color: rgba(247,242,234,.78);
+  line-height: 1.9;
+  font-weight: 400;
+  margin-top: 22px;
+}
+.body-copy {
+  font-family: var(--fb);
+  font-size: 14px;
+  color: rgba(247,242,234,.6);
+  line-height: 2;
+  margin-top: 16px;
+}
+.rule {
+  width: 48px; height: 1px;
+  background: var(--sand);
+  margin: 28px 0;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SECTION WRAPPER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+.section { padding: 110px 0; }
+.section-sm { padding: 72px 0; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PROJECT GRID — MAGAZINE LAYOUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 3px;
+  margin-top: 56px;
+}
+.proj-card {
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+}
+.proj-card .bg {
+  width: 100%; height: 100%; min-height: 380px;
+  background-size: cover;
+  background-position: center;
+  transition: transform .7s ease;
+}
+.proj-card:hover .bg { transform: scale(1.05); }
+
+/* Dark overlay */
+.proj-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,12,10,.88) 0%, rgba(13,12,10,.1) 60%, transparent 100%);
+}
+.proj-card.tall .bg { min-height: 780px; }
+.proj-card.sm .bg { min-height: 380px; }
+
+.proj-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 32px 36px;
+  z-index: 2;
+}
+.proj-tag {
+  font-family: var(--fs);
+  font-size: 8.5px;
+  letter-spacing: .5em;
+  color: var(--sand);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.proj-name {
+  font-family: var(--fd);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ivory);
+  line-height: 1.1;
+  letter-spacing: .02em;
+}
+.proj-name em { font-style: italic; }
+.proj-scale {
+  font-family: var(--fs);
+  font-size: 11px;
+  color: rgba(247,242,234,.55);
+  letter-spacing: .2em;
+  margin-top: 6px;
+}
+.proj-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NEWS EDITORIAL GRID
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.news-editorial {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 3px;
+  margin-top: 56px;
+}
+.news-card-ed {
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+  background: var(--black2);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.news-card-ed .thumb {
+  width: 100%;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  transition: transform .6s ease;
+  flex-shrink: 0;
+}
+.news-card-ed:hover .thumb { transform: scale(1.04); }
+.news-card-ed.featured .thumb { height: 320px; }
+.news-body {
+  padding: 28px 28px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.news-cat-ed {
+  font-family: var(--fs);
+  font-size: 8.5px;
+  letter-spacing: .45em;
+  color: var(--sand);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.news-h {
+  font-family: var(--fd);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ivory);
+  line-height: 1.35;
+  flex: 1;
+}
+.news-card-ed.featured .news-h { font-size: 26px; }
+.news-excerpt-ed {
+  font-family: var(--fb);
+  font-size: 12.5px;
+  color: rgba(247,242,234,.55);
+  line-height: 1.85;
+  margin-top: 10px;
+}
+.news-date-ed {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .25em;
+  color: rgba(247,242,234,.35);
+  margin-top: 18px;
+  text-transform: uppercase;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CTA FULL BLEED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.cta-full {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.cta-full .bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+}
+.cta-full .ov {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(13,12,10,.9) 0%, rgba(13,12,10,.55) 55%, rgba(13,12,10,.3) 100%);
+}
+.cta-full-inner {
+  position: relative;
+  z-index: 2;
+  padding: 80px 80px;
+  max-width: 680px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MARKET PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.page-banner {
+  position: relative;
+  height: 62vh;
+  min-height: 460px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.page-banner .bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: heroZoom 14s ease-out forwards;
+}
+.page-banner .ov {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,12,10,.9) 0%, rgba(13,12,10,.3) 60%, rgba(13,12,10,.1) 100%);
+}
+.page-banner-text {
+  position: relative;
+  z-index: 2;
+  padding: 0 64px 60px;
+}
+.page-banner-eyebrow {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .5em;
+  color: var(--sand);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.page-banner-title {
+  font-family: var(--fd);
+  font-size: clamp(44px, 6vw, 80px);
+  font-weight: 300;
+  line-height: 1.05;
+}
+.page-banner-title em { font-style: italic; color: var(--sand2); }
+
+/* Project strip */
+.proj-strip {
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  transition: background .3s;
+  cursor: none;
+}
+.proj-strip:hover { background: var(--mist); }
+.proj-strip-inner {
+  display: grid;
+  grid-template-columns: 300px 1fr auto;
+  align-items: stretch;
+  gap: 0;
+}
+.proj-strip-img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  transition: transform .5s;
+}
+.proj-strip:hover .proj-strip-img { transform: scale(1.03); }
+.proj-strip-body {
+  padding: 36px 48px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.proj-strip-name {
+  font-family: var(--fd);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--sand2);
+  letter-spacing: .04em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.proj-strip-sub {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .35em;
+  color: rgba(247,242,234,.35);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.proj-strip-desc {
+  font-family: var(--fb);
+  font-size: 13.5px;
+  color: rgba(247,242,234,.68);
+  line-height: 1.85;
+}
+.proj-strip-scale {
+  padding: 36px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  white-space: nowrap;
+  min-width: 200px;
+}
+.proj-strip-num {
+  font-family: var(--fd);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--sand);
+  letter-spacing: -.01em;
+}
+.proj-strip-unit {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .3em;
+  color: rgba(247,242,234,.35);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Data table */
+.d-table { width:100%; border-collapse:collapse; margin-top: 32px; }
+.d-table th {
+  background: var(--black3);
+  border: 1px solid var(--border);
+  padding: 14px 22px;
+  font-family: var(--fs);
+  font-size: 9.5px;
+  letter-spacing: .3em;
+  color: var(--sand);
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.d-table td {
+  border: 1px solid var(--border);
+  padding: 16px 22px;
+  font-family: var(--fb);
+  font-size: 13.5px;
+  color: rgba(247,242,234,.72);
+  line-height: 1.5;
+}
+.d-table tr:hover td { background: var(--mist); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   GUIDE PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.guide-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.guide-side {
+  border-right: 1px solid var(--border);
+  padding: 64px 0;
+  position: sticky;
+  top: 68px;
+  align-self: start;
+  height: calc(100vh - 68px);
+  overflow-y: auto;
+}
+.guide-side-nav { list-style: none; }
+.guide-side-nav li a {
+  display: block;
+  padding: 13px 36px;
+  font-family: var(--fs);
+  font-size: 11px;
+  letter-spacing: .15em;
+  color: rgba(247,242,234,.45);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+  transition: all .3s;
+  text-transform: uppercase;
+}
+.guide-side-nav li a:hover,
+.guide-side-nav li a.active {
+  color: var(--sand);
+  border-left-color: var(--sand);
+  padding-left: 44px;
+}
+.guide-main { padding: 64px 72px; }
+.guide-section { margin-bottom: 88px; }
+.guide-h {
+  font-family: var(--fd);
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.15;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+.guide-h em { font-style: italic; color: var(--sand2); }
+
+/* Step list */
+.steps { display:flex; flex-direction:column; gap:3px; margin-top:28px; }
+.step {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0;
+  background: var(--black2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color .3s;
+}
+.step:hover { border-color: rgba(184,151,90,.4); }
+.step-n {
+  background: var(--black3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+.step-n span {
+  font-family: var(--fd);
+  font-size: 48px;
+  font-weight: 300;
+  color: rgba(184,151,90,.25);
+  line-height: 1;
+}
+.step-body { padding: 28px 32px; }
+.step-title {
+  font-family: var(--fb);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ivory);
+  margin-bottom: 8px;
+}
+.step-text { font-family: var(--fb); font-size:13.5px; color:rgba(247,242,234,.62); line-height:1.9; }
+
+.callout {
+  background: var(--black3);
+  border-left: 3px solid var(--sand);
+  padding: 24px 28px;
+  margin: 24px 0;
+  font-family: var(--fb);
+  font-size: 14px;
+  color: rgba(247,242,234,.75);
+  line-height: 1.85;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FAQ PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.faq-wrap { max-width: 860px; margin: 0 auto; padding: 72px 64px; }
+.faq-filters {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 52px;
+  flex-wrap: wrap;
+}
+.faq-filter {
+  font-family: var(--fs);
+  font-size: 9.5px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  padding: 11px 26px;
+  background: var(--black2);
+  border: 1px solid var(--border);
+  color: rgba(247,242,234,.5);
+  transition: all .3s;
+  cursor: none;
+  font-weight: 300;
+}
+.faq-filter:hover, .faq-filter.active {
+  background: rgba(184,151,90,.12);
+  border-color: var(--sand);
+  color: var(--sand);
+}
+.faq-item { border-bottom: 1px solid var(--border2); }
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 0;
+  gap: 24px;
+  cursor: none;
+}
+.faq-q-t {
+  font-family: var(--fb);
+  font-size: 16px;
+  color: var(--ivory);
+  line-height: 1.55;
+  font-weight: 400;
+  flex: 1;
+}
+.faq-icon {
+  width: 34px; height: 34px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--fd);
+  font-size: 22px;
+  color: var(--sand);
+  font-weight: 300;
+  transition: transform .35s, border-color .3s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--sand); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .5s ease; }
+.faq-a-body {
+  padding: 4px 0 32px;
+  font-family: var(--fb);
+  font-size: 14px;
+  color: rgba(247,242,234,.65);
+  line-height: 2;
+}
+.faq-a-body p + p { margin-top: 12px; }
+.faq-item.open .faq-a { max-height: 700px; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ABOUT PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 600px;
+}
+.about-img-half {
+  position: relative;
+  overflow: hidden;
+}
+.about-img-half .bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform .8s ease;
+}
+.about-img-half:hover .bg { transform: scale(1.04); }
+.about-text-half {
+  background: var(--black2);
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--border);
+}
+.quote-block {
+  background: var(--black3);
+  border-left: 3px solid var(--sand);
+  padding: 32px 36px;
+  margin-top: 36px;
+}
+.quote-block blockquote {
+  font-family: var(--fd);
+  font-size: 21px;
+  font-style: italic;
+  color: var(--sand2);
+  line-height: 1.55;
+  font-weight: 400;
+}
+.quote-block cite {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .35em;
+  color: rgba(247,242,234,.35);
+  margin-top: 12px;
+  display: block;
+  text-transform: uppercase;
+}
+
+/* Timeline */
+.timeline { margin-top: 60px; }
+.tl-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: 99px;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.tl-year {
+  font-family: var(--fd);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--sand);
+  padding-top: 2px;
+}
+.tl-body strong {
+  display: block;
+  font-family: var(--fb);
+  font-size: 15px;
+  color: var(--ivory);
+  margin-bottom: 4px;
+}
+.tl-body p { font-family: var(--fb); font-size: 13px; color: rgba(247,242,234,.6); line-height: 1.8; }
+
+/* Works mosaic */
+.works-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto auto;
+  gap: 3px;
+  margin-top: 56px;
+}
+.work-tile {
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+}
+.work-tile .bg {
+  width: 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  transition: transform .7s ease;
+}
+.work-tile:hover .bg { transform: scale(1.06); }
+.work-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,12,10,.82) 0%, transparent 60%);
+}
+.work-tile-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 24px 26px;
+  z-index: 2;
+}
+.work-tile-loc {
+  font-family: var(--fs);
+  font-size: 8px;
+  letter-spacing: .4em;
+  color: var(--sand);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.work-tile-name {
+  font-family: var(--fd);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ivory);
+  line-height: 1.2;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NEWS PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.news-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+.news-main { padding: 64px; border-right: 1px solid var(--border); }
+.news-side { padding: 64px 40px; }
+.article-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  transition: background .3s;
+  cursor: none;
+}
+.article-item:hover { background: var(--mist); }
+.article-thumb {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  transition: transform .5s;
+  flex-shrink: 0;
+}
+.article-item:hover .article-thumb { transform: scale(1.04); }
+.article-body { padding: 28px 36px; }
+.article-cat2 {
+  font-family: var(--fs);
+  font-size: 8.5px;
+  letter-spacing: .4em;
+  color: var(--sand);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.article-title2 {
+  font-family: var(--fd);
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--ivory);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+.article-exc {
+  font-family: var(--fb);
+  font-size: 13px;
+  color: rgba(247,242,234,.55);
+  line-height: 1.85;
+}
+.article-date2 {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .2em;
+  color: rgba(247,242,234,.3);
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+.side-widget { margin-bottom: 48px; }
+.side-widget-title {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .45em;
+  color: var(--sand);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.tag2 {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  font-family: var(--fs);
+  font-size: 10px;
+  color: rgba(247,242,234,.55);
+  letter-spacing: .12em;
+  margin: 0 4px 6px 0;
+  transition: all .3s;
+  cursor: none;
+}
+.tag2:hover { border-color: var(--sand); color: var(--sand); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MEMBER PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.member-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.member-hero .bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center 40%;
+  animation: heroZoom 14s ease-out forwards;
+}
+.member-hero .ov {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(13,12,10,.95) 0%, rgba(13,12,10,.45) 65%, rgba(13,12,10,.15) 100%);
+}
+.member-hero-inner {
+  position: relative; z-index: 2;
+  padding: 0 64px 72px;
+}
+.benefits-strip {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 3px;
+  margin-bottom: 60px;
+  border: 1px solid var(--border);
+}
+.benefit-cell {
+  padding: 36px 32px;
+  background: var(--black2);
+  border-right: 1px solid var(--border);
+  transition: background .3s;
+}
+.benefit-cell:last-child { border-right: none; }
+.benefit-cell:hover { background: var(--mist); }
+.benefit-icon2 {
+  font-size: 26px;
+  margin-bottom: 14px;
+  display: block;
+}
+.benefit-title2 {
+  font-family: var(--fb);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ivory);
+  margin-bottom: 8px;
+}
+.benefit-desc {
+  font-family: var(--fb);
+  font-size: 12.5px;
+  color: rgba(247,242,234,.55);
+  line-height: 1.85;
+}
+
+/* Form */
+.form-block {
+  background: var(--black2);
+  border: 1px solid var(--border);
+  padding: 56px 60px;
+}
+.form-h {
+  font-family: var(--fd);
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+.form-sub {
+  font-family: var(--fb);
+  font-size: 13.5px;
+  color: rgba(247,242,234,.5);
+  margin-bottom: 44px;
+}
+.form-row { display: grid; grid-template-columns:1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.form-row.full { grid-template-columns: 1fr; }
+.form-grp { display:flex; flex-direction:column; gap:8px; }
+.form-label2 {
+  font-family: var(--fs);
+  font-size: 9.5px;
+  letter-spacing: .3em;
+  color: rgba(247,242,234,.4);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.form-label2 sup { color: var(--sand); }
+.form-input2, .form-select2, .form-textarea2 {
+  background: rgba(247,242,234,.04);
+  border: 1px solid var(--border);
+  color: var(--ivory);
+  padding: 15px 20px;
+  font-family: var(--fb);
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  transition: border-color .3s, background .3s;
+  width: 100%;
+}
+.form-input2:focus, .form-select2:focus, .form-textarea2:focus {
+  border-color: var(--sand);
+  background: rgba(184,151,90,.05);
+}
+.form-textarea2 { resize: vertical; min-height: 130px; }
+.form-select2 option { background: var(--black2); }
+.form-note2 {
+  font-family: var(--fs);
+  font-size: 11px;
+  color: rgba(247,242,234,.3);
+  line-height: 1.9;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.form-submit {
+  width: 100%;
+  padding: 20px;
+  background: var(--sand);
+  border: none;
+  color: var(--black);
+  font-family: var(--fs);
+  font-size: 11px;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 32px;
+  transition: background .3s, transform .2s;
+  cursor: none;
+}
+.form-submit:hover { background: var(--sand2); transform: translateY(-2px); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+footer {
+  background: var(--black2);
+  border-top: 1px solid var(--border);
+  padding: 80px 64px 48px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 64px;
+  max-width: 1280px;
+  margin: 0 auto 60px;
+}
+.footer-logo {
+  font-family: var(--fd);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: var(--ivory);
+  margin-bottom: 12px;
+}
+.footer-tagline {
+  font-family: var(--fb);
+  font-size: 13px;
+  color: rgba(247,242,234,.4);
+  line-height: 1.85;
+}
+.footer-col-h {
+  font-family: var(--fs);
+  font-size: 9px;
+  letter-spacing: .5em;
+  color: var(--sand);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.footer-links2 { list-style: none; }
+.footer-links2 li { margin-bottom: 12px; }
+.footer-links2 a {
+  font-family: var(--fb);
+  font-size: 13.5px;
+  color: rgba(247,242,234,.45);
+  text-decoration: none;
+  transition: color .3s;
+  cursor: none;
+}
+.footer-links2 a:hover { color: var(--sand); }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.footer-copy {
+  font-family: var(--fs);
+  font-size: 10px;
+  color: rgba(247,242,234,.25);
+  letter-spacing: .15em;
+}
+.footer-apply {
+  font-family: var(--fs);
+  font-size: 9.5px;
+  letter-spacing: .35em;
+  color: var(--sand);
+  border: 1px solid rgba(184,151,90,.35);
+  padding: 9px 22px;
+  text-transform: uppercase;
+  transition: all .3s;
+  cursor: none;
+}
+.footer-apply:hover { background: rgba(184,151,90,.1); }
+</style>
+</head>
+<body>
+
+<!-- cursors -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <div class="nav-logo" onclick="show('top')" style="cursor:none">
+    SAUDI INSIGHT
+    <small>by Desert Bamboo Global</small>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="show('market')">Market</a></li>
+    <li><a onclick="show('guide')">Guide</a></li>
+    <li><a onclick="show('faq')">FAQ</a></li>
+    <li><a onclick="show('about')">Desert Bamboo</a></li>
+    <li><a onclick="show('news')">News</a></li>
+  </ul>
+  <button class="nav-apply" onclick="show('member')">Apply for Membership</button>
+</nav>
+
+<!-- ══════════════════════════════════════
+     TOP
+══════════════════════════════════════ -->
+<div id="page-top" class="page active">
+
+  <!-- Hero: NEOM aerial by Unsplash -->
+  <div class="hero">
+    <div class="hero-img" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Saudi Arabia × Desert Bamboo Global</div>
+      <h1 class="hero-title">
+        Vision 2030が<br>
+        切り拓く、<br>
+        <em>新たな地平。</em>
+      </h1>
+      <p class="hero-sub">サウジアラビア政府プロジェクトの最前線情報と、Desert Bamboo Globalの投資・建築案件を日本語でお届けする唯一のクローズドプラットフォーム。</p>
+      <div class="hero-actions">
+        <button class="btn-gold" onclick="show('member')">会員申請する</button>
+        <button class="btn-ghost" onclick="show('market')">市場を探る →</button>
+      </div>
+    </div>
+    <div class="scroll-ind">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <div class="stat-cell">
+      <div class="stat-n">¥1.38兆<sup style="font-size:.45em">+</sup></div>
+      <div class="stat-l">Portfolio Target</div>
+      <div class="stat-d">関与する投資ポートフォリオの総規模</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">7</div>
+      <div class="stat-l">Giga Projects</div>
+      <div class="stat-d">追跡中の政府巨大プロジェクト</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">87<span style="font-size:.5em;font-family:var(--fs)">%</span></div>
+      <div class="stat-l">Vision Progress</div>
+      <div class="stat-d">2024年末時点での目標達成率</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">2030</div>
+      <div class="stat-l">Deadline</div>
+      <div class="stat-d">参入機会のタイムリミット</div>
+    </div>
+  </div>
+
+  <!-- Concept: image split -->
+  <div class="img-split">
+    <div class="img-panel">
+      <div class="img-bg" style="background-image:url('https://images.unsplash.com/photo-1597435877853-5c8c433e0c51?w=1200&q=80')"></div>
+      <div class="img-panel-caption">Riyadh Skyline, Saudi Arabia</div>
+    </div>
+    <div class="text-panel">
+      <div class="eyebrow">Concept</div>
+      <h2 class="display">なぜ今、<em>サウジアラビア</em>なのか</h2>
+      <div class="rule"></div>
+      <p class="lead">石油依存からの脱却を掲げるVision 2030は、数百兆円規模の都市開発・観光・エンターテインメント投資を現在進行形で動かしている。これは20年に一度の参入機会だ。</p>
+      <p class="body-copy">現地ネットワーク経由の一次情報と、Desert Bamboo Globalの建築実績が融合した本プラットフォームは、日本の富裕層・機関投資家だけが持てる「知る権利」を提供する。</p>
+      <div style="margin-top:36px">
+        <button class="btn-ghost" onclick="show('market')">サウジ市場を詳しく見る →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Grid -->
+  <div class="section wrap">
+    <div class="eyebrow">Giga Projects</div>
+    <h2 class="display">注目の<em>プロジェクト群</em></h2>
+    <div class="proj-grid">
+      <!-- featured tall -->
+      <div class="proj-card tall">
+        <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=1200&q=80')"></div>
+        <div class="proj-info">
+          <div class="proj-tag">Tabuk Region · Flagship</div>
+          <div class="proj-name">NEOM &<br><em>The Line</em></div>
+          <div class="proj-scale">総投資額 $5,000億 · 26,500km²</div>
+        </div>
+      </div>
+      <!-- side 2 cards -->
+      <div class="proj-side">
+        <div class="proj-card sm">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1601459427108-47e20b727fc6?w=900&q=80')"></div>
+          <div class="proj-info">
+            <div class="proj-tag">Red Sea Coast · Wellness</div>
+            <div class="proj-name"><em>AMAALA</em></div>
+            <div class="proj-scale">$2,500億</div>
+          </div>
+        </div>
+        <div class="proj-card sm">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=900&q=80')"></div>
+          <div class="proj-info">
+            <div class="proj-tag">Riyadh · Culture</div>
+            <div class="proj-name"><em>Diriyah</em></div>
+            <div class="proj-scale">UNESCO世界遺産エリア</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:28px;text-align:right">
+      <button class="btn-ghost" onclick="show('market')">全プロジェクトを見る →</button>
+    </div>
+  </div>
+
+  <!-- News editorial -->
+  <div class="section wrap" style="padding-top:0">
+    <div class="eyebrow">Latest News</div>
+    <h2 class="display">最新<em>動向</em></h2>
+    <div class="news-editorial">
+      <div class="news-card-ed featured" onclick="show('news')">
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1604964432806-254d07c11f32?w=900&q=80')"></div>
+        <div class="news-body">
+          <div class="news-cat-ed">Market Update</div>
+          <div class="news-h">NEOM CEO交代の真相と、ギガプロジェクト縮小計画が示す「次のフェーズ」への移行</div>
+          <div class="news-excerpt-ed">象徴的インフラ整備期から外国資本誘致期へ——Desert Bamboo現地チームの一次情報をもとに解説する。</div>
+          <div class="news-date-ed">Nov 28, 2025</div>
+        </div>
+      </div>
+      <div class="news-card-ed" onclick="show('news')">
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?w=700&q=80')"></div>
+        <div class="news-body">
+          <div class="news-cat-ed">Project</div>
+          <div class="news-h">AMAALA第一期区画販売開始。外国法人の参入要件が明確化</div>
+          <div class="news-date-ed">Oct 15, 2025</div>
+        </div>
+      </div>
+      <div class="news-card-ed" onclick="show('news')">
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=700&q=80')"></div>
+        <div class="news-body">
+          <div class="news-cat-ed">Investment</div>
+          <div class="news-h">サウジ不動産、外国人購入が前年比+42%。ジェッダ高級コンドが牽引</div>
+          <div class="news-date-ed">Oct 03, 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA full bleed -->
+  <div class="cta-full">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1800&q=80')"></div>
+    <div class="ov"></div>
+    <div class="cta-full-inner">
+      <div class="eyebrow">Membership</div>
+      <h2 class="display">会員になると、<em>何が変わるか。</em></h2>
+      <div class="rule"></div>
+      <p class="lead">現在、7件の非公開投資案件と3件の構想プロジェクト全容を会員向けに掲載中。</p>
+      <div style="margin-top:36px">
+        <button class="btn-gold" onclick="show('member')">会員申請はこちら（審査制・無料）</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">SAUDI INSIGHT</div>
+        <p class="footer-tagline">Desert Bamboo Global 日本事務局が運営する、サウジアラビア投資・建築情報のクローズドプラットフォーム。現地一次情報を日本語でお届けします。</p>
+      </div>
+      <div>
+        <div class="footer-col-h">Market Info</div>
+        <ul class="footer-links2">
+          <li><a onclick="show('market')">サウジ市場解説</a></li>
+          <li><a onclick="show('guide')">投資・不動産ガイド</a></li>
+          <li><a onclick="show('faq')">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-h">Desert Bamboo</div>
+        <ul class="footer-links2">
+          <li><a onclick="show('about')">企業紹介</a></li>
+          <li><a onclick="show('news')">ニュース</a></li>
+          <li><a onclick="show('about')">プロジェクト実績</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-h">Membership</div>
+        <ul class="footer-links2">
+          <li><a onclick="show('member')">会員申請</a></li>
+          <li><a>会員ログイン</a></li>
+          <li><a>お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Desert Bamboo Global. All rights reserved.</span>
+      <span class="footer-apply" onclick="show('member')">Apply for Membership →</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ══ MARKET ══ -->
+<div id="page-market" class="page">
+  <div class="page-banner">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=1800&q=80')"></div>
+    <div class="ov"></div>
+    <div class="page-banner-text">
+      <div class="page-banner-eyebrow">Saudi Arabia Market</div>
+      <h1 class="page-banner-title">Vision 2030と<br><em>ギガプロジェクト</em>の全容</h1>
+    </div>
+  </div>
+
+  <div class="section wrap">
+    <div class="eyebrow">Overview</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+      <div>
+        <h2 class="display">Vision 2030とは<em>何か</em></h2>
+        <p class="lead">2016年4月、サウジアラビア政府が発表した国家変革戦略。石油依存型経済からの脱却を中核に、観光・エンターテインメント・テクノロジーへの多角化投資を推進。</p>
+      </div>
+      <div>
+        <table class="d-table">
+          <thead><tr><th>指標</th><th>2024年末実績</th></tr></thead>
+          <tbody>
+            <tr><td>非石油GDP比率</td><td>56%（目標達成）</td></tr>
+            <tr><td>PIF総資産</td><td>2兆8,100億リヤル</td></tr>
+            <tr><td>失業率</td><td>7%（目標水準到達）</td></tr>
+            <tr><td>女性労働参加率</td><td>37%（目標超過）</td></tr>
+            <tr><td>目標達成率</td><td>87%</td></tr>
+            <tr><td>外国人観光客数（2023）</td><td>2,740万人</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project strips with images -->
+  <div style="border-top:1px solid var(--border)">
+    <div class="proj-strip">
+      <div class="proj-strip-inner">
+        <div class="proj-strip-img" style="background-image:url('https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=600&q=80')"></div>
+        <div class="proj-strip-body">
+          <div class="proj-strip-name">NEOM</div>
+          <div class="proj-strip-sub">Red Sea Coast, Tabuk · Flagship Megaproject</div>
+          <div class="proj-strip-desc">ベルギー国土規模（26,500km²）の未来型スマートシティ。THE LINE・Oxagon・Trojenaなど複数のサブプロジェクトで構成。2025年のCEO交代を経て外国資本誘致フェーズへ移行。</div>
+        </div>
+        <div class="proj-strip-scale">
+          <div class="proj-strip-num">$5,000億</div>
+          <div class="proj-strip-unit">Total Investment</div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-strip">
+      <div class="proj-strip-inner">
+        <div class="proj-strip-img" style="background-image:url('https://images.unsplash.com/photo-1601459427108-47e20b727fc6?w=600&q=80')"></div>
+        <div class="proj-strip-body">
+          <div class="proj-strip-name">AMAALA</div>
+          <div class="proj-strip-sub">Red Sea Coast · Ultra-Luxury Wellness Resort</div>
+          <div class="proj-strip-desc">ウルトララグジュアリーリゾートを核とした健康・ウェルネス特化型観光開発。NEOMの南側に位置し、2025年Q3に第一期区画の販売が開始された。</div>
+        </div>
+        <div class="proj-strip-scale">
+          <div class="proj-strip-num">$2,500億</div>
+          <div class="proj-strip-unit">Total Investment</div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-strip">
+      <div class="proj-strip-inner">
+        <div class="proj-strip-img" style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&q=80')"></div>
+        <div class="proj-strip-body">
+          <div class="proj-strip-name">Red Sea Global</div>
+          <div class="proj-strip-sub">Red Sea Coastline · Eco-Tourism</div>
+          <div class="proj-strip-desc">紅海沿岸50の島々と6つのウォーターウェイを活用した大規模エコツーリズム開発。100%再生可能エネルギーでの運営を掲げ、2030年までに100万人の受け入れを目標とする。</div>
+        </div>
+        <div class="proj-strip-scale">
+          <div class="proj-strip-num">SAR 1兆+</div>
+          <div class="proj-strip-unit">Total Investment</div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-strip">
+      <div class="proj-strip-inner">
+        <div class="proj-strip-img" style="background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=600&q=80')"></div>
+        <div class="proj-strip-body">
+          <div class="proj-strip-name">Diriyah</div>
+          <div class="proj-strip-sub">Riyadh · UNESCO Heritage District</div>
+          <div class="proj-strip-desc">リヤド郊外のユネスコ世界遺産・ディルイーヤの歴史地区を中心とした文化観光開発。サウジアラビアの建国ゆかりの地を観光・商業・住宅の複合ゾーンとして再開発。</div>
+        </div>
+        <div class="proj-strip-scale">
+          <div class="proj-strip-num">$20億</div>
+          <div class="proj-strip-unit">Phase 1</div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-strip">
+      <div class="proj-strip-inner">
+        <div class="proj-strip-img" style="background-image:url('https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=600&q=80')"></div>
+        <div class="proj-strip-body">
+          <div class="proj-strip-name">Qiddiyah</div>
+          <div class="proj-strip-sub">Riyadh · Entertainment City</div>
+          <div class="proj-strip-desc">リヤド近郊に建設中の巨大エンターテインメントシティ。テーマパーク・スポーツ・e-スポーツを集積させる「エンターテインメントの首都」として設計。2034年FIFAワールドカップ会場候補地。</div>
+        </div>
+        <div class="proj-strip-scale">
+          <div class="proj-strip-num">SAR 500億</div>
+          <div class="proj-strip-unit">Total Investment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ GUIDE ══ -->
+<div id="page-guide" class="page">
+  <div class="page-banner">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80')"></div>
+    <div class="ov"></div>
+    <div class="page-banner-text">
+      <div class="page-banner-eyebrow">Investment & Real Estate Guide</div>
+      <h1 class="page-banner-title">サウジアラビア<br><em>投資・不動産ガイド</em></h1>
+    </div>
+  </div>
+  <div class="guide-layout">
+    <div class="guide-side">
+      <ul class="guide-side-nav">
+        <li><a class="active" onclick="scrollG('g1',this)">外国人の不動産購入制度</a></li>
+        <li><a onclick="scrollG('g2',this)">購入プロセス・手続き</a></li>
+        <li><a onclick="scrollG('g3',this)">エスクロー・資金管理</a></li>
+        <li><a onclick="scrollG('g4',this)">会社設立・MISA登録</a></li>
+        <li><a onclick="scrollG('g5',this)">税制・コスト試算</a></li>
+        <li><a onclick="scrollG('g6',this)">リスクと注意点</a></li>
+      </ul>
+    </div>
+    <div class="guide-main">
+      <div class="guide-section" id="g1">
+        <h2 class="guide-h">外国人の<em>不動産購入制度</em></h2>
+        <p class="body-copy">Vision 2030の推進に伴い、特定エリアにおける外国人所有が段階的に解禁されています。2024年時点で購入可能な不動産はフリーゾーン・ギガプロジェクトエリア・ラグジュアリーリゾートゾーンに限定されます。</p>
+        <div class="callout">メッカ・メディナの聖域エリアへの非ムスリムによる購入は引き続き不可。対象エリアはMISAへの事前確認が必須です。</div>
+        <div class="steps">
+          <div class="step"><div class="step-n"><span>①</span></div><div class="step-body"><div class="step-title">Premium Residencyの取得</div><div class="step-text">長期投資を目的とする外国人はPremium Residency取得により不動産所有・事業展開の在留資格を得られます。年間費用は約100万リヤル（約4,000万円）。</div></div></div>
+          <div class="step"><div class="step-n"><span>②</span></div><div class="step-body"><div class="step-title">対象エリアの確認</div><div class="step-text">NEOM・AMALAエリア内物件、Red Sea Globalの指定区画、ジェッダの一部高級エリアが対象。エリアごとに規制内容が異なるためMISAへの事前確認が必須です。</div></div></div>
+          <div class="step"><div class="step-n"><span>③</span></div><div class="step-body"><div class="step-title">Wafiデベロッパーとの売買契約</div><div class="step-text">Wafiライセンスを持つ政府認定デベロッパーとの売買契約を締結。契約書はアラビア語・英語の二言語で作成されます。</div></div></div>
+        </div>
+      </div>
+      <div class="guide-section" id="g2">
+        <h2 class="guide-h">購入<em>プロセス・手続き</em></h2>
+        <table class="d-table">
+          <thead><tr><th>フェーズ</th><th>内容</th><th>所要期間</th></tr></thead>
+          <tbody>
+            <tr><td>物件選定・視察</td><td>現地視察またはバーチャルツアー</td><td>1〜4週間</td></tr>
+            <tr><td>LOI・予約申込</td><td>購入意向書の提出・予約金支払い（5〜10%）</td><td>1週間</td></tr>
+            <tr><td>SPA締結</td><td>売買契約書の締結・公証</td><td>2〜4週間</td></tr>
+            <tr><td>エスクロー入金</td><td>Wafi認定エスクロー口座への入金</td><td>1〜2週間</td></tr>
+            <tr><td>RERA登記申請</td><td>不動産規制当局への登記申請</td><td>4〜8週間</td></tr>
+            <tr><td>所有権移転</td><td>タイトルディードの受領</td><td>2〜4週間</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="guide-section" id="g3">
+        <h2 class="guide-h">エスクロー・<em>資金管理</em></h2>
+        <p class="body-copy">Wafiライセンスに基づくエスクロー制度が義務化されています。購入者の資金は認定エスクロー口座で保全され、完成・引き渡し条件の充足に応じて段階的にデベロッパーへ支払われます。</p>
+        <div class="callout">Desert Bambooが関与する案件ではBanque Saudi Fransiのエスクロー口座を利用しています。詳細は会員限定ページにて開示。</div>
+      </div>
+      <div class="guide-section" id="g4">
+        <h2 class="guide-h">会社設立・<em>MISA登録</em></h2>
+        <div class="steps">
+          <div class="step"><div class="step-n"><span>1</span></div><div class="step-body"><div class="step-title">MISA外資投資ライセンスの取得</div><div class="step-text">MISAオンラインポータルから申請。審査期間は通常5〜15営業日。業種によって最低資本金要件が異なります。</div></div></div>
+          <div class="step"><div class="step-n"><span>2</span></div><div class="step-body"><div class="step-title">会社定款の作成・認証</div><div class="step-text">アラビア語での定款作成・公証が必要。日本の書類はアポスティーユ認証が必要で、この手続きに2〜4週間かかります。</div></div></div>
+          <div class="step"><div class="step-n"><span>3</span></div><div class="step-body"><div class="step-title">商業登録（CR）の取得</div><div class="step-text">Ministry of CommerceへのCR申請。登録完了後、銀行口座開設・ZATCA登録へと進みます。</div></div></div>
+        </div>
+      </div>
+      <div class="guide-section" id="g5">
+        <h2 class="guide-h">税制・<em>コスト試算</em></h2>
+        <table class="d-table">
+          <thead><tr><th>費用項目</th><th>概要</th><th>目安</th></tr></thead>
+          <tbody>
+            <tr><td>法人税</td><td>外資法人の純利益</td><td>20%</td></tr>
+            <tr><td>VAT</td><td>商品・サービス取引</td><td>15%</td></tr>
+            <tr><td>不動産取得税（RETT）</td><td>不動産取引額</td><td>5%</td></tr>
+            <tr><td>各種登録費用</td><td>MISA・CR・ZATCAなど</td><td>SAR 5,000〜30,000</td></tr>
+            <tr><td>弁護士・公証費用</td><td>契約書作成・認証</td><td>SAR 10,000〜50,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="guide-section" id="g6">
+        <h2 class="guide-h">リスクと<em>注意点</em></h2>
+        <div class="steps">
+          <div class="step"><div class="step-n"><span>!</span></div><div class="step-body"><div class="step-title">プロジェクト遅延リスク</div><div class="step-text">大型プロジェクトは当初計画から遅延が報告されています。「世代をまたぐ投資」という視点と長期タイムラインが前提です。</div></div></div>
+          <div class="step"><div class="step-n"><span>!</span></div><div class="step-body"><div class="step-title">為替・送金リスク</div><div class="step-text">SARは米ドルにペッグされており為替変動は限定的ですが、サウジから日本への送金はForex規制を受けます。事前に弁護士・銀行と確認してください。</div></div></div>
+          <div class="step"><div class="step-n"><span>!</span></div><div class="step-body"><div class="step-title">Wafiライセンス未取得業者への注意</div><div class="step-text">Wafiライセンスを持たないデベロッパーとの契約は資金保全が担保されません。契約前にMISAデータベースでの確認が必須です。</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FAQ ══ -->
+<div id="page-faq" class="page">
+  <div class="page-banner">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1800&q=80')"></div>
+    <div class="ov"></div>
+    <div class="page-banner-text">
+      <div class="page-banner-eyebrow">FAQ</div>
+      <h1 class="page-banner-title">よくある<em>ご質問</em></h1>
+    </div>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-filters">
+      <button class="faq-filter active" onclick="faqFilter('all',this)">すべて</button>
+      <button class="faq-filter" onclick="faqFilter('market',this)">市場・制度</button>
+      <button class="faq-filter" onclick="faqFilter('re',this)">不動産購入</button>
+      <button class="faq-filter" onclick="faqFilter('co',this)">会社設立</button>
+      <button class="faq-filter" onclick="faqFilter('bam',this)">Desert Bamboo</button>
+      <button class="faq-filter" onclick="faqFilter('mem',this)">会員制度</button>
+    </div>
+    <div id="faq-list">
+      <div class="faq-item" data-c="market"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">Vision 2030とは何ですか？日本の投資家にとってどんな意味がありますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>Vision 2030は2016年にサウジアラビア政府が発表した国家変革戦略です。石油収入への依存度を下げ、観光・エンターテインメント・テクノロジー・製造業へ投資を拡大することを目指しています。</p><p>日本の投資家にとって重要な点は3つ。第一に数百兆円規模の政府投資が投資機会として具体化していること、第二に外資参入規制の大幅緩和により直接投資が可能になっていること、第三に日本の技術・建築・デザインへの需要が高く競争環境がまだ整備されていない先行者優位の状態にあることです。</p></div></div></div>
+      <div class="faq-item" data-c="market"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">NEOMプロジェクトの縮小報道は事実ですか？投資価値はまだありますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>THE LINEの第一期収容人口が150万人から30万人に縮小されたことは事実です。ただしこれをプロジェクトの「失敗」と解釈するのは誤りです。サウジ投資相が述べているようにNEOMは「世代をまたぐ投資」であり、2〜3年で完成するプロジェクトではありません。</p><p>2025年のCEO交代は「インフラ整備期」から「外国資本誘致期」へのフェーズ移行のシグナルと解釈するのが適切です。ただし短期リターンを求める投資には適しません。10〜20年以上の時間軸が前提です。</p></div></div></div>
+      <div class="faq-item" data-c="re"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">日本人・外国人はサウジアラビアで不動産を購入できますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>はい、政府が指定した特定エリアに限り、外国人による不動産購入が許可されています。主な対象エリアはNEOM周辺、AMAALA指定区画、Red Sea Globalの観光エリア、ジェッダ・リヤドの一部ラグジュアリーコンプレックスです。</p><p>具体的な物件・区画情報は会員限定ページにて掲載しています。会員申請のうえご確認ください。</p></div></div></div>
+      <div class="faq-item" data-c="re"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">Wafiライセンスとは何ですか？なぜ重要なのですか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>WafiはRERA（不動産規制当局）が認定する不動産オフプランエスクロー制度です。Wafiライセンスを持つデベロッパーは、購入者から受領した資金を認定エスクロー口座で保全し、完成・引き渡しの段階に応じて段階払いを受ける仕組みになっています。</p><p>Wafiライセンスを持たないデベロッパーとの取引ではこの保護が受けられないため、必ずMISAデータベースでライセンスの有無を確認してください。Desert Bambooが関与する案件はすべてWafi取得済みデベロッパーとの取引を要件としています。</p></div></div></div>
+      <div class="faq-item" data-c="co"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">サウジアラビアで会社設立にかかる費用と期間はどれくらいですか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>標準的なLLCの設立費用は概ねSAR 40,000〜100,000（約160万〜400万円）程度。MISA申請費用・商業登録費用・公証翻訳費用・弁護士費用の合計です。所要期間は書類が揃った状態から4〜8週間。日本の書類はアポスティーユ認証に2〜4週間かかることも考慮してください。</p></div></div></div>
+      <div class="faq-item" data-c="bam"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">竹建築はサウジアラビアの高温・砂漠環境に対応できますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>素材特性と設計アプローチの組み合わせにより十分に対応可能です。Desert Bamboo Globalでは熱処理・防腐処理による耐候性強化、複層構造による断熱性能の確保、遮熱コーティング、空調設計との統合を標準仕様としています。ロンボク島での実績（年間最高気温35℃超・高湿度）で培った技術を低湿度・高温のサウジ環境向けに最適化します。</p></div></div></div>
+      <div class="faq-item" data-c="bam"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">「永遠の砂時計」プロジェクトとはどのようなものですか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>500年かけて落下し続ける砂を内包した巨大砂時計型建築モニュメント。ヴァルター・ベンヤミンの「アウラ（Aura）」概念——今この瞬間、ここだけに存在するという唯一性——を建築として具現化したプロジェクトです。詳細・投資条件は会員限定ページにて公開しています。</p></div></div></div>
+      <div class="faq-item" data-c="mem"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">会員になると、具体的に何が見られますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>会員ページでは①現在進行中の非公開投資案件（物件概要・価格・条件・エスクロー情報）、②Desert Bamboo独自の構想プロジェクト全容（永遠の砂時計など）、③現地一次情報レポート（四半期発行）、④個別案件への商談申し込み窓口、⑤現地ネットワーク情報にアクセスできます。現在7件の非公開案件と3件の構想プロジェクトを掲載中です。</p></div></div></div>
+      <div class="faq-item" data-c="mem"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">会員審査の基準と費用を教えてください。</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>会員制度は現在無料です。審査はデスクスクリーニングを基本とし、個人の場合は金融資産規模・投資目的・海外投資経験を、法人の場合は事業概要・投資担当者としての属性を確認します。申請から2営業日以内にご返答します。投資能力・目的が明確でない場合はお断りする場合があります。</p></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<div id="page-about" class="page">
+  <div class="page-banner">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1604964432806-254d07c11f32?w=1800&q=80')"></div>
+    <div class="ov"></div>
+    <div class="page-banner-text">
+      <div class="page-banner-eyebrow">About Desert Bamboo Global</div>
+      <h1 class="page-banner-title">竹が、砂漠を<br><em>変える。</em></h1>
+    </div>
+  </div>
+
+  <div class="about-intro">
+    <div class="about-img-half">
+      <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=900&q=80')"></div>
+    </div>
+    <div class="about-text-half">
+      <div class="eyebrow">Philosophy</div>
+      <h2 class="display">「複製できないもの」<br>だけが、<em>価値を持つ。</em></h2>
+      <div class="rule"></div>
+      <p class="lead">AIとデジタル技術が画像・音楽・デザインを瞬時に生成できる時代に、「複製できないもの」の価値は逆説的に向上する。</p>
+      <p class="body-copy">Desert Bamboo Globalが手がける竹建築は、その場の空気・光・自然との関係性において二つとして同じものがない体験を生み出す。これはヴァルター・ベンヤミンが「アウラ（Aura）」と呼んだ概念——今この瞬間、ここだけに存在するという唯一性——の建築的表現だ。</p>
+      <div class="quote-block">
+        <blockquote>「その場所にしかない空気が、人を動かす。それが竹建築の本質だ。」</blockquote>
+        <cite>— Desert Bamboo Global, Founding Philosophy</cite>
+      </div>
+    </div>
+  </div>
+
+  <div class="section wrap">
+    <div class="eyebrow">Timeline</div>
+    <h2 class="display">創業から<em>サウジへ</em></h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">2020</div><div class="tl-body"><strong>Desert Bamboo Global 創業</strong><p>インドネシア・ロンボク島を拠点に竹建築の設計・施工を開始。</p></div></div>
+      <div class="tl-item"><div class="tl-year">2021</div><div class="tl-body"><strong>世界初・竹建築スターバックス 竣工</strong><p>ロンボク島に世界初の竹建築スターバックスを設計・施工。国際的な注目を集める。</p></div></div>
+      <div class="tl-item"><div class="tl-year">2022</div><div class="tl-body"><strong>Milky Wave・XENO GYM 竣工</strong><p>高評価を受けた複数の施設を手がけ、「持続可能な独創性」のブランドを確立。</p></div></div>
+      <div class="tl-item"><div class="tl-year">2024</div><div class="tl-body"><strong>Desert Bamboo LLC（サウジ法人）設立</strong><p>リヤド・アル・オラヤにてサウジアラビア法人を設立。現地活動基盤を確立。</p></div></div>
+      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-body"><strong>SAUDI INSIGHT 開設</strong><p>日本向けサウジアラビア投資・情報プラットフォームを開設。富裕層・機関投資家向け会員制サービスを開始。</p></div></div>
+    </div>
+  </div>
+
+  <div class="section wrap" style="padding-top:0">
+    <div class="eyebrow">Works</div>
+    <h2 class="display">主要<em>実績</em></h2>
+    <div class="works-mosaic">
+      <div class="work-tile"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=700&q=80')"></div><div class="work-tile-info"><div class="work-tile-loc">Lombok, Indonesia</div><div class="work-tile-name">竹建築<br>スターバックス</div></div></div>
+      <div class="work-tile"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1439694117886-f3f0f5501e1b?w=700&q=80')"></div><div class="work-tile-info"><div class="work-tile-loc">Lombok, Indonesia</div><div class="work-tile-name">Milky Wave</div></div></div>
+      <div class="work-tile"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1571019613576-2b22c76fd955?w=700&q=80')"></div><div class="work-tile-info"><div class="work-tile-loc">Lombok, Indonesia</div><div class="work-tile-name">XENO GYM</div></div></div>
+      <div class="work-tile"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80')"></div><div class="work-tile-info"><div class="work-tile-loc">Lombok, Indonesia</div><div class="work-tile-name">Honey Jack</div></div></div>
+      <div class="work-tile"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&q=80')"></div><div class="work-tile-info"><div class="work-tile-loc">Mandalika SEZ, Indonesia</div><div class="work-tile-name">KLEO Mandalika<br>Resort</div></div></div>
+      <div class="work-tile"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=700&q=80')"></div><div class="work-tile-info"><div class="work-tile-loc">Saudi Arabia · Concept</div><div class="work-tile-name">永遠の砂時計<br><em>（構想）</em></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NEWS ══ -->
+<div id="page-news" class="page">
+  <div class="page-banner">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1597435877853-5c8c433e0c51?w=1800&q=80')"></div>
+    <div class="ov"></div>
+    <div class="page-banner-text">
+      <div class="page-banner-eyebrow">News & Column</div>
+      <h1 class="page-banner-title">最新動向・<em>コラム</em></h1>
+    </div>
+  </div>
+  <div class="news-page-layout">
+    <div class="news-main">
+      <div class="article-item" onclick="show('news')">
+        <div class="article-thumb" style="background-image:url('https://images.unsplash.com/photo-1604964432806-254d07c11f32?w=400&q=80')"></div>
+        <div class="article-body"><div class="article-cat2">Market Update</div><div class="article-title2">NEOM CEO交代の真相と、ギガプロジェクト縮小計画が示す「次のフェーズ」への移行</div><div class="article-exc">象徴的インフラ整備期から外国資本誘致期へ——Desert Bamboo現地チームの一次情報をもとに解説する。</div><div class="article-date2">Nov 28, 2025</div></div>
+      </div>
+      <div class="article-item" onclick="show('news')">
+        <div class="article-thumb" style="background-image:url('https://images.unsplash.com/photo-1601459427108-47e20b727fc6?w=400&q=80')"></div>
+        <div class="article-body"><div class="article-cat2">Project</div><div class="article-title2">AMAALA第一期エリアの区画販売が開始。外国法人の参入要件が明確化</div><div class="article-exc">Desert Bambooは既に現地デベロッパーとの協議を開始しており、会員向けに詳細情報を近日中に提供予定。</div><div class="article-date2">Oct 15, 2025</div></div>
+      </div>
+      <div class="article-item" onclick="show('news')">
+        <div class="article-thumb" style="background-image:url('https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=400&q=80')"></div>
+        <div class="article-body"><div class="article-cat2">Investment</div><div class="article-title2">サウジ不動産市場、2025年Q3は外国人購入が前年比+42%。ジェッダの高級コンドミニアムが牽引</div><div class="article-exc">日本人投資家の成約事例もDesert Bambooのネットワークで確認されている。</div><div class="article-date2">Oct 03, 2025</div></div>
+      </div>
+      <div class="article-item" onclick="show('news')">
+        <div class="article-thumb" style="background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=400&q=80')"></div>
+        <div class="article-body"><div class="article-cat2">Column</div><div class="article-title2">【解説】サウジアラビアの不動産エスクロー制度「Wafi」とは何か</div><div class="article-exc">Wafiライセンスを知らずに進めた取引でトラブルが発生しているケースがある。投資家保護の仕組みを日本語で詳解する。</div><div class="article-date2">Sep 18, 2025</div></div>
+      </div>
+      <div class="article-item" onclick="show('news')">
+        <div class="article-thumb" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&q=80')"></div>
+        <div class="article-body"><div class="article-cat2">Bamboo</div><div class="article-title2">竹建築とサウジアラビアの気候——Desert Bamboo Globalが開発した「砂漠対応仕様」の全容</div><div class="article-exc">高温・低湿度・砂嵐というサウジ特有の環境に竹建築を対応させるための技術開発の詳細を公開する。</div><div class="article-date2">Aug 30, 2025</div></div>
+      </div>
+      <div class="article-item" onclick="show('news')">
+        <div class="article-thumb" style="background-image:url('https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=400&q=80')"></div>
+        <div class="article-body"><div class="article-cat2">Market</div><div class="article-title2">Vision 2030の87%が完了。残り3年で何が動くか——2025〜2030年のサウジ投資カレンダー</div><div class="article-exc">「象徴プロジェクトの完成」から「生活インフラ・民間投資の本格化」へのシフトを時系列で整理する。</div><div class="article-date2">Jul 22, 2025</div></div>
+      </div>
+    </div>
+    <div class="news-side">
+      <div class="side-widget">
+        <div class="side-widget-title">Categories</div>
+        <div style="font-family:var(--fb);font-size:13px">
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);color:rgba(247,242,234,.6)"><span>市場・制度</span><span style="color:var(--sand)">12</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);color:rgba(247,242,234,.6)"><span>プロジェクト情報</span><span style="color:var(--sand)">8</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);color:rgba(247,242,234,.6)"><span>投資・不動産</span><span style="color:var(--sand)">15</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);color:rgba(247,242,234,.6)"><span>Desert Bamboo</span><span style="color:var(--sand)">6</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;color:rgba(247,242,234,.6)"><span>コラム・解説</span><span style="color:var(--sand)">9</span></div>
+        </div>
+      </div>
+      <div class="side-widget">
+        <div class="side-widget-title">Tags</div>
+        <div>
+          <span class="tag2">NEOM</span><span class="tag2">AMAALA</span><span class="tag2">Vision 2030</span><span class="tag2">不動産</span><span class="tag2">Wafi</span><span class="tag2">PIF</span><span class="tag2">竹建築</span><span class="tag2">外資規制</span><span class="tag2">ジェッダ</span>
+        </div>
+      </div>
+      <div class="side-widget">
+        <div class="side-widget-title">Membership</div>
+        <p style="font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.55);line-height:1.85;margin-bottom:20px">会員限定の非公開案件情報・現地レポートは審査制の会員ページにてご覧いただけます。</p>
+        <button class="btn-gold" style="width:100%" onclick="show('member')">会員申請する</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MEMBER ══ -->
+<div id="page-member" class="page">
+  <div class="member-hero">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80')"></div>
+    <div class="ov"></div>
+    <div class="member-hero-inner">
+      <div class="page-banner-eyebrow">Membership Application</div>
+      <h1 class="page-banner-title" style="font-size:clamp(44px,6vw,78px)">会員申請<br><em>（審査制・無料）</em></h1>
+      <p style="font-family:var(--fb);font-size:15px;color:rgba(247,242,234,.7);max-width:480px;line-height:1.85;margin-top:16px">現在7件の非公開投資案件と3件の構想プロジェクト全容を会員向けに掲載中。審査通過後、2営業日以内にご招待します。</p>
+    </div>
+  </div>
+
+  <div class="section wrap">
+    <div class="benefits-strip">
+      <div class="benefit-cell"><span class="benefit-icon2">📋</span><div class="benefit-title2">非公開案件情報</div><div class="benefit-desc">現在7件の投資案件（詳細・価格・条件・エスクロー情報）を掲載</div></div>
+      <div class="benefit-cell"><span class="benefit-icon2">⧗</span><div class="benefit-title2">構想プロジェクト全容</div><div class="benefit-desc">永遠の砂時計など3件の構想プロジェクトの全設計・投資条件</div></div>
+      <div class="benefit-cell" style="border-right:none"><span class="benefit-icon2">📊</span><div class="benefit-title2">独自市場レポート</div><div class="benefit-desc">現地一次情報をまとめた四半期レポートを会員限定で発行</div></div>
+      <div class="benefit-cell"><span class="benefit-icon2">🤝</span><div class="benefit-title2">商談申し込み窓口</div><div class="benefit-desc">各案件への個別相談・商談申し込みを専用窓口からダイレクトに</div></div>
+      <div class="benefit-cell"><span class="benefit-icon2">🌐</span><div class="benefit-title2">現地ネットワーク情報</div><div class="benefit-desc">政府機関・デベロッパー・パートナーとのコネクション情報</div></div>
+      <div class="benefit-cell" style="border-right:none"><span class="benefit-icon2">📧</span><div class="benefit-title2">会員向けニュースレター</div><div class="benefit-desc">公開前の最新情報・案件速報を月2回会員限定でメール配信</div></div>
+    </div>
+
+    <div class="form-block">
+      <div class="form-h">会員申請フォーム</div>
+      <div class="form-sub">審査結果は2営業日以内にご連絡いたします。</div>
+      <div class="form-row">
+        <div class="form-grp"><label class="form-label2">氏名<sup>*</sup></label><input class="form-input2" type="text" placeholder="山田 太郎"></div>
+        <div class="form-grp"><label class="form-label2">氏名（フリガナ）</label><input class="form-input2" type="text" placeholder="ヤマダ タロウ"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-grp"><label class="form-label2">メールアドレス<sup>*</sup></label><input class="form-input2" type="email" placeholder="taro@example.com"></div>
+        <div class="form-grp"><label class="form-label2">電話番号</label><input class="form-input2" type="tel" placeholder="090-0000-0000"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-grp"><label class="form-label2">所属（会社名・法人名）</label><input class="form-input2" type="text" placeholder="株式会社○○ / 個人"></div>
+        <div class="form-grp"><label class="form-label2">役職・肩書き</label><input class="form-input2" type="text" placeholder="代表取締役 / 投資担当"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-grp"><label class="form-label2">属性<sup>*</sup></label><select class="form-select2"><option value="" disabled selected>選択してください</option><option>個人投資家（富裕層）</option><option>法人投資家</option><option>ファミリーオフィス</option><option>金融機関・証券会社</option><option>不動産会社</option><option>事業会社（中東進出検討）</option><option>その他</option></select></div>
+        <div class="form-grp"><label class="form-label2">投資関心領域<sup>*</sup></label><select class="form-select2"><option value="" disabled selected>選択してください</option><option>サウジアラビア不動産への直接投資</option><option>ギガプロジェクトへの事業参画</option><option>Desert Bambooプロジェクトへの出資</option><option>サウジアラビアへの法人進出</option><option>情報収集・調査目的</option></select></div>
+      </div>
+      <div class="form-row full">
+        <div class="form-grp"><label class="form-label2">概算投資可能額（任意）</label><select class="form-select2"><option value="" disabled selected>差し支えなければご選択ください</option><option>〜5,000万円</option><option>5,000万円〜1億円</option><option>1億円〜5億円</option><option>5億円〜10億円</option><option>10億円以上</option></select></div>
+      </div>
+      <div class="form-row full">
+        <div class="form-grp"><label class="form-label2">メッセージ・ご状況（任意）</label><textarea class="form-textarea2" placeholder="投資への関心背景、現在のご状況、気になっているプロジェクト等をご記入いただけると審査がスムーズに進みます。"></textarea></div>
+      </div>
+      <div class="form-note2">ご入力いただいた情報は、会員審査および会員向けサービスの提供のみに使用します。第三者への提供は行いません。競合他社・情報転売目的の申請はお断りいたします。</div>
+      <button class="form-submit" onclick="alert('ご申請ありがとうございます。\n2営業日以内に審査結果をメールにてご連絡いたします。')">申請する — Apply for Membership</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── cursor ── */
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top  = e.clientY + 'px';
+  rx += (e.clientX - rx) * .12;
+  ry += (e.clientY - ry) * .12;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+});
+function animRing() {
+  rx += (parseFloat(cur.style.left||0) - rx) * .12;
+  ry += (parseFloat(cur.style.top||0)  - ry) * .12;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+
+/* ── nav scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* ── page routing ── */
+function show(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── FAQ ── */
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!open) item.classList.add('open');
+}
+function faqFilter(cat, btn) {
+  document.querySelectorAll('.faq-filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.faq-item').forEach(el => {
+    el.style.display = (cat === 'all' || el.dataset.c === cat) ? '' : 'none';
+  });
+}
+
+/* ── Guide sidebar ── */
+function scrollG(id, el) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.guide-side-nav a').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
