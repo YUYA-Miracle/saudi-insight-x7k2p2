@@ -19,9 +19,11 @@
 .g-kpi-d{font-family:var(--fb);font-size:12px;color:rgba(247,242,234,.55);margin-top:5px;line-height:1.5}
 .g-wrap{max-width:1280px;margin:0 auto;padding:0 64px}
 .g-section{padding:72px 0}
+/* g-split: 画像＋テキストの2カラム */
 .g-split{display:grid;grid-template-columns:1fr 1fr;min-height:440px}
-.g-split.rev{direction:rtl}
-.g-split.rev > *{direction:ltr}
+/* rev: 画像を右・テキストを左にするためgrid-column指定 */
+.g-split.rev .g-img{order:2}
+.g-split.rev .g-text{order:1}
 .g-img{position:relative;overflow:hidden;min-height:380px}
 .g-img .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s}
 .g-img:hover .bg{transform:scale(1.04)}
@@ -30,7 +32,7 @@
 .g-text p{font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.72);line-height:2.05;margin-bottom:18px}
 .g-text ul{list-style:none;margin:14px 0;display:flex;flex-direction:column;gap:9px}
 .g-text ul li{font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.68);line-height:1.85;padding-left:18px;position:relative}
-.g-text ul li::before{content:'—';position:absolute;left:0;color:var(--sand);font-family:var(--fd)}
+.g-text ul li::before{content:'—';position:absolute;left:0;color:var(--sand)}
 .g-text strong{color:var(--ivory);font-weight:700}
 .g-3img{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:0}
 .g-3img-item{position:relative;overflow:hidden;height:260px}
@@ -45,18 +47,16 @@
 .g-data-label{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.48)}
 .g-data-val{font-family:var(--fb);font-size:13px;color:var(--ivory);text-align:right;max-width:55%}
 .g-callout{background:var(--black3);border-left:3px solid var(--sand);padding:24px 28px;margin:24px 0;font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75);line-height:1.9}
-/* ミニマップ */
 .g-minimap-grid{display:grid;grid-template-columns:1fr 280px;gap:3px}
-/* データ+画像 */
 .g-data-grid{display:grid;grid-template-columns:1fr 340px;gap:3px}
 
-/* RESPONSIVE */
 @media(max-width:1024px){
   .g-kpi{grid-template-columns:1fr 1fr}
   .g-wrap{padding:0 32px}
   .g-3img{grid-template-columns:1fr 1fr}
   .g-split{grid-template-columns:1fr}
-  .g-split.rev{direction:ltr}
+  .g-split.rev .g-img{order:0}
+  .g-split.rev .g-text{order:0}
   .g-img{min-height:300px}
   .g-text{padding:40px 32px}
   .g-minimap-grid{display:block}
@@ -69,7 +69,6 @@
   .g-kpi-cell{padding:18px 16px}
   .g-kpi-n{font-size:28px}
   .g-split{grid-template-columns:1fr}
-  .g-split.rev{direction:ltr}
   .g-img{min-height:260px}
   .g-text{padding:36px 20px}
   .g-section{padding:48px 0}
