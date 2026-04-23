@@ -6,88 +6,163 @@
 <title>NEOM | SAUDI INSIGHT</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.proj-detail-grid{display:grid;grid-template-columns:2fr 1fr;gap:3px;margin-top:48px;}
-.detail-img{position:relative;overflow:hidden;min-height:400px;}
-.detail-img .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s;}
-.detail-img:hover .bg{transform:scale(1.04);}
-.detail-meta{background:var(--black2);border:1px solid var(--border);padding:36px 32px;}
-.meta-title{font-family:var(--fs);font-size:9px;letter-spacing:.45em;color:var(--sand);text-transform:uppercase;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-.meta-row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(184,151,90,.08);font-size:13px;}
-.meta-row:last-child{border-bottom:none;}
-.meta-label{font-family:var(--fb);color:rgba(247,242,234,.45);flex-shrink:0;}
-.meta-val{font-family:var(--fb);color:var(--ivory);text-align:right;}
-.breadcrumb{font-family:var(--fs);font-size:10px;letter-spacing:.15em;color:rgba(247,242,234,.35);margin-bottom:8px;}
-.breadcrumb a{color:var(--sand);text-decoration:none;}
-.breadcrumb a:hover{text-decoration:underline;}
-
-@media(max-width:768px){
-  .page-banner-text{padding:0 20px 36px;}
-  .page-title{font-size:clamp(28px,8vw,48px);}
-}
-
-@media(max-width:1024px){
-  .proj-detail-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:768px){
-  .proj-detail-grid{grid-template-columns:1fr;}
-}
+.g-hero{position:relative;height:75vh;min-height:540px;display:flex;align-items:flex-end;overflow:hidden;margin-top:68px;}
+.g-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:heroZoom 14s ease-out forwards;}
+.g-hero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.97) 0%,rgba(13,12,10,.3) 55%,rgba(13,12,10,.05) 100%);}
+.g-hero-inner{position:relative;z-index:2;padding:0 64px 72px;max-width:900px;}
+.g-kpi{display:grid;grid-template-columns:repeat(4,1fr);background:var(--black2);border-bottom:1px solid var(--border);}
+.g-kpi-cell{padding:28px 32px;border-right:1px solid var(--border);transition:background .3s;}
+.g-kpi-cell:last-child{border-right:none;}
+.g-kpi-cell:hover{background:var(--mist);}
+.g-kpi-n{font-family:var(--fd);font-size:38px;font-weight:300;color:var(--sand);line-height:1;}
+.g-kpi-l{font-family:var(--fs);font-size:8px;letter-spacing:.4em;color:rgba(247,242,234,.32);text-transform:uppercase;margin-top:4px;}
+.g-kpi-d{font-family:var(--fb);font-size:12px;color:rgba(247,242,234,.55);margin-top:5px;line-height:1.5;}
+.g-wrap{max-width:1280px;margin:0 auto;padding:0 64px;}
+.g-section{padding:72px 0;}
+.g-split{display:grid;grid-template-columns:1fr 1fr;min-height:440px;}
+.g-split.rev{direction:rtl;}
+.g-split.rev > *{direction:ltr;}
+.g-img{position:relative;overflow:hidden;min-height:380px;}
+.g-img .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s;}
+.g-img:hover .bg{transform:scale(1.04);}
+.g-img-cap{position:absolute;bottom:14px;left:20px;font-family:var(--fs);font-size:8.5px;letter-spacing:.3em;color:rgba(247,242,234,.4);text-transform:uppercase;z-index:2;}
+.g-text{background:var(--black2);padding:56px 52px;display:flex;flex-direction:column;justify-content:center;}
+.g-text p{font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.72);line-height:2.05;margin-bottom:18px;}
+.g-text ul{list-style:none;margin:14px 0;display:flex;flex-direction:column;gap:9px;}
+.g-text ul li{font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.68);line-height:1.85;padding-left:18px;position:relative;}
+.g-text ul li::before{content:'—';position:absolute;left:0;color:var(--sand);font-family:var(--fd);}
+.g-text strong{color:var(--ivory);font-weight:700;}
+.g-3img{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:40px;}
+.g-3img-item{position:relative;overflow:hidden;height:260px;}
+.g-3img-item .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s;}
+.g-3img-item:hover .bg{transform:scale(1.06);}
+.g-3img-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.7) 0%,transparent 60%);}
+.g-3img-cap{position:absolute;bottom:14px;left:18px;right:18px;z-index:2;font-family:var(--fs);font-size:9px;letter-spacing:.2em;color:rgba(247,242,234,.55);text-transform:uppercase;}
+.g-data{background:var(--black2);border:1px solid var(--border);}
+.g-data-head{padding:20px 28px;background:var(--black3);border-bottom:1px solid var(--border);font-family:var(--fs);font-size:9px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;}
+.g-data-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 28px;border-bottom:1px solid rgba(184,151,90,.08);}
+.g-data-row:last-child{border-bottom:none;}
+.g-data-label{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.48);}
+.g-data-val{font-family:var(--fb);font-size:13px;color:var(--ivory);text-align:right;max-width:55%;}
+.g-callout{background:var(--black3);border-left:3px solid var(--sand);padding:24px 28px;margin:24px 0;font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75);line-height:1.9;}
+@media(max-width:1024px){.g-kpi{grid-template-columns:1fr 1fr;}.g-wrap{padding:0 32px;}.g-3img{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.g-hero{margin-top:60px;}.g-hero-inner{padding:0 20px 48px;}.g-kpi{grid-template-columns:1fr 1fr;}.g-kpi-cell{padding:18px 16px;}.g-kpi-n{font-size:28px;}.g-split{grid-template-columns:1fr;}.g-text{padding:36px 20px;}.g-section{padding:48px 0;}.g-wrap{padding:0 20px;}.g-3img{grid-template-columns:1fr;}}
 </style>
 </head>
 <body data-nav-solid="1">
 <script src="nav.js"></script>
-<div class="page-banner">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
+
+<div class="g-hero">
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1488462237308-ecaa28b729d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
   <div class="ov"></div>
-  <div class="page-banner-text">
-    <div class="breadcrumb"><a href="market.html">サウジ市場</a> / Giga Project — NEOM</div>
-    <div class="page-eyebrow">Giga Project — NEOM</div>
-    <h1 class="page-title">NEOM &amp;<br><em>The Line</em></h1>
-    <p class="page-lead">ベルギー国土規模（26,500km²）の未来型スマートシティ。ムハンマド皇太子肝いりの巨大開発が、外国資本誘致の新フェーズへと移行しつつある。</p>
+  <div class="g-hero-inner">
+    <div style="font-family:var(--fs);font-size:9px;letter-spacing:.45em;color:var(--sand);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:12px"><a href="market.html" style="color:rgba(184,151,90,.6);text-decoration:none">サウジ市場</a><span style="color:rgba(184,151,90,.3)">›</span><span>Giga Project — NEOM</span></div>
+    <h1 style="font-family:var(--fd);font-size:clamp(48px,7vw,96px);font-weight:300;line-height:1;color:var(--ivory);margin-bottom:18px">NEOM &amp; <em>The Line</em></h1>
+    <div style="font-family:var(--fs);font-size:10px;letter-spacing:.3em;color:var(--sand);text-transform:uppercase;margin-bottom:20px">未来型スマートシティ · Tabuk州</div>
+    <p style="font-family:var(--fb);font-size:15px;color:rgba(247,242,234,.75);max-width:640px;line-height:1.85">ベルギー国土規模（26,500km²）の未来型スマートシティ。ムハンマド皇太子肝いりの巨大開発が、2025年のCEO交代を経て外国資本誘致の新フェーズへと移行しつつある。</p>
   </div>
 </div>
 
-<div class="section wrap">
-  <div class="proj-detail-grid">
-    <div class="detail-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1578895101408-1a36b834405b?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')"></div></div>
-    <div class="detail-meta">
-      <div class="meta-title">Project Data</div>
-      <div class="meta-row"><span class="meta-label">プロジェクト名</span><span class="meta-val">NEOM</span></div>
-      <div class="meta-row"><span class="meta-label">所在地</span><span class="meta-val">タブーク州北西部・紅海沿岸</span></div>
-      <div class="meta-row"><span class="meta-label">総面積</span><span class="meta-val">26,500km²</span></div>
-      <div class="meta-row"><span class="meta-label">総投資額</span><span class="meta-val">$5,000億</span></div>
-      <div class="meta-row"><span class="meta-label">主要サブPJ</span><span class="meta-val">THE LINE, Oxagon, Trojena</span></div>
-      <div class="meta-row"><span class="meta-label">状況</span><span class="meta-val">建設進行中（第一期縮小済）</span></div>
-      <div class="meta-row"><span class="meta-label">2030目標</span><span class="meta-val">外国資本誘致・一部完成</span></div>
+<!-- KPI -->
+<div class="g-kpi">
+  <div class="g-kpi-cell"><div class="g-kpi-n">$5,000億</div><div class="g-kpi-l">Total Investment</div><div class="g-kpi-d">総投資額。NEOMの全サブプロジェクト合計</div></div>
+<div class="g-kpi-cell"><div class="g-kpi-n">26,500km²</div><div class="g-kpi-l">Total Area</div><div class="g-kpi-d">ベルギーとほぼ同規模の開発面積</div></div>
+<div class="g-kpi-cell"><div class="g-kpi-n">30万人</div><div class="g-kpi-l">Phase 1 Population</div><div class="g-kpi-d">第一期の収容人口目標（調整後）</div></div>
+<div class="g-kpi-cell"><div class="g-kpi-n">2029年</div><div class="g-kpi-l">Trojena完成</div><div class="g-kpi-d">アジア冬季大会開催確定</div></div>
+</div>
+
+<!-- プロジェクトデータ + 画像3枚 -->
+<div class="g-section">
+  <div class="g-wrap">
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:3px">
+      <!-- 画像グリッド -->
+      <div class="g-3img" style="margin-top:0;grid-template-columns:1fr 1fr">
+        <div class="g-3img-item"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-3img-cap">NEOM — タブーク州北西部の砂漠</div></div>
+<div class="g-3img-item"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-3img-cap">Trojena — 山岳リゾートゾーン</div></div>
+<div class="g-3img-item"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-3img-cap">建設進行中のNEOMインフラ</div></div>
+      </div>
+      <!-- データ -->
+      <div>
+        <div class="g-data">
+          <div class="g-data-head">Project Data</div>
+          <div class="g-data-row"><span class="g-data-label">プロジェクト名</span><span class="g-data-val">NEOM</span></div>
+<div class="g-data-row"><span class="g-data-label">所在地</span><span class="g-data-val">タブーク州北西部・紅海沿岸</span></div>
+<div class="g-data-row"><span class="g-data-label">総面積</span><span class="g-data-val">26,500km²（ベルギー国土相当）</span></div>
+<div class="g-data-row"><span class="g-data-label">総投資額</span><span class="g-data-val">$5,000億（約70兆円）</span></div>
+<div class="g-data-row"><span class="g-data-label">主要サブPJ</span><span class="g-data-val">THE LINE / Oxagon / Trojena / Sindalah</span></div>
+<div class="g-data-row"><span class="g-data-label">状況</span><span class="g-data-val">建設進行中（第一期人口目標を30万人に調整）</span></div>
+<div class="g-data-row"><span class="g-data-label">2029目標</span><span class="g-data-val">Trojena — アジア冬季大会開催</span></div>
+        </div>
+        <div style="margin-top:3px">
+          <a class="btn-gold" href="member.html" style="display:block;text-align:center;padding:16px">非公開案件を見る →</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="section wrap" style="padding-top:0">
-  <div class="article-body" style="max-width:100%;padding:0">
+<!-- 本文セクション -->
+
+<div class="g-split">
+  <div class="g-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-img-cap">NEOM — タブーク州北西部の砂漠</div></div>
+  <div class="g-text">
+    <div class="eyebrow">NEOM</div>
+    <h2 class="display" style="font-size:clamp(28px,3vw,44px)">NEOMとは何か</h2>
+    <div class="rule"></div>
     
-<h2>NEOMとは<em>何か</em></h2>
-<p>NEOMは、サウジアラビア北西部タブーク州の紅海沿岸に建設中の未来型スマートシティ計画だ。2017年10月、ムハンマド・ビン・サルマン皇太子が世界投資会議で発表し、以来Vision 2030の象徴的プロジェクトとして国際的な注目を集め続けている。総面積26,500km²はベルギーの国土とほぼ同規模。総投資額は最終的に$5,000億（約70兆円）に上ると見込まれている。</p>
-<p>NEOMはひとつの都市ではなく、複数のサブプロジェクトの集合体だ。THE LINEは幅200m・高さ500m・全長170kmの直線状の都市で、将来的には数百万人の居住を想定する。Oxagonは八角形の海上工業都市として設計され、水素・製造業の拠点となる予定だ。Trojenaは山岳地帯に建設されるリゾート・スキー施設で、2029年アジア冬季大会の開催地に選定されている。</p>
+<p>NEOMは、サウジアラビア北西部タブーク州の紅海沿岸に建設中の未来型スマートシティ計画だ。2017年10月、ムハンマド・ビン・サルマン皇太子が世界投資会議で発表し、以来Vision 2030の象徴的プロジェクトとして国際的な注目を集め続けている。</p>
+<p>総面積26,500km²はベルギーの国土とほぼ同規模。総投資額は最終的に$5,000億（約70兆円）に上ると見込まれている。NEOMはひとつの都市ではなく、複数のサブプロジェクトの集合体だ。</p>
+<ul>
+<li><strong>THE LINE</strong>：幅200m・高さ500m・全長170kmの直線状の都市。将来的には数百万人の居住を想定。</li>
+<li><strong>Oxagon</strong>：八角形の海上工業都市として設計。水素製造・製造業の拠点となる予定。</li>
+<li><strong>Trojena</strong>：山岳地帯のリゾート・スキー施設。2029年アジア冬季大会の開催地に選定確定。</li>
+<li><strong>Sindalah</strong>：紅海に浮かぶ豪華ヨットマリーナ島。2024年から部分開業済み。</li>
+</ul>
 
-<h2>2025年の転換点——<em>「縮小」か「フェーズ移行」か</em></h2>
-<p>2024年後半から2025年にかけて、NEOMは大きな転換期を迎えた。THE LINEの第一期収容人口が当初計画の150万人から30万人に縮小されたことが報じられ、また長年CEOを務めたナドミ・アル・ナスル氏が退任した。メディアの一部はこれを「計画の失敗」と報じたが、現地情報をもとに分析すると、実態はより複雑だ。</p>
-<p>サウジアラビア投資相は「NEOMは世代をまたぐ投資であり、2〜3年で完成するプロジェクトではない」と明言している。CEO交代は「象徴的インフラ整備期」から「外国資本・民間投資の誘致期」へのフェーズ移行のシグナルと読むのが適切だ。実際、2025年以降、外国人投資家がNEOMを実際に視察するケースが増えており、投資機会は縮小ではなく具体化の方向へと向かっている。</p>
+  </div>
+</div>
+<div class="g-split rev">
+  <div class="g-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-img-cap">Trojena — 山岳リゾートゾーン</div></div>
+  <div class="g-text">
+    <div class="eyebrow">Phase Shift</div>
+    <h2 class="display" style="font-size:clamp(28px,3vw,44px)">2025年の転換点</h2>
+    <div class="rule"></div>
+    
+<p>2024年後半から2025年にかけて、NEOMは大きな転換期を迎えた。THE LINEの第一期収容人口が当初計画の150万人から30万人に縮小されたことが報じられ、また長年CEOを務めたナドミ・アル・ナスル氏が退任した。</p>
+<p>メディアの一部はこれを「計画の失敗」と報じたが、現地情報をもとに分析すると実態はより複雑だ。サウジアラビア投資相は「NEOMは世代をまたぐ投資であり、2〜3年で完成するプロジェクトではない」と明言している。CEO交代は「象徴的インフラ整備期」から「外国資本・民間投資の誘致期」へのフェーズ移行のシグナルと読むのが適切だ。</p>
+<p>実際、2025年以降、外国人投資家がNEOMを実際に視察するケースが増えており、投資機会は縮小ではなく具体化の方向へと向かっている。</p>
 
-<h2>Desert Bamboo Globalとの<em>接点</em></h2>
-<p>Desert Bamboo Globalが注目するのは、NEOMが掲げる「サステナブル・ユニーク・世界初」という開発コンセプトとの親和性だ。Bamboo Lab Architectがインドネシア・ロンボク島で実証してきた竹建築の実績——世界初の竹建築スターバックスをはじめとする一連のプロジェクト——は、NEOMが求める「どこにもない体験価値」の設計思想と重なる。</p>
-<p>NEOMエリア内の民間施設・体験型コンテンツへの参入可能性について、Desert Bamboo Global日本事務局は現地パートナーとの協議を継続中だ。詳細は会員限定ページにて随時更新する。</p>
-
-<h2>日本の投資家にとっての<em>機会とリスク</em></h2>
-<p>NEOMへの直接投資は現時点で一般公開されている案件は限定的だ。ただしNEOMの発展に伴い周辺エリアの不動産需要・インフラ需要・サービス需要は確実に拡大する。日本の投資家にとって現実的なアプローチは、NEOMエリア周辺のタブーク州における不動産・商業施設への先行投資、NEOMへのサプライヤー・サービス提供者としての参入、NEOMと近接するAMALAエリアへの投資を通じた間接的な恩恵の享受などが考えられる。</p>
-<p>リスクとしては開発遅延が最大の懸念点だ。「世代をまたぐ投資」という性格上、10〜20年以上の時間軸を持てる資金での参入が前提となる。短期キャピタルゲインを求める投資スタイルには適していない。</p>
+  </div>
+</div>
+<div class="g-split">
+  <div class="g-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-img-cap">建設進行中のNEOMインフラ</div></div>
+  <div class="g-text">
+    <div class="eyebrow">Investment Opportunity</div>
+    <h2 class="display" style="font-size:clamp(28px,3vw,44px)">日本の投資家にとっての機会</h2>
+    <div class="rule"></div>
+    
+<p>NEOMへの直接投資は現時点で一般公開されている案件は限定的だ。ただしNEOMの発展に伴い周辺エリアの不動産需要・インフラ需要・サービス需要は確実に拡大する。日本の投資家にとって現実的なアプローチは3つある。</p>
+<ul>
+<li><strong>周辺エリアへの先行投資</strong>：NEOMエリア周辺のタブーク州における不動産・商業施設への先行取得</li>
+<li><strong>Trojenaへの参入</strong>：2029年アジア冬季大会に向けたホテル・飲食・体験施設への参入。2026〜2027年が最良のタイミング</li>
+<li><strong>サプライヤーとしての参入</strong>：NEOMへの建設資材・テクノロジー・食品・サービスの供給事業者としての参入</li>
+</ul>
+<p>リスクとしては開発遅延が最大の懸念点だ。10〜20年以上の時間軸を持てる資金での参入が前提となる。短期キャピタルゲインを求める投資スタイルには適していない。</p>
 
   </div>
 </div>
 
+<!-- CTA -->
 <div class="cta-full">
   <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
   <div class="ov"></div>
-  <div class="cta-inner"><div class="eyebrow">Membership</div><h2 class="display">非公開案件情報は<em>会員限定</em></h2><div class="rule"></div><p class="lead">このプロジェクトに関連する非公開投資案件の詳細は、審査制の会員ページにてご覧いただけます。</p><div style="margin-top:32px"><a class="btn-gold" href="member.html">会員申請はこちら</a></div></div>
+  <div class="cta-inner">
+    <div class="eyebrow">Membership</div>
+    <h2 class="display">非公開案件情報は<em>会員限定</em></h2>
+    <div class="rule"></div>
+    <p class="lead">このプロジェクトに関連する非公開投資案件の詳細は、審査制の会員ページにてご覧いただけます。現在7件掲載中。</p>
+    <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn-gold" href="member.html">会員申請はこちら</a><a class="btn-ghost" href="market.html">全プロジェクトを見る →</a></div>
+  </div>
 </div>
 <script src="common.js"></script>
 </body>

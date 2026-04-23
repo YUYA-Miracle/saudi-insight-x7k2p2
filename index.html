@@ -118,12 +118,70 @@
 <div class="section wrap">
   <div class="eyebrow">Giga Projects</div>
   <h2 class="display">注目の<em>プロジェクト群</em></h2>
-  <div class="proj-grid">
-    <a class="proj-card tall" href="neom.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1488462237308-ecaa28b729d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')"></div><div class="proj-info"><div class="proj-tag">Tabuk · Flagship</div><div class="proj-name">NEOM &amp;<br><em>The Line</em></div><div class="proj-scale">$5,000億 · 26,500km²</div></div></a>
-    <a class="proj-card" href="amaala.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')"></div><div class="proj-info"><div class="proj-tag">Red Sea · Wellness</div><div class="proj-name"><em>AMAALA</em></div><div class="proj-scale">$2,500億</div></div></a>
-    <a class="proj-card" href="redsea.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')"></div><div class="proj-info"><div class="proj-tag">Red Sea · Eco</div><div class="proj-name"><em>Red Sea Global</em></div><div class="proj-scale">SAR 1兆+</div></div></a>
+  <p class="body-copy" style="margin-bottom:40px">Vision 2030が生み出した国家規模のメガプロジェクト群。それぞれが独自のコンセプトを持ち、日本の投資家に異なる機会を提供している。</p>
+
+  <!-- メインカード2つ + サイド2つ -->
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:340px 300px;gap:3px">
+
+    <!-- NEOM 大カード -->
+    <a href="neom.html" style="position:relative;overflow:hidden;grid-row:1/2;text-decoration:none;display:block">
+      <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1488462237308-ecaa28b729d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');background-size:cover;background-position:center;transition:transform .7s"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.94) 0%,transparent 55%)"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 30px">
+        <div style="font-family:var(--fs);font-size:7.5px;letter-spacing:.5em;color:var(--sand);text-transform:uppercase;margin-bottom:8px">Tabuk · Flagship · $5,000億</div>
+        <div style="font-family:var(--fd);font-size:34px;font-weight:300;color:var(--ivory);line-height:1.1;margin-bottom:6px">NEOM &amp; <em style="color:var(--sand2)">The Line</em></div>
+        <div style="font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.6);line-height:1.7">26,500km²の未来型スマートシティ。THE LINE・Oxagon・Trojena・Sindalahで構成。外国資本誘致フェーズへ移行中。</div>
+      </div>
+    </a>
+
+    <!-- AMAALA + Red Sea 縦積み -->
+    <div style="display:grid;grid-template-rows:1fr 1fr;gap:3px;grid-row:1/2">
+      <a href="amaala.html" style="position:relative;overflow:hidden;text-decoration:none;display:block">
+        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80');background-size:cover;background-position:center;transition:transform .7s"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.9) 0%,transparent 55%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 22px">
+          <div style="font-family:var(--fs);font-size:7px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:5px">Red Sea · Wellness · $2,500億</div>
+          <div style="font-family:var(--fd);font-size:24px;font-weight:400;color:var(--ivory);line-height:1.1;font-style:italic">AMAALA</div>
+          <div style="font-family:var(--fb);font-size:11.5px;color:rgba(247,242,234,.55);margin-top:4px">ウルトララグジュアリーリゾート。2025年Q3区画販売開始。</div>
+        </div>
+      </a>
+      <a href="redsea.html" style="position:relative;overflow:hidden;text-decoration:none;display:block">
+        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80');background-size:cover;background-position:center;transition:transform .7s"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.9) 0%,transparent 55%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 22px">
+          <div style="font-family:var(--fs);font-size:7px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:5px">Red Sea · Eco · SAR 1兆+</div>
+          <div style="font-family:var(--fd);font-size:22px;font-weight:400;color:var(--ivory);font-style:italic">Red Sea Global</div>
+          <div style="font-family:var(--fb);font-size:11.5px;color:rgba(247,242,234,.55);margin-top:4px">50の島々・100%再生可能エネルギー。一部開業済。</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Diriyah -->
+    <a href="diriyah.html" style="position:relative;overflow:hidden;text-decoration:none;display:block">
+      <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80');background-size:cover;background-position:center;transition:transform .7s"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.9) 0%,transparent 55%)"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:22px 26px">
+        <div style="font-family:var(--fs);font-size:7.5px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:7px">Riyadh · UNESCO · $200億+</div>
+        <div style="font-family:var(--fd);font-size:26px;font-weight:400;color:var(--ivory);font-style:italic">Diriyah</div>
+        <div style="font-family:var(--fb);font-size:12px;color:rgba(247,242,234,.58);margin-top:6px">建国の地・ユネスコ世界遺産。Bujairi Terraceが開業済み。リヤド大都市圏内で早期収益化可能。</div>
+      </div>
+    </a>
+
+    <!-- Qiddiyah -->
+    <a href="qiddiyah.html" style="position:relative;overflow:hidden;text-decoration:none;display:block">
+      <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80');background-size:cover;background-position:center;transition:transform .7s"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.9) 0%,transparent 55%)"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:22px 26px">
+        <div style="font-family:var(--fs);font-size:7.5px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:7px">Riyadh · Entertainment · SAR 500億</div>
+        <div style="font-family:var(--fd);font-size:26px;font-weight:400;color:var(--ivory);font-style:italic">Qiddiyah</div>
+        <div style="font-family:var(--fb);font-size:12px;color:rgba(247,242,234,.58);margin-top:6px">334km²のエンタメシティ。2034年FIFA W杯会場候補。日本アニメ・ゲーム需要が旺盛。</div>
+      </div>
+    </a>
+
   </div>
-  <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn-ghost" href="diriyah.html">Diriyah →</a><a class="btn-ghost" href="qiddiyah.html">Qiddiyah →</a><a class="btn-ghost" href="market.html">全プロジェクト →</a></div>
+  <div style="margin-top:12px;display:flex;gap:3px;flex-wrap:wrap">
+    <a class="btn-ghost" href="market.html" style="font-size:9.5px;padding:12px 24px">全プロジェクト詳細 →</a>
+  </div>
 </div>
 <div class="section wrap" style="padding-top:0">
   <div class="eyebrow">Latest News</div>

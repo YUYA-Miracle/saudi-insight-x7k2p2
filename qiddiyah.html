@@ -6,84 +6,163 @@
 <title>Qiddiyah | SAUDI INSIGHT</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.proj-detail-grid{display:grid;grid-template-columns:2fr 1fr;gap:3px;margin-top:48px;}
-.detail-img{position:relative;overflow:hidden;min-height:400px;}
-.detail-img .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s;}
-.detail-img:hover .bg{transform:scale(1.04);}
-.detail-meta{background:var(--black2);border:1px solid var(--border);padding:36px 32px;}
-.meta-title{font-family:var(--fs);font-size:9px;letter-spacing:.45em;color:var(--sand);text-transform:uppercase;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-.meta-row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(184,151,90,.08);font-size:13px;}
-.meta-row:last-child{border-bottom:none;}
-.meta-label{font-family:var(--fb);color:rgba(247,242,234,.45);flex-shrink:0;}
-.meta-val{font-family:var(--fb);color:var(--ivory);text-align:right;}
-.breadcrumb{font-family:var(--fs);font-size:10px;letter-spacing:.15em;color:rgba(247,242,234,.35);margin-bottom:8px;}
-.breadcrumb a{color:var(--sand);text-decoration:none;}
-.breadcrumb a:hover{text-decoration:underline;}
-
-@media(max-width:768px){
-  .page-banner-text{padding:0 20px 36px;}
-  .page-title{font-size:clamp(28px,8vw,48px);}
-}
-
-@media(max-width:1024px){
-  .proj-detail-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:768px){
-  .proj-detail-grid{grid-template-columns:1fr;}
-}
+.g-hero{position:relative;height:75vh;min-height:540px;display:flex;align-items:flex-end;overflow:hidden;margin-top:68px;}
+.g-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:heroZoom 14s ease-out forwards;}
+.g-hero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.97) 0%,rgba(13,12,10,.3) 55%,rgba(13,12,10,.05) 100%);}
+.g-hero-inner{position:relative;z-index:2;padding:0 64px 72px;max-width:900px;}
+.g-kpi{display:grid;grid-template-columns:repeat(4,1fr);background:var(--black2);border-bottom:1px solid var(--border);}
+.g-kpi-cell{padding:28px 32px;border-right:1px solid var(--border);transition:background .3s;}
+.g-kpi-cell:last-child{border-right:none;}
+.g-kpi-cell:hover{background:var(--mist);}
+.g-kpi-n{font-family:var(--fd);font-size:38px;font-weight:300;color:var(--sand);line-height:1;}
+.g-kpi-l{font-family:var(--fs);font-size:8px;letter-spacing:.4em;color:rgba(247,242,234,.32);text-transform:uppercase;margin-top:4px;}
+.g-kpi-d{font-family:var(--fb);font-size:12px;color:rgba(247,242,234,.55);margin-top:5px;line-height:1.5;}
+.g-wrap{max-width:1280px;margin:0 auto;padding:0 64px;}
+.g-section{padding:72px 0;}
+.g-split{display:grid;grid-template-columns:1fr 1fr;min-height:440px;}
+.g-split.rev{direction:rtl;}
+.g-split.rev > *{direction:ltr;}
+.g-img{position:relative;overflow:hidden;min-height:380px;}
+.g-img .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s;}
+.g-img:hover .bg{transform:scale(1.04);}
+.g-img-cap{position:absolute;bottom:14px;left:20px;font-family:var(--fs);font-size:8.5px;letter-spacing:.3em;color:rgba(247,242,234,.4);text-transform:uppercase;z-index:2;}
+.g-text{background:var(--black2);padding:56px 52px;display:flex;flex-direction:column;justify-content:center;}
+.g-text p{font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.72);line-height:2.05;margin-bottom:18px;}
+.g-text ul{list-style:none;margin:14px 0;display:flex;flex-direction:column;gap:9px;}
+.g-text ul li{font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.68);line-height:1.85;padding-left:18px;position:relative;}
+.g-text ul li::before{content:'—';position:absolute;left:0;color:var(--sand);font-family:var(--fd);}
+.g-text strong{color:var(--ivory);font-weight:700;}
+.g-3img{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:40px;}
+.g-3img-item{position:relative;overflow:hidden;height:260px;}
+.g-3img-item .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s;}
+.g-3img-item:hover .bg{transform:scale(1.06);}
+.g-3img-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.7) 0%,transparent 60%);}
+.g-3img-cap{position:absolute;bottom:14px;left:18px;right:18px;z-index:2;font-family:var(--fs);font-size:9px;letter-spacing:.2em;color:rgba(247,242,234,.55);text-transform:uppercase;}
+.g-data{background:var(--black2);border:1px solid var(--border);}
+.g-data-head{padding:20px 28px;background:var(--black3);border-bottom:1px solid var(--border);font-family:var(--fs);font-size:9px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;}
+.g-data-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 28px;border-bottom:1px solid rgba(184,151,90,.08);}
+.g-data-row:last-child{border-bottom:none;}
+.g-data-label{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.48);}
+.g-data-val{font-family:var(--fb);font-size:13px;color:var(--ivory);text-align:right;max-width:55%;}
+.g-callout{background:var(--black3);border-left:3px solid var(--sand);padding:24px 28px;margin:24px 0;font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75);line-height:1.9;}
+@media(max-width:1024px){.g-kpi{grid-template-columns:1fr 1fr;}.g-wrap{padding:0 32px;}.g-3img{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.g-hero{margin-top:60px;}.g-hero-inner{padding:0 20px 48px;}.g-kpi{grid-template-columns:1fr 1fr;}.g-kpi-cell{padding:18px 16px;}.g-kpi-n{font-size:28px;}.g-split{grid-template-columns:1fr;}.g-text{padding:36px 20px;}.g-section{padding:48px 0;}.g-wrap{padding:0 20px;}.g-3img{grid-template-columns:1fr;}}
 </style>
 </head>
 <body data-nav-solid="1">
 <script src="nav.js"></script>
-<div class="page-banner">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c-7efd050a4d0e?w=1800&q=80')"></div>
+
+<div class="g-hero">
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
   <div class="ov"></div>
-  <div class="page-banner-text">
-    <div class="breadcrumb"><a href="market.html">サウジ市場</a> / Giga Project — Qiddiyah</div>
-    <div class="page-eyebrow">Giga Project — Qiddiyah</div>
-    <h1 class="page-title"><em>Qiddiyah</em><br>エンターテインメントの<br>首都</h1>
-    <p class="page-lead">リヤド近郊に建設中の巨大エンターテインメントシティ。テーマパーク・スポーツ・e-スポーツ・モータースポーツを集積させ、サウジアラビアを世界のエンタメ首都へと変貌させる。</p>
+  <div class="g-hero-inner">
+    <div style="font-family:var(--fs);font-size:9px;letter-spacing:.45em;color:var(--sand);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:12px"><a href="market.html" style="color:rgba(184,151,90,.6);text-decoration:none">サウジ市場</a><span style="color:rgba(184,151,90,.3)">›</span><span>Giga Project — Qiddiyah</span></div>
+    <h1 style="font-family:var(--fd);font-size:clamp(48px,7vw,96px);font-weight:300;line-height:1;color:var(--ivory);margin-bottom:18px"><em>Qiddiyah</em></h1>
+    <div style="font-family:var(--fs);font-size:10px;letter-spacing:.3em;color:var(--sand);text-transform:uppercase;margin-bottom:20px">エンターテインメントの首都 · Riyadh</div>
+    <p style="font-family:var(--fb);font-size:15px;color:rgba(247,242,234,.75);max-width:640px;line-height:1.85">リヤド近郊に建設中の巨大エンターテインメントシティ。テーマパーク・スポーツ・e-スポーツ・モータースポーツを集積させ、サウジアラビアを世界のエンタメ首都へと変貌させる。2034年FIFAワールドカップ会場候補。</p>
   </div>
 </div>
 
-<div class="section wrap">
-  <div class="proj-detail-grid">
-    <div class="detail-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c-254d07c11f32?w=900&q=80')"></div></div>
-    <div class="detail-meta">
-      <div class="meta-title">Project Data</div>
-      <div class="meta-row"><span class="meta-label">プロジェクト名</span><span class="meta-val">Qiddiyah</span></div>
-      <div class="meta-row"><span class="meta-label">所在地</span><span class="meta-val">リヤド近郊（市内から約40km）</span></div>
-      <div class="meta-row"><span class="meta-label">総面積</span><span class="meta-val">334km²</span></div>
-      <div class="meta-row"><span class="meta-label">総投資額</span><span class="meta-val">SAR 500億</span></div>
-      <div class="meta-row"><span class="meta-label">主要コンテンツ</span><span class="meta-val">テーマパーク・モータースポーツ・e-スポーツ</span></div>
-      <div class="meta-row"><span class="meta-label">状況</span><span class="meta-val">建設中（段階的開業予定）</span></div>
-      <div class="meta-row"><span class="meta-label">スポーツイベント</span><span class="meta-val">2034年FIFA WC会場候補</span></div>
+<!-- KPI -->
+<div class="g-kpi">
+  <div class="g-kpi-cell"><div class="g-kpi-n">SAR 500億</div><div class="g-kpi-l">Total Investment</div><div class="g-kpi-d">総投資額</div></div>
+<div class="g-kpi-cell"><div class="g-kpi-n">334km²</div><div class="g-kpi-l">Total Area</div><div class="g-kpi-d">開発エリアの総面積</div></div>
+<div class="g-kpi-cell"><div class="g-kpi-n">2034年</div><div class="g-kpi-l">FIFA W杯</div><div class="g-kpi-d">会場候補として選定</div></div>
+<div class="g-kpi-cell"><div class="g-kpi-n">70%+</div><div class="g-kpi-l">Under 35</div><div class="g-kpi-d">サウジ若年人口比率</div></div>
+</div>
+
+<!-- プロジェクトデータ + 画像3枚 -->
+<div class="g-section">
+  <div class="g-wrap">
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:3px">
+      <!-- 画像グリッド -->
+      <div class="g-3img" style="margin-top:0;grid-template-columns:1fr 1fr">
+        <div class="g-3img-item"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1543158181-e6f9f6712055?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-3img-cap">Qiddiyah開発エリア空撮</div></div>
+<div class="g-3img-item"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-3img-cap">リヤド近郊の地形</div></div>
+<div class="g-3img-item"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-3img-cap">リヤド夜景</div></div>
+      </div>
+      <!-- データ -->
+      <div>
+        <div class="g-data">
+          <div class="g-data-head">Project Data</div>
+          <div class="g-data-row"><span class="g-data-label">プロジェクト名</span><span class="g-data-val">Qiddiyah</span></div>
+<div class="g-data-row"><span class="g-data-label">所在地</span><span class="g-data-val">リヤド近郊（市内から約40km）</span></div>
+<div class="g-data-row"><span class="g-data-label">総面積</span><span class="g-data-val">334km²</span></div>
+<div class="g-data-row"><span class="g-data-label">総投資額</span><span class="g-data-val">SAR 500億</span></div>
+<div class="g-data-row"><span class="g-data-label">主要コンテンツ</span><span class="g-data-val">テーマパーク・モータースポーツ・e-スポーツ</span></div>
+<div class="g-data-row"><span class="g-data-label">状況</span><span class="g-data-val">建設中（段階的開業予定）</span></div>
+<div class="g-data-row"><span class="g-data-label">スポーツイベント</span><span class="g-data-val">2034年FIFA WC会場候補</span></div>
+        </div>
+        <div style="margin-top:3px">
+          <a class="btn-gold" href="member.html" style="display:block;text-align:center;padding:16px">非公開案件を見る →</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="section wrap" style="padding-top:0">
-  <div class="article-body" style="max-width:100%;padding:0">
+<!-- 本文セクション -->
+
+<div class="g-split">
+  <div class="g-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1543158181-e6f9f6712055?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-img-cap">Qiddiyah開発エリア空撮</div></div>
+  <div class="g-text">
+    <div class="eyebrow">概要</div>
+    <h2 class="display" style="font-size:clamp(28px,3vw,44px)">Qiddiyahとは何か</h2>
+    <div class="rule"></div>
     
-<h2>Qiddiyahとは<em>何か</em></h2>
 <p>キディーヤは、リヤドから南西約40kmの場所に建設中の巨大エンターテインメントシティだ。Qiddiyah Investment Company（QIC）が開発主体となり、総面積334km²の敷地にテーマパーク・スポーツ施設・e-スポーツアリーナ・モータースポーツサーキット・コンサートホール・映画館などを集積させる計画だ。</p>
-<p>このプロジェクトの背景にあるのは、サウジアラビア社会の急激な変化だ。Vision 2030以前のサウジアラビアでは、映画館・混合施設・エンターテインメント施設は厳しく制限されていた。しかし2017年以降の社会改革により、映画館の営業が解禁され、コンサート・スポーツイベントが次々と開催されるようになった。キディーヤはその延長線上にある「エンターテインメント産業の本格的な構築」プロジェクトだ。</p>
+<ul>
+<li><strong>Six Flags Qiddiyah</strong>：世界最大規模のテーマパーク。Six Flagsと提携した世界最速ジェットコースターも計画</li>
+<li><strong>Qiddiyah Circuit</strong>：Formula Eの開催実績を持つモータースポーツサーキット。2034年W杯前後に拡張予定</li>
+<li><strong>Esports & Gaming Zone</strong>：年間Esports World Cup開催拠点。Prize Poolは世界最大規模</li>
+<li><strong>Water Theme Park</strong>：紅海をテーマにした世界最大規模の水テーマパーク</li>
+</ul>
 
-<h2>なぜ<em>世界が注目するのか</em></h2>
-<p>キディーヤが国際的に注目を集める最大の理由は、そのスケールと政治的後ろ盾の強さだ。ディズニー・ユニバーサル・Six Flagsなどの世界的なテーマパーク企業との交渉が報じられており、世界最大規模のテーマパーク開発になる可能性がある。</p>
-<p>また、2034年FIFAワールドカップのサウジアラビア開催が決定しており、キディーヤのスタジアムが会場候補のひとつとなっている。スポーツイベントに向けた観客インフラの整備という意味でも、開発のスピードアップが求められている。</p>
+  </div>
+</div>
+<div class="g-split rev">
+  <div class="g-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-img-cap">リヤド近郊の地形</div></div>
+  <div class="g-text">
+    <div class="eyebrow">日本コンテンツとの接点</div>
+    <h2 class="display" style="font-size:clamp(28px,3vw,44px)">なぜ今、日本企業にとってのチャンスか</h2>
+    <div class="rule"></div>
+    
+<p>キディーヤが国際的に注目を集める最大の理由は、そのスケールと政治的後ろ盾の強さだ。2034年FIFAワールドカップのサウジアラビア開催が決定しており、キディーヤのスタジアムが会場候補のひとつとなっている。</p>
+<p>日本のアニメ・ゲーム・マンガ・食文化に対するサウジアラビア若年層の熱狂的な支持は広く知られており、日本発のエンタメコンテンツ・飲食ブランドのサウジ展開においてキディーヤは最有力の舞台となる可能性がある。</p>
+<ul>
+<li>サウジアラビアの70%以上が35歳以下という若年人口。日本アニメ・ゲームの需要は飽和知らず</li>
+<li>テーマパーク内の飲食施設・グッズ販売・体験コンテンツへの運営権取得機会</li>
+<li>ラーメン・寿司・居酒屋など日本食フランチャイズへの旺盛な需要</li>
+<li>Desert Bamboo Globalが計画するエンタメレストラン（MAGONIA風）の参入候補地</li>
+</ul>
 
-<h2>飲食・エンタメ施設への<em>参入機会</em></h2>
-<p>キディーヤは純粋な観光施設開発だけでなく、その周辺・内部への民間事業者の参入を積極的に促している。飲食施設・ホスピタリティ・グッズ販売・体験型コンテンツなど、テーマパーク内での運営権取得が日本企業にとっての現実的な参入チャネルとなりうる。</p>
-<p>日本のアニメ・ゲーム・食文化に対するサウジアラビア若年層の熱狂的な支持は広く知られており、日本発のエンタメコンテンツ・飲食ブランドのサウジ展開においてキディーヤは最有力の舞台となる可能性がある。Desert Bamboo Global日本事務局では、飲食施設の設計・施工から運営コンサルティングまでを含めたトータルソリューションの提供を検討している。</p>
+  </div>
+</div>
+<div class="g-split">
+  <div class="g-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div><div class="g-img-cap">リヤド夜景</div></div>
+  <div class="g-text">
+    <div class="eyebrow">機会の整理</div>
+    <h2 class="display" style="font-size:clamp(28px,3vw,44px)">投資・参入スキームの選択肢</h2>
+    <div class="rule"></div>
+    
+<p>キディーヤへの民間事業者参入は、施設内の飲食・ホスピタリティ・グッズ販売・体験型コンテンツなど、テーマパーク内での運営権取得が現実的なチャネルだ。</p>
+<p>また、Qiddiyah周辺エリアの不動産（宿泊施設・サービスアパートメント・商業施設）は、観光客・スポーツ観戦客の流入増に伴い需要拡大が見込まれる。2034年W杯の観客需要を見越した先行投資も有望だ。</p>
+<p>Desert Bamboo Global日本事務局では、飲食施設の設計・施工から運営コンサルティングまでを含めたトータルソリューションの提供を検討している。詳細は会員ページの商談申し込み窓口から。</p>
 
   </div>
 </div>
 
+<!-- CTA -->
 <div class="cta-full">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1800&q=80')"></div>
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
   <div class="ov"></div>
-  <div class="cta-inner"><div class="eyebrow">Membership</div><h2 class="display">非公開案件情報は<em>会員限定</em></h2><div class="rule"></div><p class="lead">このプロジェクトに関連する非公開投資案件の詳細は、審査制の会員ページにてご覧いただけます。</p><div style="margin-top:32px"><a class="btn-gold" href="member.html">会員申請はこちら</a></div></div>
+  <div class="cta-inner">
+    <div class="eyebrow">Membership</div>
+    <h2 class="display">非公開案件情報は<em>会員限定</em></h2>
+    <div class="rule"></div>
+    <p class="lead">このプロジェクトに関連する非公開投資案件の詳細は、審査制の会員ページにてご覧いただけます。現在7件掲載中。</p>
+    <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn-gold" href="member.html">会員申請はこちら</a><a class="btn-ghost" href="market.html">全プロジェクトを見る →</a></div>
+  </div>
 </div>
 <script src="common.js"></script>
 </body>

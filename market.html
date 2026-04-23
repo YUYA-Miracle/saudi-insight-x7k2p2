@@ -6,129 +6,337 @@
 <title>サウジ市場概要 | SAUDI INSIGHT</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.proj-strip{border-bottom:1px solid var(--border);transition:background .3s;}
-.proj-strip:hover{background:var(--mist);}
-.proj-strip a{display:grid;grid-template-columns:260px 1fr auto;gap:0;text-decoration:none;align-items:stretch;}
-.proj-img{height:200px;background-size:cover;background-position:center;transition:transform .5s;}
-.proj-strip:hover .proj-img{transform:scale(1.03);}
-.proj-body{padding:32px 44px;border-left:1px solid var(--border);border-right:1px solid var(--border);}
-.proj-nm{font-family:var(--fd);font-size:30px;font-weight:400;color:var(--sand2);letter-spacing:.04em;line-height:1;}
-.proj-sb{font-family:var(--fs);font-size:9px;letter-spacing:.35em;color:rgba(247,242,234,.35);margin-bottom:12px;text-transform:uppercase;margin-top:4px;}
-.proj-dc{font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.68);line-height:1.85;}
-.proj-sc{padding:32px 40px;display:flex;flex-direction:column;justify-content:center;text-align:right;white-space:nowrap;min-width:180px;}
-.proj-sc-n{font-family:var(--fd);font-size:34px;font-weight:300;color:var(--sand);letter-spacing:-.01em;}
-.proj-sc-u{font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:rgba(247,242,234,.35);text-transform:uppercase;margin-top:4px;}
-.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:48px;}
-.info-box{background:var(--black2);border:1px solid var(--border);padding:32px 28px;}
-.info-box-h{font-family:var(--fs);font-size:9.5px;letter-spacing:.35em;color:var(--sand);text-transform:uppercase;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-.info-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(184,151,90,.08);font-size:13px;}
-.info-row:last-child{border-bottom:none;}
-.info-label{font-family:var(--fb);color:rgba(247,242,234,.5);}
-.info-val{font-family:var(--fb);color:var(--cream,var(--ivory));font-weight:400;}
+/* ── ヒーロー系 ── */
+.m-hero{position:relative;height:72vh;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;margin-top:68px;}
+.m-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:heroZoom 14s ease-out forwards;}
+.m-hero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.97) 0%,rgba(13,12,10,.35) 55%,rgba(13,12,10,.05) 100%);}
+.m-hero-inner{position:relative;z-index:2;padding:0 64px 72px;max-width:860px;}
 
-@media(max-width:768px){
-  .page-banner-text{padding:0 20px 36px;}
-  .page-title{font-size:clamp(28px,8vw,48px);}
-}
+/* ── KPIストリップ ── */
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);background:var(--black2);border-bottom:1px solid var(--border);}
+.kpi-cell{padding:32px 36px;border-right:1px solid var(--border);transition:background .3s;}
+.kpi-cell:last-child{border-right:none;}
+.kpi-cell:hover{background:var(--mist);}
+.kpi-n{font-family:var(--fd);font-size:44px;font-weight:300;color:var(--sand);line-height:1;}
+.kpi-l{font-family:var(--fs);font-size:8.5px;letter-spacing:.4em;color:rgba(247,242,234,.32);text-transform:uppercase;margin-top:5px;}
+.kpi-d{font-family:var(--fb);font-size:12.5px;color:rgba(247,242,234,.58);margin-top:6px;line-height:1.55;}
 
-@media(max-width:1024px){
-  .proj-strip a{grid-template-columns:200px 1fr auto;}
-  .proj-img{height:180px;}
-  .proj-strip-body{padding:24px 28px;}
-  .proj-strip-scale{padding:24px 28px;min-width:140px;}
-  .proj-strip-num{font-size:26px;}
-  .info-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:768px){
-  .proj-strip a{grid-template-columns:1fr;}
-  .proj-img{height:180px;}
-  .proj-strip-body{border-left:none;border-right:none;padding:18px 20px;}
-  .proj-strip-scale{text-align:left;padding:8px 20px 20px;}
-  .info-grid{grid-template-columns:1fr;}
-}
+/* ── セクション共通 ── */
+.m-section{padding:80px 0;}
+.m-wrap{max-width:1280px;margin:0 auto;padding:0 64px;}
+
+/* ── フルブリード画像テキスト ── */
+.m-split{display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
+.m-split.reverse{direction:rtl;}
+.m-split.reverse > *{direction:ltr;}
+.m-img{position:relative;overflow:hidden;}
+.m-img .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s;}
+.m-img:hover .bg{transform:scale(1.04);}
+.m-text{background:var(--black2);padding:64px 60px;display:flex;flex-direction:column;justify-content:center;}
+
+/* ── プロジェクトカード ── */
+.proj-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:48px;}
+.proj-card-v2{position:relative;overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;}
+.proj-card-v2 .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s;}
+.proj-card-v2:hover .bg{transform:scale(1.06);}
+.proj-card-v2::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.92) 0%,rgba(13,12,10,.1) 60%,transparent 100%);}
+.proj-card-v2-info{position:relative;z-index:2;padding:28px 28px 32px;}
+.proj-card-v2-tag{font-family:var(--fs);font-size:8px;letter-spacing:.45em;color:var(--sand);text-transform:uppercase;margin-bottom:8px;}
+.proj-card-v2-name{font-family:var(--fd);font-size:28px;font-weight:400;color:var(--ivory);line-height:1.1;margin-bottom:6px;}
+.proj-card-v2-name em{font-style:italic;color:var(--sand2);}
+.proj-card-v2-scale{font-family:var(--fs);font-size:10px;color:rgba(247,242,234,.5);letter-spacing:.15em;}
+.proj-card-v2-desc{font-family:var(--fb);font-size:12.5px;color:rgba(247,242,234,.6);line-height:1.75;margin-top:10px;}
+
+/* ── データテーブル拡張 ── */
+.m-table{width:100%;border-collapse:collapse;}
+.m-table th{background:var(--black3);border:1px solid var(--border);padding:13px 20px;font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:var(--sand);text-align:left;text-transform:uppercase;font-weight:400;}
+.m-table td{border:1px solid var(--border);padding:14px 20px;font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.72);line-height:1.5;}
+.m-table tr:hover td{background:var(--mist);}
+.m-table .highlight td{background:rgba(184,151,90,0.06);}
+
+/* ── タイムライン ── */
+.timeline{display:flex;flex-direction:column;gap:0;}
+.tl-row{display:grid;grid-template-columns:100px 1fr;gap:0;border-bottom:1px solid var(--border);}
+.tl-row:last-child{border-bottom:none;}
+.tl-year{padding:24px 24px;background:var(--black3);border-right:1px solid var(--border);font-family:var(--fd);font-size:26px;font-weight:300;color:var(--sand);display:flex;align-items:center;justify-content:center;}
+.tl-body{padding:24px 32px;}
+.tl-title{font-family:var(--fb);font-size:15px;font-weight:700;color:var(--ivory);margin-bottom:6px;}
+.tl-text{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.6);line-height:1.85;}
+
+/* ── インフォグラフィック ── */
+.infographic{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:48px;}
+.info-box{background:var(--black2);border:1px solid var(--border);padding:36px 30px;position:relative;overflow:hidden;}
+.info-box::before{content:attr(data-num);position:absolute;right:16px;top:8px;font-family:var(--fd);font-size:80px;font-weight:300;color:rgba(184,151,90,.06);line-height:1;}
+.info-box-num{font-family:var(--fd);font-size:52px;font-weight:300;color:var(--sand);line-height:1;margin-bottom:8px;}
+.info-box-label{font-family:var(--fs);font-size:9px;letter-spacing:.4em;color:rgba(247,242,234,.35);text-transform:uppercase;margin-bottom:14px;}
+.info-box-text{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.6);line-height:1.85;}
+
+/* ── 投資環境 3カラム ── */
+.invest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:40px;}
+.invest-col{background:var(--black2);border:1px solid var(--border);}
+.invest-col-head{padding:22px 24px;border-bottom:1px solid var(--border);background:var(--black3);}
+.invest-col-head-label{font-family:var(--fs);font-size:9px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:6px;}
+.invest-col-head-title{font-family:var(--fd);font-size:20px;font-weight:400;color:var(--ivory);}
+.invest-col-body{padding:8px 0;}
+.invest-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 24px;border-bottom:1px solid rgba(184,151,90,.06);}
+.invest-row:last-child{border-bottom:none;}
+.invest-label{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.5);}
+.invest-val{font-family:var(--fb);font-size:13px;color:var(--ivory);font-weight:400;text-align:right;}
+
+@media(max-width:1024px){.kpi-strip{grid-template-columns:1fr 1fr;}.proj-cards{grid-template-columns:1fr 1fr;}.m-wrap{padding:0 32px;}.infographic,.invest-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.m-hero{margin-top:60px;}.m-hero-inner{padding:0 20px 48px;}.kpi-strip{grid-template-columns:1fr 1fr;}.kpi-cell{padding:22px 18px;}.kpi-n{font-size:34px;}.m-split{grid-template-columns:1fr;}.m-text{padding:40px 20px;}.m-section{padding:52px 0;}.m-wrap{padding:0 20px;}.proj-cards,.infographic,.invest-grid{grid-template-columns:1fr;}.tl-row{grid-template-columns:72px 1fr;}}
 </style>
 </head>
 <body data-nav-solid="1">
 <script src="nav.js"></script>
-<div class="page-banner">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1578895101408-1a36b834405b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
+
+<!-- ヒーロー -->
+<div class="m-hero">
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1543158181-e6f9f6712055?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
   <div class="ov"></div>
-  <div class="page-banner-text">
-    <div class="page-eyebrow">Saudi Arabia Market</div>
-    <h1 class="page-title">Vision 2030と<br><em>ギガプロジェクト</em>の全容</h1>
-    <p class="page-lead">サウジアラビアが国家戦略として推進する超大型プロジェクト群の最新動向を、現地一次情報をもとに日本語で解説します。</p>
+  <div class="m-hero-inner">
+    <div class="page-eyebrow">Saudi Arabia Market Overview</div>
+    <h1 class="page-title" style="font-size:clamp(44px,6vw,80px)">Vision 2030と<br><em>ギガプロジェクト</em>の全容</h1>
+    <p class="page-lead" style="max-width:620px">サウジアラビアが国家戦略として推進する超大型プロジェクト群の最新動向を、現地一次情報をもとに日本語で解説します。目標の87%が完了した今、残りの機会窓をどう掴むか。</p>
   </div>
 </div>
 
-<div class="section wrap">
-  <div class="two-col">
-    <div>
-      <div class="eyebrow">Overview</div>
-      <h2 class="display">Vision 2030とは<em>何か</em></h2>
-      <div class="rule"></div>
-      <p class="lead">2016年4月、サウジアラビア政府が発表した国家変革戦略。石油依存型経済からの脱却を中核に、観光・エンターテインメント・テクノロジーへの多角化投資を推進。</p>
-      <p class="body-copy">ムハンマド・ビン・サルマン皇太子主導のもと、PIFを通じた巨額の政府系ファンド投資が現在進行形で動いている。2024年末時点で目標の87%が完了または進捗中。残り数年は外国資本誘致の加速期と位置づけられており、日本の投資家にとっての機会窓は今が最も開いている。</p>
-    </div>
-    <div>
-      <table class="d-table">
-        <thead><tr><th>指標</th><th>2024年末実績</th></tr></thead>
-        <tbody>
-          <tr><td>非石油GDP比率</td><td>56%（目標達成）</td></tr>
-          <tr><td>PIF総資産</td><td>2兆8,100億リヤル</td></tr>
-          <tr><td>失業率</td><td>7%（目標水準到達）</td></tr>
-          <tr><td>女性労働参加率</td><td>37%（目標超過）</td></tr>
-          <tr><td>目標達成率</td><td>87%</td></tr>
-          <tr><td>外国人観光客数（2023）</td><td>2,740万人</td></tr>
-          <tr><td>RHQ登録企業数</td><td>675社（目標500社超過）</td></tr>
-        </tbody>
+<!-- KPIストリップ -->
+<div class="kpi-strip">
+  <div class="kpi-cell"><div class="kpi-n">87<span style="font-size:.5em;font-family:var(--fs)">%</span></div><div class="kpi-l">Vision 2030 達成率</div><div class="kpi-d">目標KPIの87%が完了または進捗中（2024年末）</div></div>
+  <div class="kpi-cell"><div class="kpi-n">$700<span style="font-size:.45em;font-family:var(--fs)">B+</span></div><div class="kpi-l">PIF 総資産</div><div class="kpi-d">世界有数の政府系ファンド。目標$1兆に向け拡大中</div></div>
+  <div class="kpi-cell"><div class="kpi-n">675<span style="font-size:.42em;font-family:var(--fs)">社</span></div><div class="kpi-l">RHQ 登録企業数</div><div class="kpi-d">目標500社を超過達成。日本企業の参入も加速</div></div>
+  <div class="kpi-cell"><div class="kpi-n">2,740<span style="font-size:.35em;font-family:var(--fs)">万人</span></div><div class="kpi-l">外国人観光客（2023）</div><div class="kpi-d">目標3,500万人に向けて急増。前年比大幅増</div></div>
+</div>
+
+<!-- Vision 2030 概要 -->
+<div class="m-split">
+  <div class="m-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')"></div></div>
+  <div class="m-text">
+    <div class="eyebrow">Vision 2030</div>
+    <h2 class="display">石油依存からの<em>脱却</em></h2>
+    <div class="rule"></div>
+    <p class="lead">2016年4月、ムハンマド・ビン・サルマン皇太子が発表した国家変革戦略。石油依存型経済から観光・エンターテインメント・テクノロジーへの多角化を推進。</p>
+    <p class="body-copy">国家の根幹を変える野心的な計画は、8年間で87%の達成率を記録した。PIFを通じた巨額の政府系ファンド投資が現在進行形で動いており、今がまさに外国資本誘致の加速期だ。日本の投資家にとって、参入機会の窓は今もっとも開いている。</p>
+    <div style="margin-top:28px">
+      <table class="m-table">
+        <tr><th>指標</th><th>目標</th><th>2024年実績</th></tr>
+        <tr class="highlight"><td>非石油GDP比率</td><td>50%</td><td>56%（超過達成）</td></tr>
+        <tr><td>女性労働参加率</td><td>30%</td><td>37%（超過達成）</td></tr>
+        <tr><td>失業率</td><td>7%</td><td>7%（達成）</td></tr>
+        <tr><td>観光業のGDP貢献</td><td>10%</td><td>拡大中</td></tr>
+        <tr><td>RHQ登録企業数</td><td>500社</td><td>675社（超過達成）</td></tr>
       </table>
     </div>
   </div>
 </div>
 
-<div style="border-top:1px solid var(--border)">
-  <div class="proj-strip"><a href="neom.html"><div class="proj-img" style="background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div><div class="proj-body"><div class="proj-nm">NEOM</div><div class="proj-sb">Red Sea Coast, Tabuk · Flagship Megaproject</div><div class="proj-dc">ベルギー国土規模（26,500km²）の未来型スマートシティ。THE LINE・Oxagon・Trojenaで構成。2025年CEO交代を経て外国資本誘致フェーズへ。</div></div><div class="proj-sc"><div class="proj-sc-n">$5,000億</div><div class="proj-sc-u">Total Investment</div></div></a></div>
-  <div class="proj-strip"><a href="amaala.html"><div class="proj-img" style="background-image:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div><div class="proj-body"><div class="proj-nm">AMAALA</div><div class="proj-sb">Red Sea Coast · Ultra-Luxury Wellness</div><div class="proj-dc">ウルトララグジュアリーリゾートを核とした健康・ウェルネス特化型観光開発。2025年Q3に第一期区画販売が開始された。</div></div><div class="proj-sc"><div class="proj-sc-n">$2,500億</div><div class="proj-sc-u">Total Investment</div></div></a></div>
-  <div class="proj-strip"><a href="redsea.html"><div class="proj-img" style="background-image:url('https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div><div class="proj-body"><div class="proj-nm">Red Sea Global</div><div class="proj-sb">Red Sea Coastline · Eco-Tourism</div><div class="proj-dc">紅海沿岸50の島々を活用した大規模エコツーリズム開発。100%再生可能エネルギーでの運営。2030年までに100万人の受け入れを目標。</div></div><div class="proj-sc"><div class="proj-sc-n">SAR 1兆+</div><div class="proj-sc-u">Total Investment</div></div></a></div>
-  <div class="proj-strip"><a href="diriyah.html"><div class="proj-img" style="background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div><div class="proj-body"><div class="proj-nm">Diriyah</div><div class="proj-sb">Riyadh · UNESCO Heritage District</div><div class="proj-dc">リヤド郊外のユネスコ世界遺産・ディルイーヤを観光・商業・住宅の複合ゾーンとして再開発。サウジアラビアの建国ゆかりの地。</div></div><div class="proj-sc"><div class="proj-sc-n">$20億</div><div class="proj-sc-u">Phase 1</div></div></a></div>
-  <div class="proj-strip"><a href="qiddiyah.html"><div class="proj-img" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div><div class="proj-body"><div class="proj-nm">Qiddiyah</div><div class="proj-sb">Riyadh · Entertainment City</div><div class="proj-dc">リヤド近郊の巨大エンターテインメントシティ。テーマパーク・e-スポーツ・モータースポーツを集積。2034年FIFAワールドカップ会場候補地。</div></div><div class="proj-sc"><div class="proj-sc-n">SAR 500億</div><div class="proj-sc-u">Total Investment</div></div></a></div>
-</div>
-
-<div class="section wrap">
-  <div class="eyebrow">Investment Climate</div>
-  <h2 class="display">投資環境の<em>現状</em></h2>
-  <div class="info-grid">
-    <div class="info-box">
-      <div class="info-box-h">外資参入規制の緩和</div>
-      <div class="info-row"><span class="info-label">外資100%出資</span><span class="info-val">多数業種で解禁</span></div>
-      <div class="info-row"><span class="info-label">RHQ登録企業数</span><span class="info-val">675社（目標超過）</span></div>
-      <div class="info-row"><span class="info-label">法人税率</span><span class="info-val">20%</span></div>
-      <div class="info-row"><span class="info-label">VAT</span><span class="info-val">15%</span></div>
-      <div class="info-row"><span class="info-label">外国人不動産購入</span><span class="info-val">指定エリアで許可</span></div>
-    </div>
-    <div class="info-box">
-      <div class="info-box-h">主要経済指標（2024年）</div>
-      <div class="info-row"><span class="info-label">GDP規模</span><span class="info-val">約$1.3兆</span></div>
-      <div class="info-row"><span class="info-label">実質GDP成長率</span><span class="info-val">+2.6%</span></div>
-      <div class="info-row"><span class="info-label">FDI流入額</span><span class="info-val">$250億</span></div>
-      <div class="info-row"><span class="info-label">人口</span><span class="info-val">約3,700万人</span></div>
-      <div class="info-row"><span class="info-label">中位年齢</span><span class="info-val">31.8歳</span></div>
-    </div>
-    <div class="info-box">
-      <div class="info-box-h">日本との関係</div>
-      <div class="info-row"><span class="info-label">日サウジビジョン2030</span><span class="info-val">2017年締結</span></div>
-      <div class="info-row"><span class="info-label">JETRO リヤド事務所</span><span class="info-val">機能強化中</span></div>
-      <div class="info-row"><span class="info-label">主要参入業種</span><span class="info-val">エネルギー・医療</span></div>
-      <div class="info-row"><span class="info-label">不動産参入日系</span><span class="info-val">まだ限定的</span></div>
-      <div class="info-row"><span class="info-label">日本語情報の充実度</span><span class="info-val">著しく不足</span></div>
+<!-- 主要KPI インフォグラフィック -->
+<div class="m-section" style="background:var(--black2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="m-wrap">
+    <div class="eyebrow">Economic Transformation</div>
+    <h2 class="display">経済変革の<em>規模と速度</em></h2>
+    <div class="infographic">
+      <div class="info-box" data-num="1">
+        <div class="info-box-num">$1.3<span style="font-size:.5em;font-family:var(--fs)">兆</span></div>
+        <div class="info-box-label">GDP規模（2024年）</div>
+        <div class="info-box-text">中東・アフリカ地域最大の経済規模。実質GDP成長率+2.6%を記録し、非石油部門が成長を牽引している。</div>
+      </div>
+      <div class="info-box" data-num="2">
+        <div class="info-box-num">37<span style="font-size:.5em;font-family:var(--fs)">%</span></div>
+        <div class="info-box-label">女性労働参加率</div>
+        <div class="info-box-text">Vision 2030以前は17%以下。わずか8年で2倍以上に拡大。消費市場の拡大とともに、ビジネス環境の変化を象徴する指標だ。</div>
+      </div>
+      <div class="info-box" data-num="3">
+        <div class="info-box-num">$250<span style="font-size:.45em;font-family:var(--fs)">億</span></div>
+        <div class="info-box-label">FDI流入額（2024年）</div>
+        <div class="info-box-text">外国直接投資の急増。政府は2030年までに年間$1,000億のFDI獲得を目標に掲げており、各種インセンティブが整備されている。</div>
+      </div>
+      <div class="info-box" data-num="4">
+        <div class="info-box-num">3,700<span style="font-size:.38em;font-family:var(--fs)">万人</span></div>
+        <div class="info-box-label">総人口・中位年齢31.8歳</div>
+        <div class="info-box-text">若い人口構造が内需拡大の原動力。70%以上が35歳以下という若年人口比率は、エンタメ・飲食・テクノロジーへの旺盛な消費需要を生み出している。</div>
+      </div>
+      <div class="info-box" data-num="5">
+        <div class="info-box-num">20<span style="font-size:.45em;font-family:var(--fs)">%</span></div>
+        <div class="info-box-label">外資法人税率</div>
+        <div class="info-box-text">RHQ（地域統括本部）ライセンス取得企業は法人税30年免除。VAT15%だが、フリーゾーン内では大幅な優遇措置が受けられる。</div>
+      </div>
+      <div class="info-box" data-num="6">
+        <div class="info-box-num">100<span style="font-size:.38em;font-family:var(--fs)">%</span></div>
+        <div class="info-box-label">外資出資比率（多数業種）</div>
+        <div class="info-box-text">かつては51%までとされていた外資出資比率の制限が、多くの業種で100%に緩和。日本企業単独での参入が現実的な選択肢となった。</div>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- ギガプロジェクト一覧 -->
+<div class="m-section">
+  <div class="m-wrap">
+    <div class="eyebrow">Giga Projects</div>
+    <h2 class="display">5大<em>ギガプロジェクト</em></h2>
+    <p class="lead">PIFが主導する国家規模のメガプロジェクト群。それぞれが独自のコンセプトを持ち、世界の投資家・観光客・企業を呼び込む磁場となっている。</p>
+
+    <div class="proj-cards">
+      <a class="proj-card-v2" href="neom.html">
+        <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1488462237308-ecaa28b729d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="proj-card-v2-info">
+          <div class="proj-card-v2-tag">Tabuk · Flagship · 2017〜</div>
+          <div class="proj-card-v2-name">NEOM &amp;<br><em>The Line</em></div>
+          <div class="proj-card-v2-scale">$5,000億 · 26,500km²</div>
+          <div class="proj-card-v2-desc">ベルギー国土規模の未来型スマートシティ。THE LINE・Oxagon・Trojena・Sindalahで構成。2025年CEO交代を経て外国資本誘致フェーズへ移行中。</div>
+        </div>
+      </a>
+      <a class="proj-card-v2" href="amaala.html">
+        <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="proj-card-v2-info">
+          <div class="proj-card-v2-tag">Red Sea · Wellness · 2023〜</div>
+          <div class="proj-card-v2-name"><em>AMAALA</em></div>
+          <div class="proj-card-v2-scale">$2,500億 · 4,155km²</div>
+          <div class="proj-card-v2-desc">ウルトララグジュアリーリゾート。健康・ウェルネス・アートをテーマにグローバル超富裕層を誘致。2025年Q3に第一期区画販売開始。</div>
+        </div>
+      </a>
+      <a class="proj-card-v2" href="redsea.html">
+        <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="proj-card-v2-info">
+          <div class="proj-card-v2-tag">Red Sea · Eco · 2023〜</div>
+          <div class="proj-card-v2-name"><em>Red Sea Global</em></div>
+          <div class="proj-card-v2-scale">SAR 1兆+ · 28,000km²</div>
+          <div class="proj-card-v2-desc">50の島々を舞台にしたエコツーリズム開発。100%再生可能エネルギー運営。2030年までに観光客100万人・50ホテル整備を目標。</div>
+        </div>
+      </a>
+      <a class="proj-card-v2" href="diriyah.html">
+        <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="proj-card-v2-info">
+          <div class="proj-card-v2-tag">Riyadh · Heritage · 2021〜</div>
+          <div class="proj-card-v2-name"><em>Diriyah</em></div>
+          <div class="proj-card-v2-scale">$200億+ · 14km²</div>
+          <div class="proj-card-v2-desc">リヤド郊外のユネスコ世界遺産を観光・商業・居住の複合ゾーンとして再開発。すでに高級レストランエリアが開業し、国際的注目を集める。</div>
+        </div>
+      </a>
+      <a class="proj-card-v2" href="qiddiyah.html">
+        <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="proj-card-v2-info">
+          <div class="proj-card-v2-tag">Riyadh · Entertainment · 2019〜</div>
+          <div class="proj-card-v2-name"><em>Qiddiyah</em></div>
+          <div class="proj-card-v2-scale">SAR 500億 · 334km²</div>
+          <div class="proj-card-v2-desc">テーマパーク・e-スポーツ・モータースポーツを集積するエンターテインメントシティ。2034年FIFAワールドカップ会場候補。日本コンテンツの需要大。</div>
+        </div>
+      </a>
+      <a class="proj-card-v2" href="market.html" style="background:var(--black3);border:1px solid var(--border);justify-content:center;align-items:center;text-align:center;padding:40px 32px;min-height:380px">
+        <div style="position:relative;z-index:2">
+          <div style="font-family:var(--fd);font-size:48px;font-weight:300;color:var(--sand);margin-bottom:16px">+</div>
+          <div class="proj-card-v2-name" style="position:relative">New <em>Murabba</em></div>
+          <div class="proj-card-v2-scale" style="margin-top:8px">$50B · Riyadh CBD</div>
+          <div class="proj-card-v2-desc" style="margin-top:12px">19km²の複合都市開発。世界最大建築物Mukaabを中核に、104,000住宅・9,000ホテル室。2030 Expo・2034 W杯のイベント需要を取り込む。</div>
+          <div style="margin-top:20px;font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:var(--sand);text-transform:uppercase">詳細を見る →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- 投資環境 -->
+<div class="m-split reverse">
+  <div class="m-img"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')"></div></div>
+  <div class="m-text">
+    <div class="eyebrow">Investment Climate</div>
+    <h2 class="display">外資参入環境の<em>現状</em></h2>
+    <div class="rule"></div>
+    <p class="body-copy">Vision 2030以降、外資参入規制は劇的に緩和された。100%外資出資可能な業種が急増し、RHQライセンスによる税制優遇、不動産外国人購入の解禁と、投資環境は整いつつある。</p>
+    <div class="invest-grid" style="margin-top:28px">
+      <div class="invest-col">
+        <div class="invest-col-head"><div class="invest-col-head-label">Tax & Legal</div><div class="invest-col-head-title">税制</div></div>
+        <div class="invest-col-body">
+          <div class="invest-row"><span class="invest-label">外資法人税率</span><span class="invest-val">20%</span></div>
+          <div class="invest-row"><span class="invest-label">VAT</span><span class="invest-val">15%</span></div>
+          <div class="invest-row"><span class="invest-label">RHQ法人税優遇</span><span class="invest-val">30年免除</span></div>
+          <div class="invest-row"><span class="invest-label">不動産取得税</span><span class="invest-val">5%</span></div>
+          <div class="invest-row"><span class="invest-label">配当送金</span><span class="invest-val">制限なし</span></div>
+        </div>
+      </div>
+      <div class="invest-col">
+        <div class="invest-col-head"><div class="invest-col-head-label">Market Size</div><div class="invest-col-head-title">市場規模</div></div>
+        <div class="invest-col-body">
+          <div class="invest-row"><span class="invest-label">GDP</span><span class="invest-val">$1.3兆</span></div>
+          <div class="invest-row"><span class="invest-label">人口</span><span class="invest-val">3,700万人</span></div>
+          <div class="invest-row"><span class="invest-label">中位年齢</span><span class="invest-val">31.8歳</span></div>
+          <div class="invest-row"><span class="invest-label">FDI流入額</span><span class="invest-val">$250億</span></div>
+          <div class="invest-row"><span class="invest-label">GDP成長率</span><span class="invest-val">+2.6%</span></div>
+        </div>
+      </div>
+      <div class="invest-col">
+        <div class="invest-col-head"><div class="invest-col-head-label">Real Estate</div><div class="invest-col-head-title">不動産</div></div>
+        <div class="invest-col-body">
+          <div class="invest-row"><span class="invest-label">外国人購入</span><span class="invest-val">指定エリア可</span></div>
+          <div class="invest-row"><span class="invest-label">Q3外国人購入</span><span class="invest-val">前年比+42%</span></div>
+          <div class="invest-row"><span class="invest-label">エスクロー制度</span><span class="invest-val">Wafi認定</span></div>
+          <div class="invest-row"><span class="invest-label">主要市場</span><span class="invest-val">Jeddah/Riyadh</span></div>
+          <div class="invest-row"><span class="invest-label">主要通貨</span><span class="invest-val">SAR（$連動）</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Vision 2030 タイムライン -->
+<div class="m-section">
+  <div class="m-wrap">
+    <div class="eyebrow">Timeline</div>
+    <h2 class="display">2025〜2030年<em>投資カレンダー</em></h2>
+    <p class="lead">残り5年で何が起きるか。フェーズごとの投資機会を整理する。</p>
+    <div class="timeline" style="margin-top:40px;background:var(--black2);border:1px solid var(--border)">
+      <div class="tl-row">
+        <div class="tl-year">2025</div>
+        <div class="tl-body">
+          <div class="tl-title">外国資本誘致フェーズへの移行</div>
+          <div class="tl-text">NEOMのCEO交代、AMALAフェーズ1区画販売開始、ジェッダ高級不動産の外国人購入急増（前年比+42%）。政府インフラ整備から民間・外国資本の積み上げへ。<strong style="color:var(--sand)">→ 今が最も参入しやすい時期</strong></div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-year">2026</div>
+        <div class="tl-body">
+          <div class="tl-title">施設開業ラッシュ・Desert Bamboo LLC設立</div>
+          <div class="tl-text">AMALAフェーズ1リゾート施設完成、Red Sea Globalの追加ホテル開業。Desert Bamboo LLC（リヤド）が2026年7月設立予定。飲食・ホスピタリティ・体験施設への参入機会が本格化。</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-year">2027</div>
+        <div class="tl-body">
+          <div class="tl-title">DiriyahフェーズI完成・観光インフラ整備完了</div>
+          <div class="tl-text">Diriyahの商業・文化ゾーン完成。ジェッダ国際スタジアム等のスポーツインフラが拡充。日本企業が参入できる飲食・ウェルネス・商業施設の運営権取得のタイミング。</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-year">2028–29</div>
+        <div class="tl-body">
+          <div class="tl-title">アジア冬季大会（Trojena）・Qiddiyah開業</div>
+          <div class="tl-text">2029年アジア冬季大会をNEOM内のTrojenaが開催。Qiddiyahの主要エンターテインメント施設が相次いで開業。日本のアニメ・ゲーム・食文化コンテンツ需要が最高潮に達する。</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-year">2030</div>
+        <div class="tl-body">
+          <div class="tl-title">Expo 2030 Riyadh・Vision完成年</div>
+          <div class="tl-text">国際博覧会（Expo 2030）開催、推定来場者1,500万人。Vision 2030の達成年。さらに2034年のFIFAワールドカップへ向けた投資加速が始まる。<strong style="color:var(--sand)">→ 2025〜2027年の参入が先行者優位を生む</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
 <div class="cta-full">
   <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
   <div class="ov"></div>
-  <div class="cta-inner"><div class="eyebrow">Membership</div><h2 class="display">非公開案件情報は<em>会員限定</em></h2><div class="rule"></div><p class="lead">現地ネットワーク経由の一次情報・投資案件詳細は審査制の会員ページにてご覧いただけます。</p><div style="margin-top:32px"><a class="btn-gold" href="member.html">会員申請はこちら</a></div></div>
+  <div class="cta-inner">
+    <div class="eyebrow">Membership</div>
+    <h2 class="display">非公開案件情報は<em>会員限定</em></h2>
+    <div class="rule"></div>
+    <p class="lead">現地ネットワーク経由の一次情報・投資案件詳細は審査制の会員ページにてご覧いただけます。現在7件の非公開案件を掲載中。</p>
+    <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn-gold" href="member.html">会員申請はこちら</a><a class="btn-ghost" href="guide.html">投資ガイドを読む →</a></div>
+  </div>
 </div>
 <script src="common.js"></script>
 </body>
