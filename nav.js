@@ -75,12 +75,22 @@
   </div>
 </footer>`;
 
+  /* cursorとnavをbodyの先頭に挿入 */
   document.body.insertAdjacentHTML('afterbegin',
     '<div id="cursor"></div><div id="cursor-ring"></div>' + NAV
   );
-  document.body.insertAdjacentHTML('beforeend', FOOTER);
 
-  /* nav solid mode for pages without hero at top */
+  /* フッターをbodyの末尾に挿入 — DOMContentLoaded後に確実に末尾へ */
+  function insertFooter() {
+    document.body.insertAdjacentHTML('beforeend', FOOTER);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', insertFooter);
+  } else {
+    insertFooter();
+  }
+
+  /* nav solid mode */
   if(document.body.dataset.navSolid){
     document.getElementById('nav').classList.add('solid');
   }

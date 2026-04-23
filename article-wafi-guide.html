@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Wafiとは何か | SAUDI INSIGHT</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.article-wrap{max-width:780px;margin:0 auto;}
+.article-hero{position:relative;height:55vh;min-height:400px;overflow:hidden;margin-top:68px;}
+.article-hero .bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=1600&q=80') center/cover;animation:heroZoom 14s ease-out forwards;}
+.article-hero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.95) 0%,rgba(13,12,10,.2) 100%);}
+.article-hero-text{position:absolute;bottom:0;left:0;right:0;padding:0 64px 48px;}
+.article-body{padding:40px 64px 80px;}
+.article-body p{font-family:var(--fb);font-size:15px;color:rgba(247,242,234,.78);line-height:2.15;margin-bottom:22px;}
+.article-body h2{font-family:var(--fd);font-size:30px;font-weight:300;color:var(--ivory);margin:52px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.article-body h2 em{font-style:italic;color:var(--sand2);}
+.article-body h3{font-family:var(--fb);font-size:17px;font-weight:700;color:var(--sand2);margin:32px 0 10px;}
+.article-body .callout{margin:28px 0;}
+.article-body ul{list-style:none;margin:14px 0 22px;display:flex;flex-direction:column;gap:8px;}
+.article-body ul li{font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.7);line-height:1.85;padding-left:20px;position:relative;}
+.article-body ul li::before{content:'—';position:absolute;left:0;color:var(--sand);font-family:var(--fd);}
+.wafi-flow{display:flex;flex-direction:column;gap:3px;margin:28px 0;}
+.wafi-step{display:grid;grid-template-columns:60px 1fr;gap:0;background:var(--black2);border:1px solid var(--border);}
+.wafi-step-n{background:var(--black3);border-right:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+.wafi-step-n span{font-family:var(--fd);font-size:36px;font-weight:300;color:rgba(184,151,90,.3);}
+.wafi-step-body{padding:20px 24px;}
+.wafi-step-title{font-family:var(--fb);font-size:14px;font-weight:700;color:var(--ivory);margin-bottom:5px;}
+.wafi-step-text{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.6);line-height:1.85;}
+.article-cta{background:linear-gradient(135deg,rgba(28,21,16,.98),rgba(34,30,24,.98));border:1px solid var(--border);border-left:3px solid var(--sand);padding:40px 44px;margin:52px 0;position:relative;overflow:hidden;}
+.article-cta::before{content:'MEMBERSHIP';position:absolute;right:32px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:80px;font-weight:300;color:rgba(184,151,90,.06);letter-spacing:.1em;white-space:nowrap;}
+.article-cta-tag{font-family:var(--fs);font-size:9px;letter-spacing:.5em;color:var(--sand);text-transform:uppercase;margin-bottom:14px;}
+.article-cta-title{font-family:var(--fd);font-size:26px;font-weight:300;color:var(--ivory);margin-bottom:12px;line-height:1.2;}
+.article-cta-title em{font-style:italic;color:var(--sand2);}
+.article-cta-text{font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.65);line-height:1.85;margin-bottom:24px;}
+.article-cta-benefits{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.article-cta-benefit{font-family:var(--fs);font-size:10px;letter-spacing:.1em;color:rgba(247,242,234,.55);border:1px solid var(--border);padding:5px 14px;}
+.related{border-top:1px solid var(--border);padding:52px 64px 80px;max-width:780px;margin:0 auto;}
+.related-title{font-family:var(--fs);font-size:9px;letter-spacing:.5em;color:var(--sand);text-transform:uppercase;margin-bottom:24px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;}
+.related-card{background:var(--black2);border:1px solid var(--border);text-decoration:none;display:block;transition:border-color .3s;}
+.related-card:hover{border-color:rgba(184,151,90,.4);}
+.related-thumb{height:140px;background-size:cover;background-position:center;transition:transform .5s;}
+.related-card:hover .related-thumb{transform:scale(1.04);}
+.related-body{padding:18px 18px 20px;}
+.related-cat{font-family:var(--fs);font-size:8px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:7px;}
+.related-h{font-family:var(--fd);font-size:16px;font-weight:400;color:var(--ivory);line-height:1.35;}
+</style>
+</head>
+<body>
+<script src="nav.js"></script>
+
+<div class="article-hero">
+  <div class="bg"></div>
+  <div class="ov"></div>
+  <div class="article-hero-text">
+    <div class="article-wrap">
+      <div style="font-family:var(--fs);font-size:8.5px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:12px;">Column — 投資ガイド</div>
+      <h1 style="font-family:var(--fd);font-size:clamp(28px,4vw,46px);font-weight:300;line-height:1.1;color:var(--ivory);">サウジアラビアの不動産エスクロー制度<br>「Wafi」とは何か。<br>日本の投資家が知らなければならない理由。</h1>
+    </div>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div style="padding:0 64px;border-bottom:1px solid var(--border);">
+    <div style="font-family:var(--fs);font-size:10px;letter-spacing:.2em;color:rgba(247,242,234,.35);text-transform:uppercase;padding:28px 0;">
+      Desert Bamboo Global 日本事務局 &nbsp;·&nbsp; Sep 18, 2025 &nbsp;·&nbsp; 推定読了時間 6分
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>サウジアラビアで不動産を購入しようとした日本人投資家から、こんな相談を受けることがある。「現地のエージェントから物件を紹介されたが、エスクローという言葉が出てきて、よくわからない」「Wafiライセンスを持っているか確認せずに予約金を振り込んでしまった」——こうしたトラブルの芽は、Wafiという制度を知らないことから生まれる。</p>
+
+    <p>本稿では、サウジアラビアの不動産取引において最も重要な保護制度である「Wafi」について、日本語で丁寧に解説する。これを読めば、悪質な業者を見分け、自分の資金を守るための最低限の知識が身につく。</p>
+
+    <h2>Wafiとは<em>何か</em></h2>
+
+    <p>Wafi（ワフィ）は、サウジアラビアの不動産規制当局RERA（Real Estate General Authority）が運営する、オフプラン不動産のエスクロー認定制度だ。「オフプラン」とは、建物が完成する前に購入する先行販売のことを指す。日本でいえば、新築マンションの青田売りに相当する。</p>
+
+    <p>Wafiライセンスを取得したデベロッパーは、購入者から受け取った代金を、RERAが認定したエスクロー口座に預け入れることが義務づけられている。このエスクロー口座からデベロッパーが資金を引き出せるのは、工事の進捗に応じた所定の条件を満たした場合のみだ。つまり購入者の資金は、建物の完成・引き渡しという条件が満たされるまで、第三者機関（認定銀行）によって保全される。</p>
+
+    <h2>なぜ<em>重要なのか</em></h2>
+
+    <p>Wafiが重要な理由は明快だ。Wafiライセンスを持たないデベロッパーとの取引では、この保護が一切ない。購入者が支払った代金は、デベロッパーの手元に直接渡る。もしデベロッパーが倒産したり、資金を使い込んだり、プロジェクトを中止したりした場合、購入者の資金は戻ってこない可能性が高い。</p>
+
+    <div class="callout">実際に、Wafiライセンスを持たない業者との取引で資金を失ったケースが報告されている。サウジアラビアの不動産市場は急速に発展しており、ルールを理解した上で参入しなければ、思わぬ損失を被るリスクがある。</div>
+
+    <h2>Wafiエスクローの<em>仕組み</em></h2>
+
+    <div class="wafi-flow">
+      <div class="wafi-step"><div class="wafi-step-n"><span>1</span></div><div class="wafi-step-body"><div class="wafi-step-title">購入者がエスクロー口座に入金</div><div class="wafi-step-text">SPA（売買契約書）締結後、購入者はデベロッパーではなくRERA認定のエスクロー口座（管理銀行）に代金を振り込む。</div></div></div>
+      <div class="wafi-step"><div class="wafi-step-n"><span>2</span></div><div class="wafi-step-body"><div class="wafi-step-title">資金は管理銀行が保全</div><div class="wafi-step-text">Banque Saudi Fransi・Riyad Bank・Al Rajhi Bankなどの認定銀行がエスクロー管理銀行として機能し、資金を第三者として保全する。</div></div></div>
+      <div class="wafi-step"><div class="wafi-step-n"><span>3</span></div><div class="wafi-step-body"><div class="wafi-step-title">工事進捗に応じて段階的に支払い</div><div class="wafi-step-text">基礎工事完了・躯体完成・内装完成・引き渡しなど、各マイルストーンを達成するごとに、RERAの承認のもとデベロッパーへの資金支払いが行われる。</div></div></div>
+      <div class="wafi-step"><div class="wafi-step-n"><span>4</span></div><div class="wafi-step-body"><div class="wafi-step-title">引き渡し完了で残金支払い・登記</div><div class="wafi-step-text">物件の引き渡しが完了し、RERA登記が完了した時点で残金が支払われ、タイトルディード（所有権証書）が購入者に交付される。</div></div></div>
+    </div>
+
+    <h2>Wafiライセンスの<em>確認方法</em></h2>
+
+    <p>デベロッパーがWafiライセンスを保持しているかどうかは、RERA（不動産規制当局）の公式データベースで確認できる。RERAのウェブサイト（rera.gov.sa）にアクセスし、デベロッパー名または登録番号を検索することで、ライセンスの有無・有効期限・管理銀行名を確認できる。</p>
+
+    <p>現地エージェントや紹介者を通じて物件を紹介された場合でも、必ず自分でこの確認を行うことを強く推奨する。「Wafiライセンスがある」と口頭で言われても、実際には取得していないケースが存在する。</p>
+
+    <!-- 記事内CTA -->
+    <div class="article-cta">
+      <div class="article-cta-tag">Members Only</div>
+      <div class="article-cta-title">Desert Bamboo Globalが関与する案件は<br><em>すべてWafi取得済み</em>のデベロッパーのみ。</div>
+      <div class="article-cta-text">会員向けに掲載している7件の非公開投資案件は、すべてWafiライセンス取得済みデベロッパーとの取引です。エスクロー先（管理銀行名・口座情報）・デューデリジェンス資料・デベロッパーの財務状況まで、会員ページにて開示しています。安全な取引のために、まず情報をご確認ください。</div>
+      <div class="article-cta-benefits">
+        <span class="article-cta-benefit">Wafi確認済み案件のみ</span>
+        <span class="article-cta-benefit">エスクロー情報開示</span>
+        <span class="article-cta-benefit">DD資料あり</span>
+        <span class="article-cta-benefit">審査制・無料</span>
+      </div>
+      <a class="btn-gold" href="member.html">会員申請する（審査制・無料）</a>
+    </div>
+
+    <h2>まとめ——<em>Wafi確認はチェックリストの最初の項目</em></h2>
+
+    <p>サウジアラビアで不動産投資を検討する際、Wafiライセンスの確認は「やってもやらなくてもいい」オプションではなく、取引前の絶対的な必須確認事項だ。これを怠った場合のリスクは、日本の不動産取引では考えられないほど大きい。</p>
+
+    <p>逆に言えば、Wafiライセンスを確認し、適切なエスクロー口座への入金ができれば、サウジアラビアの不動産取引は相応の安全性を持つ仕組みの中で行われる。制度への理解が、良い投資の第一歩だ。</p>
+  </div>
+</div>
+
+<div class="related">
+  <div class="related-title">Related Articles</div>
+  <div class="related-grid">
+    <a class="related-card" href="article-neom-phase.html">
+      <div class="related-thumb" style="background-image:url('https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=400&q=80')"></div>
+      <div class="related-body"><div class="related-cat">Market Update</div><div class="related-h">NEOM CEO交代の真相とフェーズ移行</div></div>
+    </a>
+    <a class="related-card" href="guide.html">
+      <div class="related-thumb" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=80')"></div>
+      <div class="related-body"><div class="related-cat">Guide</div><div class="related-h">サウジアラビア投資・不動産ガイド</div></div>
+    </a>
+    <a class="related-card" href="article-amaala-launch.html">
+      <div class="related-thumb" style="background-image:url('https://images.unsplash.com/photo-1601459427108-47e20b727fc6?w=400&q=80')"></div>
+      <div class="related-body"><div class="related-cat">Project</div><div class="related-h">AMAALA第一期区画販売開始</div></div>
+    </a>
+  </div>
+</div>
+
+<script src="common.js"></script>
+</body>
+</html>
