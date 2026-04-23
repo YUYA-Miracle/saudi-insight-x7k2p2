@@ -19,6 +19,7 @@
       </div>
     </li>
     <li><a href="guide.html">投資ガイド</a></li>
+          <li><a href="saudi-basics.html">サウジアラビアとは</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="about.html">Desert Bamboo</a></li>
     <li><a href="news.html">ニュース</a></li>
