@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>FAQ | SAUDI INSIGHT</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.faq-wrap{max-width:860px;margin:0 auto;padding:64px 64px 100px;}
+.faq-filters{display:flex;gap:2px;margin-bottom:48px;flex-wrap:wrap;}
+.faq-filter{font-family:var(--fs);font-size:9.5px;letter-spacing:.35em;text-transform:uppercase;padding:11px 24px;background:var(--black2);border:1px solid var(--border);color:rgba(247,242,234,.5);transition:all .3s;font-weight:300;}
+.faq-filter:hover,.faq-filter.active{background:rgba(184,151,90,.12);border-color:var(--sand);color:var(--sand);}
+.faq-item{border-bottom:1px solid var(--border2);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:24px 0;gap:24px;}
+.faq-q-t{font-family:var(--fb);font-size:16px;color:var(--ivory);line-height:1.55;font-weight:400;flex:1;}
+.faq-icon{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--fd);font-size:22px;color:var(--sand);font-weight:300;transition:transform .35s,border-color .3s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--sand);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s ease;}
+.faq-a-body{padding:4px 0 30px;font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.65);line-height:2.1;}
+.faq-a-body p+p{margin-top:12px;}
+.faq-item.open .faq-a{max-height:800px;}
+</style>
+</head>
+<body data-nav-solid="1">
+<script src="nav.js"></script>
+<div class="page-banner">
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1800&q=80')"></div>
+  <div class="ov"></div>
+  <div class="page-banner-text">
+    <div class="page-eyebrow">FAQ</div>
+    <h1 class="page-title">よくある<em>ご質問</em></h1>
+    <p class="page-lead">サウジアラビアへの投資・不動産購入・Desert Bamboo Globalへのお問い合わせで多く寄せられる質問にお答えします。</p>
+  </div>
+</div>
+
+<div class="faq-wrap">
+  <div class="faq-filters">
+    <button class="faq-filter active" onclick="faqFilter('all',this)">すべて</button>
+    <button class="faq-filter" onclick="faqFilter('market',this)">市場・Vision 2030</button>
+    <button class="faq-filter" onclick="faqFilter('re',this)">不動産購入</button>
+    <button class="faq-filter" onclick="faqFilter('co',this)">会社設立</button>
+    <button class="faq-filter" onclick="faqFilter('bam',this)">Desert Bamboo Global</button>
+    <button class="faq-filter" onclick="faqFilter('mem',this)">会員制度</button>
+    <button class="faq-filter" onclick="faqFilter('tax',this)">税務・送金</button>
+  </div>
+
+  <!-- 市場 -->
+  <div class="faq-item" data-c="market"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">Vision 2030とは何ですか？日本の投資家にとってどんな意味がありますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>Vision 2030は2016年4月にサウジアラビア政府が発表した国家変革戦略です。石油収入への依存度を下げ、観光・エンターテインメント・テクノロジー・製造業・不動産など多様な産業へ投資を拡大することを目指しています。</p><p>日本の投資家にとって重要な点は3つあります。第一に、数百兆円規模の政府投資が投資機会として具体化していること。第二に、外資参入規制の大幅緩和により、かつては困難だった直接投資が可能になっていること。第三に、日本の技術・建築・デザイン・食文化への需要が高く、競争環境がまだ整備されていない先行者優位の状態にあることです。2024年末時点で目標の87%が完了または進捗中であり、残りの期間は外国資本誘致の加速期と位置づけられています。</p></div></div></div>
+
+  <div class="faq-item" data-c="market"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">NEOMプロジェクトの縮小報道は事実ですか？投資価値はまだありますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>THE LINEの第一期収容人口が150万人から30万人に縮小されたことは事実です。ただしこれをプロジェクトの「失敗」と解釈するのは誤りです。サウジ投資相が述べているようにNEOMは「世代をまたぐ投資」であり、2〜3年で完成するプロジェクトではありません。</p><p>2025年のCEO交代は「インフラ整備期」から「外国資本・民間投資誘致期」へのフェーズ移行のシグナルと解釈するのが適切です。実際、2025年以降、外国人投資家のNEOM視察が始まっており、投資機会は縮小ではなく拡大方向にあります。ただし短期リターンを求める投資には適しません。10〜20年以上の時間軸を持てる資金での参入が前提です。</p></div></div></div>
+
+  <div class="faq-item" data-c="market"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">サウジアラビアとUAE（ドバイ）、投資先としてどちらが有望ですか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>「どちらが有望か」ではなく「何を求めるか」によって異なります。UAEは成熟した市場で、外資法制・不動産市場・金融インフラが整備されており、短〜中期のキャピタルゲインを狙いやすい環境です。</p><p>一方、サウジアラビアは現在「整備途上」にある市場です。その分、先行者優位が働きやすく、政府主導のプロジェクトへの参画機会が大きい。また人口規模（3,700万人）・GDP規模（$1.3兆）はUAEを大幅に上回り、内需の成長余地が大きい。Desert Bamboo Global日本事務局としては、UAEに続く次の主戦場としてサウジアラビアを位置づけており、両市場の並行参入を推奨しています。</p></div></div></div>
+
+  <div class="faq-item" data-c="market"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">サウジアラビアのビジネス環境は、イスラム法（シャリーア）でどのような制約がありますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>Vision 2030以降、サウジアラビアのビジネス環境は劇的に変化しています。かつてはイスラム法に基づき禁止されていた映画館・混合パーティー・女性の単独外出・コンサートなどが次々と解禁されました。外国人女性がアバヤ（黒衣）を着用する義務もなくなっています。</p><p>現在の実務上の主な注意点は、金融取引における利子禁止（リバー）への対応（イスラム金融の活用）、ラマダン期間中の業務調整、豚肉・アルコールを含む商品の取り扱い制限などです。ただし外資企業向けの特別経済区（フリーゾーン）では規制が大幅に緩和されているケースもあります。</p></div></div></div>
+
+  <div class="faq-item" data-c="market"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">PIFとは何ですか？日本の投資家との関係は？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>PIF（Public Investment Fund、公共投資基金）はサウジアラビアの政府系ファンドで、ムハンマド皇太子が会長を務めます。2024年時点での総資産は2兆8,100億リヤル（約116兆円）で、世界有数の規模を誇ります。NEOMをはじめとするギガプロジェクトの多くはPIFが主要株主として資金を拠出しています。</p><p>日本との関係では、ソフトバンクのビジョンファンドへの大規模出資（450億ドル）が代表的な事例です。PIFは「世界最大の国際投資家」として日本企業との共同事業・投資機会を積極的に模索しており、日系企業との協業可能性は今後も拡大が見込まれます。</p></div></div></div>
+
+  <!-- 不動産 -->
+  <div class="faq-item" data-c="re"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">日本人・外国人はサウジアラビアで不動産を購入できますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>はい、政府が指定した特定エリアに限り、外国人による不動産購入が許可されています。購入可能エリアの主なものは、NEOMおよびその周辺開発エリア、AMAALA指定区画、Red Sea Globalの観光施設エリア、ジェッダ・リヤドの一部ラグジュアリーコンプレックスです。メッカ・メディナは非ムスリム外国人には引き続き非開放です。</p><p>購入方法としては、個人での購入（Premium Residency取得者）または法人（MISA登録済み外資法人）を通じた購入が一般的です。具体的な物件・区画情報は会員限定ページにて掲載しています。</p></div></div></div>
+
+  <div class="faq-item" data-c="re"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">Wafiライセンスとは何ですか？なぜ重要なのですか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>WafiはRERA（不動産規制当局）が認定する不動産オフプランエスクロー制度です。Wafiライセンスを持つデベロッパーは、購入者から受領した資金を認定エスクロー口座で保全し、物件完成・引き渡しの段階に応じて段階払いを受ける仕組みになっています。</p><p>これにより、デベロッパーの倒産や事業中断時にも購入者の資金が守られます。Wafiライセンスを持たないデベロッパーとの取引では、この保護が受けられないため、必ずMISAデータベースでライセンスの有無を確認してください。Desert Bamboo Globalが関与する案件はすべてWafi取得済みデベロッパーとの取引を要件としています。</p></div></div></div>
+
+  <div class="faq-item" data-c="re"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">不動産購入から所有権取得まで、どれくらいの期間がかかりますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>物件選定から所有権証書（タイトルディード）取得まで、通常3〜6ヶ月程度かかります。物件選定・視察（1〜4週間）、LOI提出・予約金支払い（1週間）、SPA締結（2〜4週間）、エスクロー入金（1〜2週間）、RERA登記申請（4〜8週間）、所有権移転（2〜4週間）という流れです。書類の準備状況や物件の複雑さによって前後します。日本の公証書類はアポスティーユ認証が必要なため、早めに準備を進めることをお勧めします。</p></div></div></div>
+
+  <div class="faq-item" data-c="re"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">購入した不動産を賃貸・売却することはできますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>物件の種類・エリア・購入条件によって異なります。一般的に、外国人が購入可能なギガプロジェクトエリアの物件は、リゾート運営会社との賃貸管理契約（レンタルプール）への参加が条件となっているケースが多く、その場合は自由な賃貸・短期賃貸は制限されます。一方、売却については購入から一定期間（1〜2年）経過後であれば可能なケースが多い。RERAの規制と物件ごとの契約条件を事前に確認することが重要です。</p></div></div></div>
+
+  <!-- 会社設立 -->
+  <div class="faq-item" data-c="co"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">サウジアラビアで会社設立にかかる費用と期間はどれくらいですか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>標準的なLLC（有限責任会社）の設立費用は概ねSAR 40,000〜100,000（約160万〜400万円）程度。内訳はMISAライセンス申請費用（SAR 2,000〜5,000）、商業登録費用（SAR 3,000〜8,000）、公証・翻訳費用（SAR 10,000〜30,000）、弁護士費用（SAR 20,000〜60,000）です。所要期間は書類が揃った状態から4〜8週間。日本の書類はアポスティーユ認証に2〜4週間かかることも考慮してください。</p></div></div></div>
+
+  <div class="faq-item" data-c="co"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">RHQ（地域統括本部）ライセンスとは何ですか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>RHQ（Regional Headquarters）ライセンスは、サウジアラビアに中東・アフリカ地域の統括本部を設置する外国企業向けの特別ライセンスです。取得企業には法人税免除（30年間）・外国人雇用枠の優遇・各種行政手続きの簡素化などの優遇措置が与えられます。</p><p>2030年までに500社の設置を目標としていましたが、2024年末時点で675社と目標を超過しています。日本の大企業を中心に参入が増加しており、RHQ設置を検討している企業向けのコンサルティングについてはDesert Bamboo Global日本事務局にお問い合わせください。</p></div></div></div>
+
+  <!-- Desert Bamboo -->
+  <div class="faq-item" data-c="bam"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">Desert Bamboo GlobalとBamboo Lab Architectはどう違うのですか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>Bamboo Lab Architectは、インドネシア・ロンボク島を拠点とする竹建築の設計・施工会社です。世界初の竹建築スターバックス、Milky Wave、XENO GYMなどの実績を持ち、竹建築の技術開発と現場施工を担当しています。PT Bamboo Lab Architectとして法人登記されています。</p><p>Desert Bamboo Globalは、Bamboo Lab Architectの実績と技術を活かしながら、サウジアラビアをはじめとする中東市場への事業展開を担う組織です。日本事務局（株式会社DESERT BAMBOO）とサウジアラビア法人（Desert Bamboo LLC）がその中核を担い、日本の投資家・パートナーへの情報提供・商談支援・案件開発を行っています。SAUDI INSIGHTはDesert Bamboo Global日本事務局が運営しています。</p></div></div></div>
+
+  <div class="faq-item" data-c="bam"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">竹建築はサウジアラビアの高温・砂漠環境に対応できますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>素材特性と設計アプローチの組み合わせにより十分に対応可能です。竹は鉄の引張強度に匹敵する強度を持ちながら木材より軽量で、適切な処理を施した上での使用であれば耐久性も確保できます。</p><p>高温・砂漠環境への対応として、Bamboo Lab Architectでは熱処理・防腐処理による耐候性強化、複層構造による断熱性能の確保、外装への遮熱コーティング、空調設計との統合を標準仕様としています。ロンボク島での実績（年間最高気温35℃超・高湿度環境）で培った技術を、低湿度・高温のサウジ環境向けに最適化します。</p></div></div></div>
+
+  <div class="faq-item" data-c="bam"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">Desert Bamboo Globalはどのようなサービスを提供していますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>主なサービスは4つです。第一に、サウジアラビアの投資案件・不動産案件の情報提供と商談支援（会員限定）。第二に、Bamboo Lab Architectによる竹建築の設計・施工（サウジアラビア・中東向け）。第三に、サウジアラビアへの法人進出コンサルティング（MISA登録支援・会社設立支援）。第四に、現地パートナー・政府機関とのネットワークを活用した事業開発支援です。具体的な相談は会員申請または問い合わせフォームからお気軽にどうぞ。</p></div></div></div>
+
+  <!-- 会員 -->
+  <div class="faq-item" data-c="mem"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">会員になると、具体的に何が見られますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>会員ページでは①現在進行中の非公開投資案件（物件概要・価格・条件・エスクロー情報）、②Desert Bamboo Global独自の市場レポート（四半期発行）、③現地ネットワーク経由の一次情報、④個別案件への商談申し込み窓口、⑤現地パートナー・政府機関のネットワーク情報にアクセスできます。現在7件の非公開案件を掲載中です。</p></div></div></div>
+
+  <div class="faq-item" data-c="mem"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">会員審査の基準と費用を教えてください。</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>会員制度は現在無料です。審査はデスクスクリーニングを基本とし、個人の場合は金融資産規模・投資目的・海外投資経験を、法人の場合は事業概要・投資担当者としての属性を確認します。申請から2営業日以内にご返答します。投資能力・目的が明確でない場合や競合他社と判断される場合はお断りする場合があります。申請フォームのメッセージ欄にご状況をご記入いただけるとスムーズです。</p></div></div></div>
+
+  <div class="faq-item" data-c="mem"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">会員情報はどのように管理されますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>ご入力いただいた個人情報は、会員審査および会員向けサービスの提供のみに使用します。第三者への提供は行いません。個人情報の取り扱いについては、プライバシーポリシーをご確認ください。また会員情報の変更・削除をご希望の場合はお問い合わせフォームからご連絡ください。</p></div></div></div>
+
+  <!-- 税務・送金 -->
+  <div class="faq-item" data-c="tax"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">日本からサウジアラビアへの送金に規制はありますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>日本の外国為替及び外国貿易法（外為法）に基づく規制があります。主な注意点は、100万円超の送金は銀行への報告義務があること、不動産購入等の資本取引は事前に財務省への届け出が必要な場合があること、送金目的の証明書類（売買契約書等）を銀行に提出する必要があることです。具体的な手続きは取引銀行と税理士に事前に相談することを強くお勧めします。</p></div></div></div>
+
+  <div class="faq-item" data-c="tax"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">サウジアラビアで得た収益の日本での課税はどうなりますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>日本居住者がサウジアラビアで得た収益（賃料・売却益・配当等）は、原則として日本での確定申告が必要です。日本とサウジアラビアの間には租税条約が締結されており、二重課税の一部は軽減されますが、具体的な課税関係は収益の種類・法人/個人の別・事業規模によって異なります。必ず税理士にご相談ください。</p><p>また、サウジアラビアでは外資法人の純利益に対して20%の法人税が課されます。ただし、RHQライセンス取得企業は30年間の法人税免除を受けられます。</p></div></div></div>
+
+  <div class="faq-item" data-c="tax"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">イスラム金融（ムラーバハ・ワカーラ等）を活用した投資方法はありますか？</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-body"><p>はい、サウジアラビアでは利子を禁止するイスラム法（シャリーア）に基づくイスラム金融が発達しています。外資企業・外国人投資家もイスラム金融商品を活用することが可能です。主な手法はムラーバハ（売買型融資）、ワカーラ（代理型預金）、イジャーラ（リース型金融）などがあります。Desert Bamboo Global日本事務局では、Al Rajhi Bank・SAB・SNBとの銀行関係を構築しており、イスラム金融を活用した投資スキームのご相談も承っています。</p></div></div></div>
+</div>
+<script src="common.js"></script>
+</body>
+</html>

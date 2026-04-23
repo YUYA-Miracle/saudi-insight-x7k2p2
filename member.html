@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>会員申請 | SAUDI INSIGHT</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.member-hero{position:relative;min-height:500px;display:flex;align-items:flex-end;overflow:hidden;margin-top:68px;}
+.member-hero .bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80') center 40%/cover;animation:heroZoom 14s ease-out forwards;}
+.member-hero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.95) 0%,rgba(13,12,10,.4) 65%,rgba(13,12,10,.12) 100%);}
+.member-hero-inner{position:relative;z-index:2;padding:0 64px 64px;}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:52px;border:1px solid var(--border);}
+.ben-cell{padding:32px 26px;background:var(--black2);border-right:1px solid var(--border);transition:background .3s;}
+.ben-cell:last-child{border-right:none;}
+.ben-cell:hover{background:var(--mist);}
+.ben-icon{font-size:26px;margin-bottom:12px;display:block;}
+.ben-title{font-family:var(--fb);font-size:14px;font-weight:700;color:var(--ivory);margin-bottom:7px;}
+.ben-text{font-family:var(--fb);font-size:12.5px;color:rgba(247,242,234,.55);line-height:1.85;}
+.form-block{background:var(--black2);border:1px solid var(--border);padding:52px 56px;}
+.form-h{font-family:var(--fd);font-size:38px;font-weight:300;margin-bottom:6px;}
+.form-sub{font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.45);margin-bottom:40px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+.form-row.full{grid-template-columns:1fr;}
+.form-grp{display:flex;flex-direction:column;gap:7px;}
+.form-lbl{font-family:var(--fs);font-size:9.5px;letter-spacing:.28em;color:rgba(247,242,234,.4);text-transform:uppercase;font-weight:400;}
+.form-lbl sup{color:var(--sand);}
+.form-inp,.form-sel,.form-ta{background:rgba(247,242,234,.04);border:1px solid var(--border);color:var(--ivory);padding:14px 18px;font-family:var(--fb);font-size:14px;font-weight:400;outline:none;transition:border-color .3s,background .3s;width:100%;}
+.form-inp:focus,.form-sel:focus,.form-ta:focus{border-color:var(--sand);background:rgba(184,151,90,.05);}
+.form-ta{resize:vertical;min-height:120px;}
+.form-sel option{background:var(--black2);}
+.form-note{font-family:var(--fs);font-size:11px;color:rgba(247,242,234,.3);line-height:1.9;margin-top:22px;padding-top:22px;border-top:1px solid var(--border);}
+.form-submit{width:100%;padding:19px;background:var(--sand);border:none;color:var(--black);font-family:var(--fs);font-size:11px;letter-spacing:.4em;text-transform:uppercase;font-weight:400;margin-top:28px;transition:background .3s,transform .2s;}
+.form-submit:hover{background:var(--sand2);transform:translateY(-2px);}
+</style>
+</head>
+<body>
+<script src="nav.js"></script>
+<div class="member-hero">
+  <div class="bg"></div><div class="ov"></div>
+  <div class="member-hero-inner">
+    <div class="page-eyebrow">Membership Application</div>
+    <h1 class="page-title">会員申請<br><em>（審査制・無料）</em></h1>
+    <p class="page-lead">現在7件の非公開投資案件を会員向けに掲載中。審査通過後、2営業日以内にご招待します。</p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="benefits-grid">
+    <div class="ben-cell"><span class="ben-icon">📋</span><div class="ben-title">非公開案件情報</div><div class="ben-text">現在7件の投資案件（詳細・価格・条件・エスクロー情報）を掲載</div></div>
+    <div class="ben-cell"><span class="ben-icon">📊</span><div class="ben-title">独自市場レポート</div><div class="ben-text">Desert Bamboo Global独自の現地一次情報をまとめた市場レポートを四半期発行</div></div>
+    <div class="ben-cell"><span class="ben-icon">🤝</span><div class="ben-title">商談申し込み窓口</div><div class="ben-text">各案件への個別相談・商談申し込みを会員専用窓口からダイレクトに</div></div>
+    <div class="ben-cell"><span class="ben-icon">🌐</span><div class="ben-title">現地ネットワーク情報</div><div class="ben-text">政府機関・デベロッパー・パートナーとのコネクション情報</div></div>
+    <div class="ben-cell"><span class="ben-icon">📧</span><div class="ben-title">会員向けニュースレター</div><div class="ben-text">公開前の最新情報・案件速報を月2回会員限定でメール配信</div></div>
+    <div class="ben-cell"><span class="ben-icon">🔍</span><div class="ben-title">個別コンサルティング</div><div class="ben-text">Desert Bamboo Global日本事務局への個別相談（商談化後）</div></div>
+  </div>
+
+  <div class="form-block">
+    <div class="form-h">会員申請フォーム</div>
+    <div class="form-sub">審査結果は2営業日以内にご連絡いたします。</div>
+    <div class="form-row">
+      <div class="form-grp"><label class="form-lbl">氏名<sup>*</sup></label><input class="form-inp" type="text" placeholder="山田 太郎"></div>
+      <div class="form-grp"><label class="form-lbl">氏名（フリガナ）</label><input class="form-inp" type="text" placeholder="ヤマダ タロウ"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-grp"><label class="form-lbl">メールアドレス<sup>*</sup></label><input class="form-inp" type="email" placeholder="taro@example.com"></div>
+      <div class="form-grp"><label class="form-lbl">電話番号</label><input class="form-inp" type="tel" placeholder="090-0000-0000"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-grp"><label class="form-lbl">所属（会社名・法人名）</label><input class="form-inp" type="text" placeholder="株式会社○○ / 個人"></div>
+      <div class="form-grp"><label class="form-lbl">役職・肩書き</label><input class="form-inp" type="text" placeholder="代表取締役 / 投資担当"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-grp"><label class="form-lbl">属性<sup>*</sup></label><select class="form-sel"><option value="" disabled selected>選択してください</option><option>個人投資家（富裕層）</option><option>法人投資家</option><option>ファミリーオフィス</option><option>金融機関・証券会社</option><option>不動産会社</option><option>事業会社（中東進出検討）</option><option>その他</option></select></div>
+      <div class="form-grp"><label class="form-lbl">投資関心領域<sup>*</sup></label><select class="form-sel"><option value="" disabled selected>選択してください</option><option>サウジアラビア不動産への直接投資</option><option>ギガプロジェクトへの事業参画</option><option>Desert Bamboo Globalプロジェクトへの出資</option><option>サウジアラビアへの法人進出</option><option>情報収集・調査目的</option><option>複数の領域に関心あり</option></select></div>
+    </div>
+    <div class="form-row full">
+      <div class="form-grp"><label class="form-lbl">概算投資可能額（任意）</label><select class="form-sel"><option value="" disabled selected>差し支えなければご選択ください</option><option>〜5,000万円</option><option>5,000万円〜1億円</option><option>1億円〜5億円</option><option>5億円〜10億円</option><option>10億円以上</option></select></div>
+    </div>
+    <div class="form-row full">
+      <div class="form-grp"><label class="form-lbl">メッセージ・ご状況（任意）</label><textarea class="form-ta" placeholder="投資への関心背景、現在のご状況、気になっているプロジェクト等をご記入いただけると審査がスムーズに進みます。"></textarea></div>
+    </div>
+    <div class="form-note">ご入力いただいた情報は、会員審査および会員向けサービスの提供のみに使用します。第三者への提供は行いません。競合他社・情報転売目的の申請はお断りいたします。個人情報の取り扱いについては<a href="terms.html" style="color:var(--sand)">利用規約</a>をご確認ください。</div>
+    <button class="form-submit" onclick="alert('ご申請ありがとうございます。\n2営業日以内に審査結果をメールにてご連絡いたします。')">申請する — Apply for Membership</button>
+  </div>
+</div>
+<script src="common.js"></script>
+</body>
+</html>
