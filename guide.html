@@ -3,116 +3,414 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<title>投資・不動産ガイド | SAUDI INSIGHT</title>
+<title>投資ガイド | SAUDI INSIGHT</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.guide-layout{display:grid;grid-template-columns:240px 1fr;gap:0;max-width:1280px;margin:0 auto;}
-.guide-side{border-right:1px solid var(--border);padding:56px 0;position:sticky;top:68px;align-self:start;height:calc(100vh - 68px);overflow-y:auto;}
-.guide-nav{list-style:none;}
-.guide-nav a{display:block;padding:12px 32px;font-family:var(--fs);font-size:10.5px;letter-spacing:.15em;color:rgba(247,242,234,.45);text-decoration:none;border-left:2px solid transparent;margin-left:-1px;transition:all .3s;text-transform:uppercase;}
-.guide-nav a:hover,.guide-nav a.active{color:var(--sand);border-left-color:var(--sand);padding-left:40px;}
-.guide-main{padding:56px 64px;}
-.guide-section{margin-bottom:80px;}
-.guide-h{font-family:var(--fd);font-size:38px;font-weight:300;line-height:1.15;padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:24px;}
-.guide-h em{font-style:italic;color:var(--sand2);}
+.guide-hero{position:relative;height:60vh;min-height:440px;display:flex;align-items:flex-end;overflow:hidden;margin-top:68px}
+.guide-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:heroZoom 14s ease-out forwards}
+.guide-hero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.97) 0%,rgba(13,12,10,.35) 55%,rgba(13,12,10,.05) 100%)}
+.guide-inner{position:relative;z-index:2;padding:0 64px 64px;max-width:860px}
 
+.guide-layout{display:grid;grid-template-columns:260px 1fr;max-width:1280px;margin:0 auto;min-height:80vh}
+.guide-side{padding:48px 32px;position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto;border-right:1px solid var(--border)}
+.guide-side-title{font-family:var(--fs);font-size:9px;letter-spacing:.45em;color:var(--sand);text-transform:uppercase;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.guide-nav{list-style:none;display:flex;flex-direction:column;gap:2px}
+.guide-nav a{display:block;font-family:var(--fs);font-size:11px;color:rgba(247,242,234,.42);text-decoration:none;padding:8px 12px;border-left:2px solid transparent;transition:all .25s;letter-spacing:.05em}
+.guide-nav a:hover{color:rgba(247,242,234,.8);border-left-color:rgba(184,151,90,.4)}
+.guide-nav a.active{color:var(--sand);border-left-color:var(--sand);background:rgba(184,151,90,.06)}
+.guide-nav .chapter{font-family:var(--fs);font-size:8.5px;letter-spacing:.4em;color:rgba(247,242,234,.2);text-transform:uppercase;padding:16px 12px 6px;margin-top:4px}
+
+.guide-main{padding:56px 64px 100px}
+.guide-chapter{margin-bottom:72px;padding-bottom:72px;border-bottom:1px solid var(--border)}
+.guide-chapter:last-child{border-bottom:none}
+.guide-chapter-num{font-family:var(--fd);font-size:72px;font-weight:300;color:rgba(184,151,90,.07);line-height:1;margin-bottom:-20px}
+.guide-chapter-title{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:300;color:var(--ivory);margin-bottom:8px;scroll-margin-top:88px}
+.guide-chapter-title em{font-style:italic;color:var(--sand2)}
+.guide-chapter-lead{font-family:var(--fb);font-size:16px;color:rgba(247,242,234,.65);line-height:1.9;margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.guide-p{font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.72);line-height:2.1;margin-bottom:20px}
+.guide-h3{font-family:var(--fb);font-size:17px;font-weight:700;color:var(--sand2);margin:40px 0 12px;scroll-margin-top:88px}
+.guide-callout{background:var(--black3);border-left:3px solid var(--sand);padding:22px 28px;margin:24px 0;font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.75);line-height:1.9}
+.guide-table{width:100%;border-collapse:collapse;margin:20px 0}
+.guide-table th{background:var(--black3);border:1px solid var(--border);padding:12px 18px;font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:var(--sand);text-align:left;text-transform:uppercase;white-space:nowrap}
+.guide-table td{border:1px solid var(--border);padding:13px 18px;font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.7);line-height:1.6}
+.guide-table tr:hover td{background:var(--mist)}
+.guide-steps{display:flex;flex-direction:column;gap:3px;margin:20px 0}
+.guide-step{display:grid;grid-template-columns:64px 1fr;background:var(--black2);border:1px solid var(--border);overflow:hidden}
+.guide-step-n{background:var(--black3);display:flex;align-items:center;justify-content:center;border-right:1px solid var(--border)}
+.guide-step-n span{font-family:var(--fd);font-size:36px;font-weight:300;color:rgba(184,151,90,.25)}
+.guide-step-body{padding:22px 26px}
+.guide-step-title{font-family:var(--fb);font-size:15px;font-weight:700;color:var(--ivory);margin-bottom:6px}
+.guide-step-text{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.62);line-height:1.85}
+.guide-2col{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin:20px 0}
+.guide-box{background:var(--black2);border:1px solid var(--border);padding:28px 24px}
+.guide-box-title{font-family:var(--fb);font-size:15px;font-weight:700;color:var(--ivory);margin-bottom:10px}
+.guide-box-text{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.62);line-height:1.85}
+.guide-ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:14px 0}
+.guide-ul li{font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.68);line-height:1.85;padding-left:18px;position:relative}
+.guide-ul li::before{content:'—';position:absolute;left:0;color:var(--sand)}
+.guide-warning{background:rgba(180,80,60,.08);border-left:3px solid rgba(180,80,60,.5);padding:22px 28px;margin:24px 0;font-family:var(--fb);font-size:13.5px;color:rgba(247,200,190,.75);line-height:1.9}
+
+@media(max-width:1024px){
+  .guide-layout{grid-template-columns:220px 1fr}
+  .guide-main{padding:44px 40px 80px}
+  .guide-side{padding:40px 24px}
+}
 @media(max-width:768px){
-  .page-banner-text{padding:0 20px 36px;}
-  .page-title{font-size:clamp(28px,8vw,48px);}
+  .guide-hero{margin-top:60px}
+  .guide-inner{padding:0 20px 48px}
+  .guide-layout{display:block}
+  .guide-side{display:none}
+  .guide-main{padding:36px 20px 60px}
+  .guide-2col{grid-template-columns:1fr}
+  .guide-step{grid-template-columns:52px 1fr}
 }
 </style>
 </head>
 <body data-nav-solid="1">
 <script src="nav.js"></script>
-<div class="page-banner">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
+
+<div class="guide-hero">
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1578895101408-1a36b834405b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
   <div class="ov"></div>
-  <div class="page-banner-text">
-    <div class="page-eyebrow">Investment & Real Estate Guide</div>
-    <h1 class="page-title">サウジアラビア<br><em>投資・不動産ガイド</em></h1>
-    <p class="page-lead">外国人投資家・日本企業がサウジアラビアで不動産購入・事業投資を行うための制度・手続き・注意点を実務レベルで解説します。</p>
+  <div class="guide-inner">
+    <div class="page-eyebrow">Investment Guide</div>
+    <h1 class="page-title">サウジアラビア<br><em>投資ガイド</em></h1>
+    <p class="page-lead">日本の投資家がサウジアラビア市場に参入するために必要な知識を、法制度・税制・不動産・スキームまで網羅的にまとめました。</p>
   </div>
 </div>
+
 <div class="guide-layout">
-  <div class="guide-side">
-    <ul class="guide-nav">
-      <li><a class="active" href="#g1">外国人の不動産購入制度</a></li>
-      <li><a href="#g2">購入プロセス・手続き</a></li>
-      <li><a href="#g3">エスクロー・資金管理</a></li>
-      <li><a href="#g4">会社設立・MISA登録</a></li>
-      <li><a href="#g5">税制・コスト試算</a></li>
-      <li><a href="#g6">リスクと注意点</a></li>
+  <!-- サイドバーナビ -->
+  <aside class="guide-side">
+    <div class="guide-side-title">目次</div>
+    <ul class="guide-nav" id="guide-toc">
+      <li><div class="chapter">Chapter 1</div></li>
+      <li><a href="#c1" class="active">外資参入の基本ルール</a></li>
+      <li><a href="#c1-misa">MISAライセンス</a></li>
+      <li><a href="#c1-rhq">RHQプログラム</a></li>
+      <li><a href="#c1-100">100%外資可能業種</a></li>
+      <li><div class="chapter">Chapter 2</div></li>
+      <li><a href="#c2">税制と財務</a></li>
+      <li><a href="#c2-tax">法人税・VAT</a></li>
+      <li><a href="#c2-zakat">ザカート</a></li>
+      <li><a href="#c2-bank">銀行口座開設</a></li>
+      <li><div class="chapter">Chapter 3</div></li>
+      <li><a href="#c3">不動産投資</a></li>
+      <li><a href="#c3-who">外国人が購入できる物件</a></li>
+      <li><a href="#c3-wafi">Wafiエスクロー制度</a></li>
+      <li><a href="#c3-flow">購入フロー</a></li>
+      <li><div class="chapter">Chapter 4</div></li>
+      <li><a href="#c4">投資スキーム</a></li>
+      <li><a href="#c4-direct">直接投資</a></li>
+      <li><a href="#c4-fund">ファンド経由</a></li>
+      <li><a href="#c4-jv">JVパートナーシップ</a></li>
+      <li><div class="chapter">Chapter 5</div></li>
+      <li><a href="#c5">サウジアイゼーション</a></li>
+      <li><div class="chapter">Chapter 6</div></li>
+      <li><a href="#c6">フリーゾーンと特別経済区</a></li>
+      <li><div class="chapter">Chapter 7</div></li>
+      <li><a href="#c7">投資リスクと注意点</a></li>
     </ul>
-  </div>
-  <div class="guide-main">
-    <div class="guide-section" id="g1">
-      <h2 class="guide-h">外国人の<em>不動産購入制度</em></h2>
-      <p class="body-copy">Vision 2030の推進に伴い、特定エリアにおける外国人所有が段階的に解禁されています。2024年時点で購入可能な不動産はフリーゾーン・ギガプロジェクトエリア・ラグジュアリーリゾートゾーンに限定されます。</p>
-      <div class="callout">メッカ・メディナの聖域エリアへの非ムスリムによる購入は引き続き不可。対象エリアはMISAへの事前確認が必須です。</div>
-      <div class="steps">
-        <div class="step"><div class="step-n"><span>①</span></div><div class="step-body"><div class="step-title">Premium Residencyの取得</div><div class="step-text">長期投資を目的とする外国人はPremium Residency取得により不動産所有・事業展開の在留資格を得られます。年間費用は約100万リヤル（約4,000万円）。</div></div></div>
-        <div class="step"><div class="step-n"><span>②</span></div><div class="step-body"><div class="step-title">対象エリアの確認</div><div class="step-text">NEOM・AMAALAエリア内物件、Red Sea Globalの指定区画、ジェッダの一部高級エリアが対象。エリアごとに規制内容が異なるためMISAへの事前確認が必須。</div></div></div>
-        <div class="step"><div class="step-n"><span>③</span></div><div class="step-body"><div class="step-title">Wafiデベロッパーとの売買契約</div><div class="step-text">Wafiライセンスを持つ政府認定デベロッパーとの売買契約を締結。契約書はアラビア語・英語の二言語で作成されます。</div></div></div>
+  </aside>
+
+  <!-- メインコンテンツ -->
+  <main class="guide-main">
+
+    <!-- Chapter 1 -->
+    <div class="guide-chapter" id="c1">
+      <div class="guide-chapter-num">01</div>
+      <h2 class="guide-chapter-title">外資参入の<em>基本ルール</em></h2>
+      <p class="guide-chapter-lead">サウジアラビアへの外国直接投資（FDI）は、外国投資法（FIL）に基づいてMISA（投資省）が管轄する。Vision 2030以降、規制緩和が急速に進み、多くの業種で100%外資出資が可能になった。</p>
+
+      <h3 class="guide-h3" id="c1-misa">MISAライセンス（外資投資ライセンス）</h3>
+      <p class="guide-p">外国企業がサウジアラビアで事業を行うには、まずMISA（Ministry of Investment of Saudi Arabia）から外資投資ライセンスを取得する必要がある。これがすべての参入手続きの起点となる。</p>
+
+      <div class="guide-steps">
+        <div class="guide-step"><div class="guide-step-n"><span>1</span></div><div class="guide-step-body"><div class="guide-step-title">MISAへの事前相談・業種確認</div><div class="guide-step-text">参入予定の業種がポジティブリスト（参入可能業種）に該当するかを確認。MISAの公式ウェブサイト（invest.gov.sa）でオンライン確認が可能。ネガティブリスト（参入不可業種）は限定的で、石油採掘・メッカ・メディナでの事業など。</div></div></div>
+        <div class="guide-step"><div class="guide-step-n"><span>2</span></div><div class="guide-step-body"><div class="guide-step-title">MISAライセンス申請・取得</div><div class="guide-step-text">オンラインポータル経由で申請。必要書類：親会社の法人登記証明書・定款・財務諸表・事業計画書。通常2〜4週間で審査が完了。ライセンス料はSAR 1,200〜（業種・資本金により変動）。</div></div></div>
+        <div class="guide-step"><div class="guide-step-n"><span>3</span></div><div class="guide-step-body"><div class="guide-step-title">会社設立（MOCI登録）</div><div class="guide-step-text">商業省（MOCI）で会社登記。LLC（有限責任会社）形態が最も一般的。最低資本金はMISAライセンス業種によって異なる（通常SAR 500,000以上が推奨）。電子登録システム「Sijil」を利用。</div></div></div>
+        <div class="guide-step"><div class="guide-step-n"><span>4</span></div><div class="guide-step-body"><div class="guide-step-title">各種許認可取得・銀行口座開設</div><div class="guide-step-text">業種別の営業許可（飲食・建設・医療等）、GOSI（社会保険機関）登録、Zakat・税務当局（ZATCA）登録、銀行口座開設。全て並行して進めることで設立から営業開始まで2〜3ヶ月が目安。</div></div></div>
       </div>
-    </div>
-    <div class="guide-section" id="g2">
-      <h2 class="guide-h">購入<em>プロセス・手続き</em></h2>
-      <table class="d-table">
-        <thead><tr><th>フェーズ</th><th>内容</th><th>所要期間</th></tr></thead>
-        <tbody>
-          <tr><td>物件選定・視察</td><td>現地視察またはバーチャルツアー</td><td>1〜4週間</td></tr>
-          <tr><td>LOI・予約申込</td><td>購入意向書の提出・予約金支払い（5〜10%）</td><td>1週間</td></tr>
-          <tr><td>SPA締結</td><td>売買契約書の締結・公証</td><td>2〜4週間</td></tr>
-          <tr><td>エスクロー入金</td><td>Wafi認定エスクロー口座への入金</td><td>1〜2週間</td></tr>
-          <tr><td>REGA登記申請</td><td>不動産規制当局への登記申請</td><td>4〜8週間</td></tr>
-          <tr><td>所有権移転</td><td>タイトルディードの受領</td><td>2〜4週間</td></tr>
-        </tbody>
+
+      <h3 class="guide-h3" id="c1-rhq">RHQプログラム（地域統括本部）</h3>
+      <p class="guide-p">2021年に導入されたRHQ（Regional Headquarters）プログラムは、外国企業がリヤドに中東・アフリカ地域の統括本部を置くことを条件に、破格の優遇措置を提供する制度だ。</p>
+
+      <div class="guide-2col">
+        <div class="guide-box">
+          <div class="guide-box-title">✅ RHQの主なメリット</div>
+          <div class="guide-box-text">
+            <ul class="guide-ul">
+              <li>法人税：<strong>30年間免除</strong>（通常20%）</li>
+              <li>源泉徴収税：30年間免除</li>
+              <li>グループ内役務提供の優遇税制</li>
+              <li>就労ビザのファストトラック処理</li>
+              <li>政府調達への優先参加資格</li>
+              <li>2024年以降はリヤド以外の都市にも拡大</li>
+            </ul>
+          </div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">📋 RHQ取得要件</div>
+          <div class="guide-box-text">
+            <ul class="guide-ul">
+              <li>本社または中東以外の国に親会社が存在すること</li>
+              <li>リヤドに物理的なオフィスを設置</li>
+              <li>3年以内に一定数のサウジ人従業員を雇用</li>
+              <li>地域統括機能（HR・財務・マーケ等）をリヤドで実施</li>
+              <li>年次報告書の提出義務</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-callout">2024年末時点でRHQ登録企業数は675社（目標500社を超過達成）。グローバル企業のリヤド集積が急加速しており、早期参入による先行者優位が確実に存在する。</div>
+
+      <h3 class="guide-h3" id="c1-100">100%外資出資が可能な主要業種</h3>
+      <table class="guide-table">
+        <tr><th>業種カテゴリ</th><th>主な業種</th><th>特記事項</th></tr>
+        <tr><td>建設・エンジニアリング</td><td>建設施工・設計・プロジェクトマネジメント</td><td>大型案件ではサウジ人パートナー推奨</td></tr>
+        <tr><td>観光・ホスピタリティ</td><td>ホテル・リゾート・旅行代理店・レストラン</td><td>ハラール認証が飲食業には必要</td></tr>
+        <tr><td>不動産</td><td>不動産開発・仲介・管理</td><td>土地取得は外資に制限あり</td></tr>
+        <tr><td>製造業</td><td>多数の製造業種</td><td>一部はサウジARAMCO認定が必要</td></tr>
+        <tr><td>小売・E-Commerce</td><td>小売店・EC・卸売</td><td>外資のみ小売はSAR 3,000万最低資本金</td></tr>
+        <tr><td>医療・ヘルスケア</td><td>病院・クリニック・医療機器</td><td>MOH（保健省）の別途ライセンス必要</td></tr>
+        <tr><td>テクノロジー</td><td>IT・ソフトウェア・フィンテック</td><td>通信はSTC等との協業が現実的</td></tr>
+        <tr><td>教育</td><td>私立学校・研修機関</td><td>MoE（教育省）の認可が必要</td></tr>
       </table>
     </div>
-    <div class="guide-section" id="g3">
-      <h2 class="guide-h">エスクロー・<em>資金管理</em></h2>
-      <p class="body-copy">Wafiライセンスに基づくエスクロー制度が義務化されています。購入者の資金は認定エスクロー口座で保全され、完成・引き渡し条件の充足に応じて段階的にデベロッパーへ支払われます。</p>
-      <div class="callout">Desert Bamboo Globalが関与する案件ではBanque Saudi Fransiのエスクロー口座を利用しています。詳細は会員限定ページにて開示。</div>
-      <p class="body-copy">エスクロー口座への入金は通常、銀行送金（TT）で行われます。日本からサウジアラビアへの送金は外国為替管理法の適用を受けるため、送金前に取引銀行への事前確認が必要です。また、送金額に応じて報告義務が発生する場合があります。送金計画は必ず税理士・銀行担当者と事前に確認してください。</p>
-    </div>
-    <div class="guide-section" id="g4">
-      <h2 class="guide-h">会社設立・<em>MISA登録</em></h2>
-      <p class="body-copy">法人として事業投資・不動産取得を行う場合、MISA（Ministry of Investment of Saudi Arabia）への外資企業登録が必要です。</p>
-      <div class="steps">
-        <div class="step"><div class="step-n"><span>1</span></div><div class="step-body"><div class="step-title">MISA外資投資ライセンスの取得</div><div class="step-text">MISAオンラインポータルから申請。審査期間は通常5〜15営業日。業種によって最低資本金要件が異なります。</div></div></div>
-        <div class="step"><div class="step-n"><span>2</span></div><div class="step-body"><div class="step-title">会社定款の作成・認証</div><div class="step-text">アラビア語での定款作成・公証が必要。日本の会社定款等はアポスティーユ認証が必要で、この手続きに2〜4週間かかることも考慮してください。</div></div></div>
-        <div class="step"><div class="step-n"><span>3</span></div><div class="step-body"><div class="step-title">商業登録（CR）の取得</div><div class="step-text">Ministry of CommerceへのCR申請。登録完了後、銀行口座開設・ZATCA（税務当局）登録へと進みます。</div></div></div>
-        <div class="step"><div class="step-n"><span>4</span></div><div class="step-body"><div class="step-title">銀行口座開設</div><div class="step-text">法人口座開設にはCR・MISA登録証・定款・役員のiqama（居住許可）が必要。Al Rajhi Bank・SAB・SNBなどが外資法人の口座開設実績を持ちます。</div></div></div>
-      </div>
-    </div>
-    <div class="guide-section" id="g5">
-      <h2 class="guide-h">税制・<em>コスト試算</em></h2>
-      <table class="d-table">
-        <thead><tr><th>費用項目</th><th>概要</th><th>目安</th></tr></thead>
-        <tbody>
-          <tr><td>法人税</td><td>外資法人の純利益</td><td>20%</td></tr>
-          <tr><td>VAT</td><td>商品・サービス取引</td><td>15%</td></tr>
-          <tr><td>不動産取得税（RETT）</td><td>不動産取引額</td><td>5%</td></tr>
-          <tr><td>MISA登録費用</td><td>投資ライセンス申請</td><td>SAR 5,000〜</td></tr>
-          <tr><td>商業登録費用（CR）</td><td>Ministry of Commerce</td><td>SAR 3,000〜8,000</td></tr>
-          <tr><td>公証・翻訳費用</td><td>定款・契約書の認証</td><td>SAR 10,000〜30,000</td></tr>
-          <tr><td>弁護士費用</td><td>法的書類作成・審査</td><td>SAR 20,000〜60,000</td></tr>
-          <tr><td>銀行口座開設</td><td>法人口座</td><td>SAR 1,000〜5,000</td></tr>
-        </tbody>
+
+    <!-- Chapter 2 -->
+    <div class="guide-chapter" id="c2">
+      <div class="guide-chapter-num">02</div>
+      <h2 class="guide-chapter-title">税制と<em>財務</em></h2>
+      <p class="guide-chapter-lead">サウジアラビアの税制は、外資企業に対して法人税20%・VAT15%を基本とする。ただしRHQライセンス・フリーゾーン・ARAMCO関連優遇など多様な節税スキームが存在する。</p>
+
+      <h3 class="guide-h3" id="c2-tax">法人税・VAT・源泉徴収税</h3>
+      <table class="guide-table">
+        <tr><th>税目</th><th>税率</th><th>備考</th></tr>
+        <tr><td>法人税（外資企業）</td><td>20%</td><td>サウジ人出資分はZakatが適用。RHQは30年免除</td></tr>
+        <tr><td>VAT（付加価値税）</td><td>15%</td><td>2020年にコロナ財源確保のため5%→15%に引き上げ</td></tr>
+        <tr><td>源泉徴収税（配当）</td><td>5%</td><td>外国親会社への配当に適用</td></tr>
+        <tr><td>源泉徴収税（役務提供）</td><td>15%</td><td>外国法人への技術料・コンサル料等</td></tr>
+        <tr><td>源泉徴収税（利子）</td><td>5%</td><td>関連会社間ローン等</td></tr>
+        <tr><td>キャピタルゲイン税</td><td>20%</td><td>株式売却益等（上場株式は一部免除）</td></tr>
+        <tr><td>不動産取得税</td><td>5%</td><td>取引価格に対して課税</td></tr>
       </table>
-    </div>
-    <div class="guide-section" id="g6">
-      <h2 class="guide-h">リスクと<em>注意点</em></h2>
-      <div class="steps">
-        <div class="step"><div class="step-n"><span>!</span></div><div class="step-body"><div class="step-title">プロジェクト遅延リスク</div><div class="step-text">大型プロジェクトは当初計画から遅延が報告されています。「世代をまたぐ投資」という性格上、10〜20年以上の時間軸が前提です。</div></div></div>
-        <div class="step"><div class="step-n"><span>!</span></div><div class="step-body"><div class="step-title">為替・送金リスク</div><div class="step-text">SARは米ドルにペッグされており為替変動は限定的ですが、日本への送金は外国為替管理法の規制を受けます。事前に弁護士・銀行と確認してください。</div></div></div>
-        <div class="step"><div class="step-n"><span>!</span></div><div class="step-body"><div class="step-title">Wafiライセンス未取得業者への注意</div><div class="step-text">Wafiライセンスを持たないデベロッパーとの契約は資金保全が担保されません。必ずMISAデータベースで確認してください。</div></div></div>
-        <div class="step"><div class="step-n"><span>!</span></div><div class="step-body"><div class="step-title">法制度変更リスク</div><div class="step-text">サウジアラビアの法制度は急速に変化しています。投資判断の前に、現地弁護士による最新の法規制確認を必ず行ってください。</div></div></div>
+
+      <div class="guide-callout">日本とサウジアラビアの間には租税条約が締結されています（1981年）。二重課税の軽減・情報交換等が定められており、日本企業の投資実務に直接影響します。</div>
+
+      <h3 class="guide-h3" id="c2-zakat">ザカート（イスラム税）</h3>
+      <p class="guide-p">サウジアラビアで特有の税制として、ザカートがある。これはイスラム法（シャリア）に基づく「浄財」の概念で、サウジ人・GCC諸国人の出資持分に対して課税される。税率は課税基準額の2.5%。外資企業の外資出資分には通常の法人税が、サウジ人出資分にはザカートが適用されるという分離課税方式をとる。</p>
+
+      <h3 class="guide-h3" id="c2-bank">銀行口座開設と決済環境</h3>
+      <p class="guide-p">外国企業がサウジアラビアで銀行口座を開設するには、MISAライセンスと会社設立書類が前提となる。主要銀行とその特徴：</p>
+      <div class="guide-2col">
+        <div class="guide-box">
+          <div class="guide-box-title">Al Rajhi Bank</div>
+          <div class="guide-box-text">サウジ最大の民間銀行。国内決済網が最も充実。イスラム金融専業。中小企業向けサービスが充実しており、外資中小企業の口座開設にも対応。Desert Bamboo Globalの推奨メインバンク。</div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">SAB（旧HSBC Saudi）</div>
+          <div class="guide-box-text">国際送金・外貨決済に強み。日本企業との取引実績多数。海外送金手数料が比較的低い。IPO・資本市場業務でも高い実績。大規模な外資参入には最適。</div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">SNB（旧NCB）</div>
+          <div class="guide-box-text">Saudi National Bank。PIFが筆頭株主の最大手銀行。政府系プロジェクト向け融資に強み。将来の上場（NOMU/MAIN市場）を見据えた銀行関係構築に最適。</div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">Banque Saudi Fransi</div>
+          <div class="guide-box-text">Wafiエスクローの認定管理銀行のひとつ。不動産エスクロー口座の開設実績が豊富。不動産投資に特化した銀行関係の構築に向く。</div>
+        </div>
       </div>
-      <div class="callout" style="margin-top:32px">本ガイドは参考情報の提供を目的としており、法的・財務的アドバイスではありません。投資判断に際しては必ず専門家にご相談ください。</div>
     </div>
-  </div>
+
+    <!-- Chapter 3 -->
+    <div class="guide-chapter" id="c3">
+      <div class="guide-chapter-num">03</div>
+      <h2 class="guide-chapter-title">不動産<em>投資</em></h2>
+      <p class="guide-chapter-lead">Vision 2030以降、外国人・外国法人によるサウジアラビアの不動産購入が一部エリアで解禁された。2025年Q3の外国人購入件数は前年比+42%。正確な法制度理解が必須だ。</p>
+
+      <h3 class="guide-h3" id="c3-who">外国人・外国法人が購入できる物件</h3>
+      <div class="guide-2col">
+        <div class="guide-box">
+          <div class="guide-box-title">✅ 購入可能</div>
+          <ul class="guide-ul">
+            <li>指定エリア内の住宅・コンドミニアム（ジェッダウォーターフロント、リヤド一部エリア等）</li>
+            <li>観光特別区（NEOM・AMAALA・Red Sea Globalエリア）内のオフプラン物件</li>
+            <li>MISA登録済み外資企業による商業用不動産（オフィス・店舗等）</li>
+            <li>ホテル客室（コンドホテル形式）の区分所有</li>
+          </ul>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">❌ 購入不可</div>
+          <ul class="guide-ul">
+            <li>メッカ・メディナ市内の不動産（外国人の立入自体が制限）</li>
+            <li>農地・牧草地</li>
+            <li>国境地帯付近の土地</li>
+            <li>軍事施設周辺の不動産</li>
+            <li>REGA（不動産監督当局）の指定エリア外の一般住宅地</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="guide-h3" id="c3-wafi">Wafi（ワフィ）エスクロー制度</h3>
+      <p class="guide-p">Wafiは、REGA（Real Estate General Authority）が運営する、オフプラン不動産のエスクロー認定制度だ。未完成物件の購入代金を認定銀行に預け、工事進捗に応じて段階的にデベロッパーに支払われる仕組みにより、購入者の資金を保護する。</p>
+
+      <div class="guide-callout">⚠️ 重要：Wafiライセンスを持たないデベロッパーとの取引は、購入代金がデベロッパーに直接渡り保護がない。必ずREGA（rega.gov.sa）のデータベースでWafiライセンスを事前確認すること。Desert Bamboo Globalが紹介する案件はすべてWafi確認済みのデベロッパーのみ。</div>
+
+      <table class="guide-table">
+        <tr><th>Wafi認定管理銀行（主要）</th><th>特徴</th></tr>
+        <tr><td>Banque Saudi Fransi</td><td>最大手のWafi管理銀行。国際的な信頼性が高い</td></tr>
+        <tr><td>Saudi Investment Bank</td><td>不動産エスクロー専門性が高い</td></tr>
+        <tr><td>Al Rajhi Bank</td><td>国内最大の銀行網。決済の利便性が高い</td></tr>
+        <tr><td>Riyad Bank</td><td>大型案件のエスクロー実績が豊富</td></tr>
+      </table>
+
+      <h3 class="guide-h3" id="c3-flow">外国法人による不動産購入フロー</h3>
+      <div class="guide-steps">
+        <div class="guide-step"><div class="guide-step-n"><span>1</span></div><div class="guide-step-body"><div class="guide-step-title">MISAライセンス取得（外資企業として登録）</div><div class="guide-step-text">外国法人が不動産を購入するにはMISAライセンスが前提。個人外国人の場合も、現地弁護士に相談の上で必要な手続きを確認する。</div></div></div>
+        <div class="guide-step"><div class="guide-step-n"><span>2</span></div><div class="guide-step-body"><div class="guide-step-title">デベロッパー・物件のデューデリジェンス</div><div class="guide-step-text">REGAデータベースでWafiライセンス確認。デベロッパーの財務状況・施工実績・エスクロー管理銀行を確認。現地弁護士によるSPA（売買契約書）レビューを依頼。</div></div></div>
+        <div class="guide-step"><div class="guide-step-n"><span>3</span></div><div class="guide-step-body"><div class="guide-step-title">SPA（売買契約書）締結・エスクロー入金</div><div class="guide-step-text">SPA締結後、代金をデベロッパーではなくWafi認定管理銀行のエスクロー口座に振り込む。送金はSWIFT経由の国際電信送金。外貨規制はなく自由に送金可能。</div></div></div>
+        <div class="guide-step"><div class="guide-step-n"><span>4</span></div><div class="guide-step-body"><div class="guide-step-title">工事進捗に応じた段階払い</div><div class="guide-step-text">基礎完了・躯体完成・内装完成・引き渡し等のマイルストーンごとに、REGAの確認のもとデベロッパーに段階的に支払われる。この仕組みが資金保護の核心。</div></div></div>
+        <div class="guide-step"><div class="guide-step-n"><span>5</span></div><div class="guide-step-body"><div class="guide-step-title">引き渡し・登記完了</div><div class="guide-step-text">物件引き渡し後、REGA登記が完了しタイトルディード（所有権証書）が交付される。購入時の不動産取得税（5%）を納付。固定資産税はサウジアラビアには現在存在しない。</div></div></div>
+      </div>
+    </div>
+
+    <!-- Chapter 4 -->
+    <div class="guide-chapter" id="c4">
+      <div class="guide-chapter-num">04</div>
+      <h2 class="guide-chapter-title">投資<em>スキーム</em></h2>
+      <p class="guide-chapter-lead">サウジアラビアへの投資スキームは、直接投資・ファンド経由・JVパートナーシップの3つが主要な選択肢だ。それぞれリスク・リターン・参入難易度が異なる。</p>
+
+      <h3 class="guide-h3" id="c4-direct">直接投資（Direct Investment）</h3>
+      <p class="guide-p">MISAライセンスを取得し、自社でサウジ法人（LLC）を設立して直接事業を行う方法。最もコントロール性が高いが、現地での事業オペレーション能力が必要となる。</p>
+      <div class="guide-2col">
+        <div class="guide-box"><div class="guide-box-title">メリット</div><div class="guide-box-text">利益の100%を享受可能。意思決定の速さ。ブランドの直接展開。長期的な事業構築に最適。</div></div>
+        <div class="guide-box"><div class="guide-box-title">留意点</div><div class="guide-box-text">現地オペレーション人材の確保が必要。サウジアイゼーション（現地人雇用比率）要件への対応。Wastaネットワークの構築に時間がかかる。</div></div>
+      </div>
+
+      <h3 class="guide-h3" id="c4-fund">不動産ファンド・SPV経由</h3>
+      <p class="guide-p">サウジアラビア国内または海外（UAE・カイマン等）にSPV（特別目的会社）を設立し、不動産投資を行う方法。複数投資家からの資金調達・リスク分散が可能だ。</p>
+      <div class="guide-2col">
+        <div class="guide-box"><div class="guide-box-title">サウジ国内SPV</div><div class="guide-box-text">CMA（資本市場庁）の認可を受けたサウジ不動産投資信託（REIT）や私募ファンドの形態。サウジ証券取引所（Tadawul）上場のREITへの投資も選択肢。</div></div>
+        <div class="guide-box"><div class="guide-box-title">海外SPV（UAE DIFC/ADGM等）</div><div class="guide-box-text">ドバイや Abu Dhabiの国際金融センターにSPVを設立し、サウジ不動産に投資する構造。日本の投資家には馴染みやすい法制度環境。ただし日・サ租税条約との整合に注意。</div></div>
+      </div>
+
+      <h3 class="guide-h3" id="c4-jv">JVパートナーシップ</h3>
+      <p class="guide-p">信頼できるサウジアラビアのローカルパートナーとJV（合弁）を組む方法。Wastaネットワーク・現地規制対応・政府関係の構築において、ローカルパートナーの存在は大きな価値を持つ。</p>
+      <div class="guide-callout">Desert Bamboo Global日本事務局は、サウジアラビアの現地パートナーとのネットワークを保有しており、信頼できるJVパートナーの紹介・JV条件の交渉支援を会員向けに提供しています。</div>
+    </div>
+
+    <!-- Chapter 5 -->
+    <div class="guide-chapter" id="c5">
+      <div class="guide-chapter-num">05</div>
+      <h2 class="guide-chapter-title">サウジアイゼーション<em>（Nitaqat制度）</em></h2>
+      <p class="guide-chapter-lead">サウジアイゼーション（Nitaqat）は、企業に対して一定比率のサウジアラビア人従業員の雇用を義務付ける制度だ。業種・企業規模によって目標比率が異なり、達成状況によって企業の「ゾーン」が決定される。</p>
+
+      <p class="guide-p">ゾーンは「プラチナ→グリーン→イエロー→レッド」の4段階で評価される。グリーン以上の企業は政府調達への参加資格・追加のビザ枠・各種優遇措置を受けられる。レッドゾーンの企業は追加の外国人労働者ビザ取得が制限される。</p>
+
+      <table class="guide-table">
+        <tr><th>業種例</th><th>最低サウジ人比率</th><th>留意事項</th></tr>
+        <tr><td>飲食業</td><td>約15%</td><td>比較的低い比率。外国人コック等を雇いやすい</td></tr>
+        <tr><td>建設業</td><td>約6%</td><td>現場労働者には外国人比率が高い業種</td></tr>
+        <tr><td>小売業</td><td>約30%〜</td><td>Vision 2030でサウジ人の小売参入を推進</td></tr>
+        <tr><td>不動産業</td><td>約35%</td><td>高い比率要件。不動産エージェントのサウジ化が進む</td></tr>
+        <tr><td>専門サービス（法務・会計）</td><td>約20%〜</td><td>資格保有者の確保が課題</td></tr>
+      </table>
+
+      <div class="guide-callout">サウジアイゼーションは一見ハードルに見えるが、逆に活用できるポイントもある。優秀なサウジ人スタッフを採用することで政府機関とのリレーション構築・市場理解の深化・現地コミュニティへの浸透が促進される。「コスト」ではなく「戦略的資産」として位置づけることが重要だ。</div>
+    </div>
+
+    <!-- Chapter 6 -->
+    <div class="guide-chapter" id="c6">
+      <div class="guide-chapter-num">06</div>
+      <h2 class="guide-chapter-title">フリーゾーンと<em>特別経済区</em></h2>
+      <p class="guide-chapter-lead">サウジアラビアには複数の特別経済区・フリーゾーンが設けられており、通常の外資参入よりも優遇された条件で事業を行うことができる。</p>
+
+      <div class="guide-2col">
+        <div class="guide-box">
+          <div class="guide-box-title">KAEC（キング・アブドゥッラー経済都市）</div>
+          <div class="guide-box-text">ジェッダ北方のビジネス・工業都市。約168km²の広大な敷地に製造業・物流・住宅が集積。工業用地の取得・工場設置に優遇措置あり。港湾直結の物流拠点として機能。</div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">NEOM特別区</div>
+          <div class="guide-box-text">NEOMプロジェクト内に設けられた特別経済区。独自の法規制・税制を持ち、従来のサウジ法とは異なるルールが適用される予定。詳細は段階的に公開中。</div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">Diriyah特別区</div>
+          <div class="guide-box-text">ユネスコ世界遺産エリア周辺の文化・観光特別区。観光・ホスピタリティ・文化施設への参入で優遇措置を受けられる可能性あり。</div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">Red Sea Global特別区</div>
+          <div class="guide-box-text">エコツーリズム施設の開発・運営への参入で優遇措置あり。100%再生可能エネルギー要件が課されるが、サステナビリティ認証取得企業への加点措置も。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 7 -->
+    <div class="guide-chapter" id="c7">
+      <div class="guide-chapter-num">07</div>
+      <h2 class="guide-chapter-title">投資リスクと<em>注意点</em></h2>
+      <p class="guide-chapter-lead">サウジアラビアへの投資には大きな機会がある一方で、固有のリスクも存在する。正確に理解した上でリスク管理を行うことが、長期的な成功の鍵だ。</p>
+
+      <div class="guide-warning">⚠️ 以下はリスクの否定ではなく、適切なリスク管理のための情報提供です。投資判断は必ず現地弁護士・税理士・ファイナンシャルアドバイザーに相談の上で行ってください。</div>
+
+      <h3 class="guide-h3">主なリスクと対応策</h3>
+
+      <div class="guide-2col">
+        <div class="guide-box">
+          <div class="guide-box-title">政治・規制リスク</div>
+          <div class="guide-box-text">サウジアラビアは絶対君主制。トップダウンで規制が変わることがある。ただしVision 2030の方向性は一貫しており、外資参入規制の緩和方向は変わらない。<br><br><strong style="color:var(--sand2)">対応：</strong>現地弁護士との顧問契約。政府機関との定期的なリレーション維持。</div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">開発遅延リスク</div>
+          <div class="guide-box-text">ギガプロジェクトのスケジュール遅延は歴史的に発生している。Wafiエスクロー制度が資金を保護するが、期待リターンの時間軸がずれるリスクは残る。<br><br><strong style="color:var(--sand2)">対応：</strong>オフプラン投資は余裕資金で。Wafi確認を必ず実施。完成後ルームへの投資を優先。</div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">流動性リスク</div>
+          <div class="guide-box-text">サウジアラビアの不動産市場は外国人バイヤーの流動性がまだ低い。EXIT（売却）のタイミングで買い手が見つかりにくい可能性がある。<br><br><strong style="color:var(--sand2)">対応：</strong>5〜10年以上の長期視点で投資。賃料収益型の物件を優先。</div>
+        </div>
+        <div class="guide-box">
+          <div class="guide-box-title">文化・オペレーションリスク</div>
+          <div class="guide-box-text">ラマダン期の業務停滞・礼拝時間による商談の中断・現地慣習への不理解から生じるビジネス上のトラブル。<br><br><strong style="color:var(--sand2)">対応：</strong>現地パートナー・アドバイザーの活用。文化理解の事前研修。</div>
+        </div>
+      </div>
+
+      <div class="guide-callout">Desert Bamboo Global日本事務局では、上記リスクの軽減を支援するため、現地弁護士・税理士・不動産仲介業者の検証済み推奨リストを会員向けに提供しています。会員ページの「エキスパートネットワーク」からアクセスできます。</div>
+
+      <!-- 最終CTA -->
+      <div style="background:linear-gradient(135deg,rgba(24,18,13,.99),rgba(34,28,20,.99));border:1px solid var(--border);border-left:3px solid var(--sand);padding:40px 44px;margin-top:48px">
+        <div style="font-family:var(--fs);font-size:9px;letter-spacing:.5em;color:var(--sand);text-transform:uppercase;margin-bottom:12px">Members Only</div>
+        <div style="font-family:var(--fd);font-size:26px;font-weight:300;color:var(--ivory);margin-bottom:10px;line-height:1.2">このガイドを読んだ次のステップは、<br><em style="color:var(--sand2)">具体的な案件情報</em>へのアクセスです。</div>
+        <p style="font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.62);line-height:1.85;margin-bottom:24px">Desert Bamboo Global日本事務局では、Wafi確認済み・エスクロー情報付きの非公開案件を審査済み会員向けに提供しています。また現地弁護士・税理士の推奨リスト、現地視察ツアーの案内も会員限定で行っています。</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn-gold" href="member.html">会員申請する（審査制・無料）</a>
+          <a class="btn-ghost" href="faq.html">よくある質問を見る →</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
 </div>
+
 <script src="common.js"></script>
+<script>
+// サイドバー目次のアクティブ追従
+(function(){
+  const chapters = document.querySelectorAll('[id^="c"]');
+  const links = document.querySelectorAll('.guide-nav a');
+  if(!chapters.length||!links.length) return;
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(a=>a.classList.remove('active'));
+        const a = document.querySelector('.guide-nav a[href="#'+e.target.id+'"]');
+        if(a) a.classList.add('active');
+      }
+    });
+  },{rootMargin:'-68px 0px -70% 0px'});
+  chapters.forEach(c=>obs.observe(c));
+})();
+</script>
 </body>
 </html>

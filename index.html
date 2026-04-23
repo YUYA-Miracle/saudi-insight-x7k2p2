@@ -331,183 +331,279 @@
   <h2 class="display">サウジアラビア<em>投資機会マップ</em></h2>
   <p class="body-copy" style="margin-bottom:36px">プロジェクトの地理的な位置関係を正確に把握することが投資判断の第一歩です。</p>
   <div style="background:var(--black2);border:1px solid var(--border);overflow:hidden">
-    <svg viewBox="0 0 960 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+    <svg viewBox="0 0 960 660" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
       <defs>
-        <radialGradient id="pg" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#B8975A" stop-opacity="0.25"/>
+        <radialGradient id="mg3" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#B8975A" stop-opacity="0.3"/>
           <stop offset="100%" stop-color="#B8975A" stop-opacity="0"/>
         </radialGradient>
-        <filter id="pb"><feGaussianBlur stdDeviation="2"/></filter>
-        <pattern id="pp" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+        <filter id="fb3"><feGaussianBlur stdDeviation="2.5"/></filter>
+        <pattern id="mp3" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
           <circle cx="1" cy="1" r="0.55" fill="rgba(184,151,90,0.07)"/>
         </pattern>
       </defs>
-      <rect width="960" height="580" fill="#0E0D0B"/>
-      <rect width="960" height="580" fill="url(#pp)"/>
 
-      <!-- 紅海 -->
-      <path d="M108,22 C101,65 95,112 89,158 C84,200 79,240 75,274 C71,305 68,330 66,352 C64,372 64,390 67,404 C70,416 75,425 81,432"
-        fill="none" stroke="rgba(55,115,160,0.55)" stroke-width="28" stroke-linecap="round"/>
-      <text transform="rotate(-80,46,245)" x="26" y="245" fill="rgba(80,140,185,0.35)" font-size="9" font-family="Jost,sans-serif" letter-spacing="3">RED SEA</text>
+      <!-- 背景 -->
+      <rect width="960" height="660" fill="#0D0C0A"/>
+      <rect width="960" height="660" fill="url(#mp3)"/>
+
+      <!--
+        座標変換（添付地図を参考に正確に配置）
+        緯度範囲: 16°N（南端イエメン国境）〜 32°N（北端ヨルダン国境）= 16度
+        経度範囲: 34.5°E（西端紅海）〜 56°E（東端オマーン）= 21.5度
+        
+        X = (lng - 34.5) / 21.5 * 820 + 70
+        Y = (32.2 - lat) / 16.5 * 590 + 35
+      -->
+
+      <!-- 周辺国（薄く） -->
+      <!-- エジプト（西） -->
+      <rect x="0" y="0" width="72" height="380" fill="rgba(255,255,255,0.018)" rx="0"/>
+      <!-- ヨルダン（北西） -->
+      <rect x="72" y="0" width="120" height="90" fill="rgba(255,255,255,0.015)" rx="0"/>
+      <!-- イラク（北） -->
+      <rect x="192" y="0" width="260" height="80" fill="rgba(255,255,255,0.015)" rx="0"/>
+      <!-- クウェート（北東） -->
+      <rect x="630" y="0" width="80" height="80" fill="rgba(255,255,255,0.015)" rx="0"/>
+      <!-- イラン（右上） -->
+      <rect x="780" y="0" width="180" height="220" fill="rgba(255,255,255,0.015)" rx="0"/>
+      <!-- UAE/オマーン（東南） -->
+      <rect x="780" y="340" width="180" height="220" fill="rgba(255,255,255,0.015)" rx="0"/>
+      <!-- イエメン（南） -->
+      <rect x="100" y="580" width="680" height="80" fill="rgba(255,255,255,0.012)" rx="0"/>
+
+      <!-- 周辺国ラベル -->
+      <text x="18" y="190" fill="rgba(255,255,255,0.18)" font-size="12" font-family="Jost,sans-serif" transform="rotate(-90,18,190)">エジプト</text>
+      <text x="105" y="52" fill="rgba(255,255,255,0.18)" font-size="11" font-family="Jost,sans-serif">ヨルダン</text>
+      <text x="290" y="42" fill="rgba(255,255,255,0.18)" font-size="12" font-family="Jost,sans-serif">イラク</text>
+      <text x="648" y="48" fill="rgba(255,255,255,0.18)" font-size="10" font-family="Jost,sans-serif">クウェート</text>
+      <text x="808" y="100" fill="rgba(255,255,255,0.15)" font-size="12" font-family="Jost,sans-serif">イラン</text>
+      <text x="800" y="420" fill="rgba(255,255,255,0.15)" font-size="11" font-family="Jost,sans-serif">UAE</text>
+      <text x="800" y="480" fill="rgba(255,255,255,0.15)" font-size="11" font-family="Jost,sans-serif">オマーン</text>
+      <text x="340" y="630" fill="rgba(255,255,255,0.15)" font-size="13" font-family="Jost,sans-serif">イエメン</text>
+      <text x="810" y="640" fill="rgba(100,160,200,0.3)" font-size="11" font-family="Jost,sans-serif">アラビア海</text>
+
+      <!-- 紅海（左側の水域）lng≈36E西岸 -->
+      <path d="M 72,35 C 67,90 62,145 58,198 C 54,248 50,295 47,335
+               C 44,368 42,396 42,420 C 42,444 44,464 48,480
+               C 52,496 58,508 66,518 C 74,528 82,534 92,537"
+        fill="none" stroke="rgba(60,120,165,0.55)" stroke-width="32" stroke-linecap="round"/>
+      <text transform="rotate(-78,28,300)" x="8" y="300"
+        fill="rgba(80,145,195,0.45)" font-size="11" font-family="Jost,sans-serif" letter-spacing="3">紅海</text>
 
       <!-- アカバ湾 -->
-      <path d="M108,22 C120,36 130,54 128,70 C126,82 119,90 110,93"
-        fill="none" stroke="rgba(55,115,160,0.3)" stroke-width="9" stroke-linecap="round"/>
+      <path d="M 72,35 C 86,55 96,80 94,100 C 92,116 84,126 74,130"
+        fill="none" stroke="rgba(60,120,165,0.38)" stroke-width="10" stroke-linecap="round"/>
 
-      <!-- ペルシャ湾 -->
-      <path d="M762,30 C780,58 795,90 800,124 C804,150 800,175 788,190 C778,202 763,208 748,205"
-        fill="none" stroke="rgba(55,115,160,0.3)" stroke-width="16" stroke-linecap="round"/>
-      <text x="808" y="108" fill="rgba(80,140,185,0.25)" font-size="8" font-family="Jost,sans-serif" letter-spacing="1">GULF</text>
+      <!-- ペルシャ湾（北東の水域）-->
+      <path d="M 760,35 C 782,68 800,106 808,148 C 812,178 808,206 796,226
+               C 784,244 766,253 748,250"
+        fill="none" stroke="rgba(60,120,165,0.38)" stroke-width="18" stroke-linecap="round"/>
+      <text x="820" y="160" fill="rgba(80,145,195,0.35)" font-size="11" font-family="Jost,sans-serif">ペルシャ湾</text>
 
-      <!-- 正確な国境ライン -->
+      <!-- オマーン湾 -->
+      <path d="M 878,450 C 898,430 912,406 918,380 C 922,360 918,342 908,328"
+        fill="none" stroke="rgba(60,120,165,0.25)" stroke-width="12" stroke-linecap="round"/>
+
+      <!--
+        正確な国境ライン（添付地図準拠）
+        主要頂点の座標:
+        
+        北西ヨルダン国境: lat32°,lng37° → X=181,Y=35
+        北ヨルダン/イラク: lat32°,lng39° → X=251,Y=35
+        北イラク: lat32°,lng42° → X=357,Y=35
+        北イラク/クウェート: lat30°,lng47° → X=534,Y=107
+        クウェート突き出し: lat29.5°,lng48° → X=569,Y=125
+        北東海岸バーレーン方面: lat26°,lng50° → X=640,Y=217
+        UAE接続: lat24°,lng51.5° → X=693,Y=287
+        オマーン突き出し: lat22°,lng59° → X=960,Y=358  (画面外)
+        南東端オマーン: lat22°,lng55° → X=820,Y=358
+        南東: lat18°,lng53° → X=750,Y=494
+        南端イエメン国境: lat17°,lng53° → X=750,Y=548 ... 複雑なため简略化
+        南西端: lat17°,lng43° → X=398,Y=548
+        南西Jizan: lat16.5°,lng42.5° → X=380,Y=566
+        西岸紅海沿い北上
+      -->
       <path d="
-        M 110,93 L 140,78 L 172,62 L 206,50 L 242,42 L 278,36
-        L 315,30 L 352,28 L 390,28 L 428,30 L 464,32 L 500,30
-        L 535,32 L 568,34 L 600,32 L 630,32 L 658,34 L 685,32
-        L 712,34 L 738,30 L 762,30
-        C 776,54 790,82 798,114 C 802,140 798,166 786,184
-        C 776,200 760,208 745,208
-        L 750,228 L 754,252 L 752,276
-        L 746,300 L 736,324 L 724,348
-        L 710,372 L 694,393 L 675,413
-        L 654,432 L 630,447 L 604,459
-        L 576,467 L 547,472 L 516,470
-        L 484,464 L 452,468 L 418,464
-        L 385,460 L 352,453 L 319,444
-        L 287,433 L 257,420 L 229,406
-        L 204,390 L 182,372 L 162,348
-        L 144,322 L 126,293
-        C 113,268 106,240 104,212
-        C 102,186 105,158 108,130
-        L 110,93 Z
-      " fill="rgba(184,151,90,0.04)" stroke="rgba(184,151,90,0.32)" stroke-width="1.4" stroke-linejoin="round"/>
+        M 74,130
+        L 100,112 L 130,95 L 162,80 L 195,68
+        L 228,55 L 262,43 L 295,34 L 330,30
+        L 365,28 L 400,30 L 436,30 L 472,32
+        L 508,30 L 542,30 L 575,30 L 608,32
+        L 636,34 L 662,32 L 690,32 L 718,30 L 760,35
+        C 776,62 794,96 804,134
+        C 812,164 810,192 798,214
+        C 786,234 768,246 750,248
+        L 756,270 L 760,295 L 758,320
+        L 752,346 L 742,372 L 730,398
+        L 716,424 L 700,446 L 682,466
+        L 660,484 L 636,500 L 610,514
+        L 582,524 L 552,532 L 520,534
+        L 488,530 L 455,534 L 422,530
+        L 388,524 L 355,516 L 322,505
+        L 290,492 L 260,477 L 232,460
+        L 206,442 L 183,422 L 162,398
+        L 144,370 L 128,340
+        C 114,310 106,278 103,246
+        C 100,216 103,186 106,158
+        L 110,128 L 92,537
+        M 92,537 L 108,540
+      " fill="rgba(184,151,90,0.05)" stroke="rgba(184,151,90,0.35)" stroke-width="1.5" stroke-linejoin="round"/>
 
-      <!-- アンビエントグロー -->
-      <ellipse cx="440" cy="285" rx="270" ry="185" fill="rgba(184,151,90,0.016)" filter="url(#pb)"/>
+      <!-- サウジアラビア国内グロー -->
+      <ellipse cx="440" cy="320" rx="310" ry="210" fill="rgba(184,151,90,0.018)" filter="url(#fb3)"/>
 
-      <!-- === マーカー === -->
-      <!-- NEOM: 28°N,35°E → X≈115, Y≈122 -->
+      <!-- 地名ラベル（薄く） -->
+      <text x="380" y="320" fill="rgba(184,151,90,0.08)" font-size="38" font-family="Cormorant,serif" font-weight="300" text-anchor="middle">サウジアラビア</text>
+
+      <!-- 主要都市ドット（小・薄く） -->
+      <!-- メッカ: lat21.4,lng39.8 → X=227,Y=357 -->
+      <circle cx="227" cy="352" r="4" fill="rgba(247,242,234,0.2)"/>
+      <text x="235" y="356" fill="rgba(247,242,234,0.22)" font-size="10" font-family="Jost,sans-serif">メッカ</text>
+      <!-- メディナ: lat24.5,lng39.6 → X=221,Y=240 -->
+      <circle cx="221" cy="240" r="4" fill="rgba(247,242,234,0.18)"/>
+      <text x="229" y="244" fill="rgba(247,242,234,0.2)" font-size="10" font-family="Jost,sans-serif">メディナ</text>
+      <!-- アブハ: lat18.2,lng42.5 → X=378,Y=493 -->
+      <circle cx="380" cy="492" r="4" fill="rgba(247,242,234,0.18)"/>
+      <text x="388" y="496" fill="rgba(247,242,234,0.2)" font-size="10" font-family="Jost,sans-serif">アブハ</text>
+      <!-- ハイル: lat27.5,lng41.7 → X=346,Y=158 -->
+      <circle cx="348" cy="157" r="3.5" fill="rgba(247,242,234,0.15)"/>
+      <text x="355" y="161" fill="rgba(247,242,234,0.18)" font-size="9.5" font-family="Jost,sans-serif">ハイル</text>
+
+      <!-- ===== プロジェクトマーカー ===== -->
+
+      <!-- NEOM: lat28°N, lng35°E → X=95, Y=143 -->
       <g style="cursor:pointer" onclick="location.href='neom.html'">
-        <circle cx="120" cy="108" r="28" fill="url(#pg)" filter="url(#pb)"/>
-        <circle cx="120" cy="108" r="9" fill="#B8975A"/>
-        <circle cx="120" cy="108" r="15" fill="none" stroke="#B8975A" stroke-width="1.4" opacity="0.4">
-          <animate attributeName="r" values="15;27;15" dur="3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite"/>
+        <circle cx="110" cy="138" r="30" fill="url(#mg3)" filter="url(#fb3)"/>
+        <circle cx="110" cy="138" r="10" fill="#B8975A"/>
+        <circle cx="110" cy="138" r="16" fill="none" stroke="#B8975A" stroke-width="1.5" opacity="0.45">
+          <animate attributeName="r" values="16;28;16" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.45;0;0.45" dur="3s" repeatCount="indefinite"/>
         </circle>
-        <line x1="131" y1="106" x2="162" y2="96" stroke="rgba(184,151,90,0.4)" stroke-width="0.9"/>
-        <rect x="162" y="76" width="155" height="46" fill="rgba(10,9,7,0.95)"/>
-        <rect x="162" y="76" width="2.5" height="46" fill="#B8975A"/>
-        <text x="172" y="95" fill="#D4B06A" font-size="14.5" font-family="Cormorant,serif" font-weight="500">NEOM</text>
-        <text x="172" y="111" fill="rgba(247,242,234,0.44)" font-size="9.5" font-family="Jost,sans-serif">Tabuk · $5,000億</text>
+        <line x1="122" y1="135" x2="155" y2="124" stroke="rgba(184,151,90,0.42)" stroke-width="1"/>
+        <rect x="155" y="104" width="162" height="48" fill="rgba(10,9,7,0.94)"/>
+        <rect x="155" y="104" width="2.5" height="48" fill="#B8975A"/>
+        <text x="166" y="124" fill="#D4B06A" font-size="15" font-family="Cormorant,serif" font-weight="500">NEOM</text>
+        <text x="166" y="140" fill="rgba(247,242,234,0.46)" font-size="9.5" font-family="Jost,sans-serif">タブーク州 · $5,000億</text>
       </g>
 
-      <!-- AMAALA: 26.5°N,36.3°E → X≈130, Y≈175 -->
+      <!-- AMAALA: lat26.5°N, lng36.3°E → X=137, Y=196 -->
       <g style="cursor:pointer" onclick="location.href='amaala.html'">
-        <circle cx="126" cy="178" r="20" fill="url(#pg)" filter="url(#pb)"/>
-        <circle cx="126" cy="178" r="7" fill="#B8975A" opacity="0.9"/>
-        <circle cx="126" cy="178" r="12" fill="none" stroke="#B8975A" stroke-width="1.2" opacity="0.38">
-          <animate attributeName="r" values="12;22;12" dur="3.6s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.38;0;0.38" dur="3.6s" repeatCount="indefinite"/>
+        <circle cx="145" cy="196" r="22" fill="url(#mg3)" filter="url(#fb3)"/>
+        <circle cx="145" cy="196" r="8" fill="#B8975A" opacity="0.9"/>
+        <circle cx="145" cy="196" r="13" fill="none" stroke="#B8975A" stroke-width="1.2" opacity="0.4">
+          <animate attributeName="r" values="13;23;13" dur="3.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.4;0;0.4" dur="3.5s" repeatCount="indefinite"/>
         </circle>
-        <line x1="135" y1="176" x2="162" y2="168" stroke="rgba(184,151,90,0.35)" stroke-width="0.9"/>
-        <rect x="162" y="150" width="155" height="44" fill="rgba(10,9,7,0.95)"/>
-        <rect x="162" y="150" width="2.5" height="44" fill="#B8975A"/>
-        <text x="172" y="168" fill="#D4B06A" font-size="13.5" font-family="Cormorant,serif" font-weight="500">AMAALA</text>
-        <text x="172" y="183" fill="rgba(247,242,234,0.44)" font-size="9.5" font-family="Jost,sans-serif">Red Sea · $2,500億</text>
+        <line x1="155" y1="194" x2="183" y2="187" stroke="rgba(184,151,90,0.38)" stroke-width="1"/>
+        <rect x="183" y="168" width="160" height="46" fill="rgba(10,9,7,0.94)"/>
+        <rect x="183" y="168" width="2.5" height="46" fill="#B8975A"/>
+        <text x="194" y="186" fill="#D4B06A" font-size="14" font-family="Cormorant,serif" font-weight="500">AMAALA</text>
+        <text x="194" y="202" fill="rgba(247,242,234,0.46)" font-size="9.5" font-family="Jost,sans-serif">紅海沿岸 · $2,500億</text>
       </g>
 
-      <!-- Red Sea Global: 24.8°N,37.2°E → X≈162, Y≈228 -->
+      <!-- Red Sea Global: lat24.8°N, lng37.2°E → X=181, Y=252 -->
       <g style="cursor:pointer" onclick="location.href='redsea.html'">
-        <circle cx="132" cy="248" r="17" fill="url(#pg)" filter="url(#pb)"/>
-        <circle cx="132" cy="248" r="6" fill="#B8975A" opacity="0.85"/>
-        <circle cx="132" cy="248" r="10" fill="none" stroke="#B8975A" stroke-width="1.1" opacity="0.35">
-          <animate attributeName="r" values="10;19;10" dur="4.2s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.35;0;0.35" dur="4.2s" repeatCount="indefinite"/>
+        <circle cx="152" cy="268" r="18" fill="url(#mg3)" filter="url(#fb3)"/>
+        <circle cx="152" cy="268" r="7" fill="#B8975A" opacity="0.85"/>
+        <circle cx="152" cy="268" r="11" fill="none" stroke="#B8975A" stroke-width="1.2" opacity="0.36">
+          <animate attributeName="r" values="11;20;11" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.36;0;0.36" dur="4s" repeatCount="indefinite"/>
         </circle>
-        <line x1="140" y1="246" x2="162" y2="240" stroke="rgba(184,151,90,0.3)" stroke-width="0.8"/>
-        <rect x="162" y="222" width="160" height="44" fill="rgba(10,9,7,0.95)"/>
-        <rect x="162" y="222" width="2.5" height="44" fill="#B8975A"/>
-        <text x="172" y="240" fill="#D4B06A" font-size="12" font-family="Cormorant,serif" font-weight="500">Red Sea Global</text>
-        <text x="172" y="255" fill="rgba(247,242,234,0.44)" font-size="9.5" font-family="Jost,sans-serif">SAR 1兆+ · Eco</text>
+        <line x1="161" y1="266" x2="188" y2="258" stroke="rgba(184,151,90,0.32)" stroke-width="0.9"/>
+        <rect x="188" y="240" width="168" height="44" fill="rgba(10,9,7,0.94)"/>
+        <rect x="188" y="240" width="2.5" height="44" fill="#B8975A"/>
+        <text x="198" y="258" fill="#D4B06A" font-size="12.5" font-family="Cormorant,serif" font-weight="500">Red Sea Global</text>
+        <text x="198" y="273" fill="rgba(247,242,234,0.46)" font-size="9.5" font-family="Jost,sans-serif">SAR 1兆+ · エコ</text>
       </g>
 
-      <!-- AlUla: 26.6°N,37.9°E → X≈186, Y≈171 -->
+      <!-- AlUla: lat26.6°N, lng37.9°E → X=203, Y=192 -->
       <g>
-        <circle cx="195" cy="182" r="7" fill="rgba(184,151,90,0.08)"/>
-        <circle cx="195" cy="182" r="3" fill="rgba(184,151,90,0.5)"/>
-        <circle cx="195" cy="182" r="7" fill="none" stroke="rgba(184,151,90,0.28)" stroke-width="0.8"/>
-        <text x="205" y="178" fill="rgba(247,242,234,0.4)" font-size="10.5" font-family="Cormorant,serif">AlUla</text>
-        <text x="205" y="190" fill="rgba(247,242,234,0.22)" font-size="8.5" font-family="Jost,sans-serif">UNESCO</text>
+        <circle cx="210" cy="205" r="7" fill="rgba(184,151,90,0.08)"/>
+        <circle cx="210" cy="205" r="3" fill="rgba(184,151,90,0.5)"/>
+        <circle cx="210" cy="205" r="7" fill="none" stroke="rgba(184,151,90,0.28)" stroke-width="0.8"/>
+        <text x="220" y="201" fill="rgba(247,242,234,0.42)" font-size="11" font-family="Cormorant,serif">AlUla</text>
+        <text x="220" y="213" fill="rgba(247,242,234,0.24)" font-size="8.5" font-family="Jost,sans-serif">UNESCO</text>
       </g>
 
-      <!-- Jeddah: 21.5°N,39.2°E → X≈208, Y≈334 -->
+      <!-- Jeddah: lat21.5°N, lng39.2°E → X=210, Y=354 -->
       <g style="cursor:pointer" onclick="location.href='market.html'">
-        <circle cx="130" cy="330" r="12" fill="rgba(184,151,90,0.08)"/>
-        <circle cx="130" cy="330" r="5" fill="rgba(184,151,90,0.7)"/>
-        <circle cx="130" cy="330" r="12" fill="none" stroke="rgba(184,151,90,0.38)" stroke-width="0.9"/>
-        <line x1="142" y1="328" x2="162" y2="322" stroke="rgba(184,151,90,0.25)" stroke-width="0.8"/>
-        <rect x="162" y="305" width="144" height="42" fill="rgba(10,9,7,0.9)"/>
-        <text x="172" y="322" fill="rgba(247,242,234,0.7)" font-size="13" font-family="Cormorant,serif">Jeddah</text>
-        <text x="172" y="337" fill="rgba(247,242,234,0.36)" font-size="9.5" font-family="Jost,sans-serif">不動産 前年比+42%</text>
+        <circle cx="160" cy="350" r="12" fill="rgba(184,151,90,0.08)"/>
+        <circle cx="160" cy="350" r="5" fill="rgba(184,151,90,0.7)"/>
+        <circle cx="160" cy="350" r="12" fill="none" stroke="rgba(184,151,90,0.38)" stroke-width="0.9"/>
+        <line x1="173" y1="348" x2="196" y2="341" stroke="rgba(184,151,90,0.26)" stroke-width="0.9"/>
+        <rect x="196" y="324" width="142" height="42" fill="rgba(10,9,7,0.9)"/>
+        <text x="207" y="341" fill="rgba(247,242,234,0.72)" font-size="13" font-family="Cormorant,serif">ジェッダ</text>
+        <text x="207" y="356" fill="rgba(247,242,234,0.38)" font-size="9.5" font-family="Jost,sans-serif">不動産 前年比+42%</text>
       </g>
 
-      <!-- Riyadh: 24.7°N,46.7°E → X≈497, Y≈232 -->
+      <!-- Riyadh: lat24.7°N, lng46.7°E → X=527, Y=256 -->
       <g style="cursor:pointer" onclick="location.href='market.html'">
-        <circle cx="497" cy="262" r="34" fill="url(#pg)" filter="url(#pb)"/>
-        <circle cx="497" cy="262" r="12" fill="#B8975A"/>
-        <circle cx="497" cy="262" r="22" fill="none" stroke="#B8975A" stroke-width="1.8" opacity="0.35">
-          <animate attributeName="r" values="22;38;22" dur="4.5s" repeatCount="indefinite"/>
+        <circle cx="527" cy="268" r="36" fill="url(#mg3)" filter="url(#fb3)"/>
+        <circle cx="527" cy="268" r="13" fill="#B8975A"/>
+        <circle cx="527" cy="268" r="24" fill="none" stroke="#B8975A" stroke-width="1.8" opacity="0.35">
+          <animate attributeName="r" values="24;40;24" dur="4.5s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0.35;0;0.35" dur="4.5s" repeatCount="indefinite"/>
         </circle>
-        <line x1="497" y1="276" x2="497" y2="300" stroke="rgba(184,151,90,0.4)" stroke-width="1"/>
-        <rect x="404" y="300" width="186" height="48" fill="rgba(10,9,7,0.96)"/>
-        <rect x="404" y="300" width="186" height="2.5" fill="#B8975A"/>
-        <text x="497" y="320" fill="#D4B06A" font-size="17" font-family="Cormorant,serif" font-weight="500" text-anchor="middle">Riyadh</text>
-        <text x="497" y="338" fill="rgba(247,242,234,0.44)" font-size="9" font-family="Jost,sans-serif" letter-spacing="0.5" text-anchor="middle">King Salman · MURABBA · Expo 2030</text>
+        <line x1="527" y1="284" x2="527" y2="308" stroke="rgba(184,151,90,0.42)" stroke-width="1"/>
+        <rect x="430" y="308" width="194" height="50" fill="rgba(10,9,7,0.96)"/>
+        <rect x="430" y="308" width="194" height="2.5" fill="#B8975A"/>
+        <text x="527" y="328" fill="#D4B06A" font-size="18" font-family="Cormorant,serif" font-weight="500" text-anchor="middle">リヤド</text>
+        <text x="527" y="346" fill="rgba(247,242,234,0.46)" font-size="9" font-family="Jost,sans-serif" text-anchor="middle">King Salman · MURABBA · Expo 2030</text>
       </g>
 
-      <!-- Diriyah: リヤド北西すぐ -->
+      <!-- Diriyah: リヤドの北西 lat24.74°N, lng46.57°E → X=523, Y=254 -->
       <g style="cursor:pointer" onclick="location.href='diriyah.html'">
-        <circle cx="468" cy="244" r="9" fill="rgba(184,151,90,0.08)"/>
-        <circle cx="468" cy="244" r="3.5" fill="rgba(184,151,90,0.65)"/>
-        <circle cx="468" cy="244" r="9" fill="none" stroke="rgba(184,151,90,0.33)" stroke-width="0.9"/>
-        <line x1="460" y1="242" x2="415" y2="234" stroke="rgba(184,151,90,0.22)" stroke-width="0.7"/>
-        <text x="300" y="230" fill="rgba(247,242,234,0.52)" font-size="11" font-family="Cormorant,serif">Diriyah</text>
-        <text x="300" y="242" fill="rgba(247,242,234,0.26)" font-size="8.5" font-family="Jost,sans-serif">UNESCO · Culture</text>
+        <circle cx="498" cy="253" r="9" fill="rgba(184,151,90,0.08)"/>
+        <circle cx="498" cy="253" r="3.5" fill="rgba(184,151,90,0.65)"/>
+        <circle cx="498" cy="253" r="9" fill="none" stroke="rgba(184,151,90,0.34)" stroke-width="0.9"/>
+        <line x1="490" y1="251" x2="445" y2="242" stroke="rgba(184,151,90,0.22)" stroke-width="0.8"/>
+        <text x="330" y="238" fill="rgba(247,242,234,0.54)" font-size="11.5" font-family="Cormorant,serif">ディルイーヤ</text>
+        <text x="330" y="250" fill="rgba(247,242,234,0.28)" font-size="8.5" font-family="Jost,sans-serif">UNESCO · 文化遺産</text>
       </g>
 
-      <!-- Qiddiyah: リヤド南西 -->
+      <!-- Qiddiyah: lat24.4°N, lng46.3°E → X=512, Y=318 -->
       <g style="cursor:pointer" onclick="location.href='qiddiyah.html'">
-        <circle cx="462" cy="304" r="10" fill="rgba(184,151,90,0.08)"/>
-        <circle cx="462" cy="304" r="4" fill="rgba(184,151,90,0.65)"/>
-        <circle cx="462" cy="304" r="10" fill="none" stroke="rgba(184,151,90,0.33)" stroke-width="0.9"/>
-        <line x1="452" y1="306" x2="404" y2="318" stroke="rgba(184,151,90,0.22)" stroke-width="0.7"/>
-        <text x="295" y="314" fill="rgba(247,242,234,0.52)" font-size="11" font-family="Cormorant,serif">Qiddiyah</text>
-        <text x="295" y="326" fill="rgba(247,242,234,0.26)" font-size="8.5" font-family="Jost,sans-serif">Entertainment</text>
+        <circle cx="500" cy="318" r="10" fill="rgba(184,151,90,0.08)"/>
+        <circle cx="500" cy="318" r="4" fill="rgba(184,151,90,0.65)"/>
+        <circle cx="500" cy="318" r="10" fill="none" stroke="rgba(184,151,90,0.34)" stroke-width="0.9"/>
+        <line x1="490" y1="320" x2="445" y2="334" stroke="rgba(184,151,90,0.22)" stroke-width="0.8"/>
+        <text x="318" y="330" fill="rgba(247,242,234,0.54)" font-size="11.5" font-family="Cormorant,serif">キディーヤ</text>
+        <text x="318" y="342" fill="rgba(247,242,234,0.28)" font-size="8.5" font-family="Jost,sans-serif">エンタメ · SAR 500億</text>
       </g>
 
-      <!-- Dammam: 26.4°N,50.1°E → X≈640, Y≈206 -->
+      <!-- Dammam: lat26.4°N, lng50.1°E → X=657, Y=218 -->
       <g>
-        <circle cx="656" cy="218" r="9" fill="rgba(184,151,90,0.07)"/>
-        <circle cx="656" cy="218" r="3.5" fill="rgba(184,151,90,0.42)"/>
-        <circle cx="656" cy="218" r="9" fill="none" stroke="rgba(184,151,90,0.24)" stroke-width="0.8"/>
-        <text x="668" y="214" fill="rgba(247,242,234,0.3)" font-size="10.5" font-family="Cormorant,serif">Dammam</text>
+        <circle cx="657" cy="226" r="9" fill="rgba(184,151,90,0.07)"/>
+        <circle cx="657" cy="226" r="3.5" fill="rgba(184,151,90,0.42)"/>
+        <circle cx="657" cy="226" r="9" fill="none" stroke="rgba(184,151,90,0.24)" stroke-width="0.8"/>
+        <text x="669" y="222" fill="rgba(247,242,234,0.32)" font-size="10.5" font-family="Cormorant,serif">ダンマーム</text>
+        <text x="669" y="234" fill="rgba(247,242,234,0.2)" font-size="8.5" font-family="Jost,sans-serif">東部州</text>
+      </g>
+
+      <!-- タブーク: lat28.4°N, lng36.6°E → X=155, Y=125 -->
+      <g>
+        <circle cx="165" cy="126" r="5" fill="rgba(247,242,234,0.12)"/>
+        <text x="173" y="130" fill="rgba(247,242,234,0.2)" font-size="9.5" font-family="Jost,sans-serif">タブーク</text>
       </g>
 
       <!-- 凡例 -->
-      <g transform="translate(686,420)">
-        <rect width="232" height="110" fill="rgba(10,9,7,0.95)" stroke="rgba(184,151,90,0.2)" stroke-width="1"/>
-        <text x="14" y="24" fill="rgba(184,151,90,0.62)" font-size="8.5" font-family="Jost,sans-serif" letter-spacing="3.5">LEGEND</text>
-        <line x1="14" y1="32" x2="218" y2="32" stroke="rgba(184,151,90,0.13)" stroke-width="0.7"/>
-        <circle cx="28" cy="54" r="8.5" fill="rgba(184,151,90,0.1)" stroke="#B8975A" stroke-width="1.3"/>
-        <circle cx="28" cy="54" r="3.5" fill="#B8975A"/>
-        <text x="44" y="58" fill="rgba(247,242,234,0.56)" font-size="10.5" font-family="Jost,sans-serif">ギガプロジェクト</text>
-        <circle cx="28" cy="80" r="5.5" fill="rgba(184,151,90,0.07)" stroke="rgba(184,151,90,0.42)" stroke-width="0.9"/>
-        <circle cx="28" cy="80" r="2.5" fill="rgba(184,151,90,0.56)"/>
-        <text x="44" y="84" fill="rgba(247,242,234,0.56)" font-size="10.5" font-family="Jost,sans-serif">都市・主要拠点</text>
-        <text x="14" y="104" fill="rgba(247,242,234,0.22)" font-size="8.5" font-family="Jost,sans-serif">クリックで詳細ページへ</text>
+      <g transform="translate(690,480)">
+        <rect width="244" height="128" fill="rgba(10,9,7,0.95)" stroke="rgba(184,151,90,0.22)" stroke-width="1"/>
+        <text x="14" y="26" fill="rgba(184,151,90,0.65)" font-size="8.5" font-family="Jost,sans-serif" letter-spacing="3.5">凡例</text>
+        <line x1="14" y1="34" x2="230" y2="34" stroke="rgba(184,151,90,0.14)" stroke-width="0.7"/>
+        <circle cx="28" cy="56" r="9" fill="rgba(184,151,90,0.1)" stroke="#B8975A" stroke-width="1.3"/>
+        <circle cx="28" cy="56" r="4" fill="#B8975A"/>
+        <text x="44" y="60" fill="rgba(247,242,234,0.58)" font-size="11" font-family="Jost,sans-serif">ギガプロジェクト</text>
+        <circle cx="28" cy="83" r="6.5" fill="rgba(184,151,90,0.07)" stroke="rgba(184,151,90,0.42)" stroke-width="0.9"/>
+        <circle cx="28" cy="83" r="3" fill="rgba(184,151,90,0.58)"/>
+        <text x="44" y="87" fill="rgba(247,242,234,0.58)" font-size="11" font-family="Jost,sans-serif">主要都市</text>
+        <circle cx="28" cy="108" r="4.5" fill="rgba(247,242,234,0.12)"/>
+        <text x="44" y="112" fill="rgba(247,242,234,0.45)" font-size="11" font-family="Jost,sans-serif">その他の都市</text>
+        <text x="14" y="124" fill="rgba(247,242,234,0.2)" font-size="8" font-family="Jost,sans-serif">クリックで詳細ページへ</text>
       </g>
-      <text x="16" y="572" fill="rgba(247,242,234,0.14)" font-size="8" font-family="Jost,sans-serif" letter-spacing="2">SAUDI INSIGHT Investment Map — Desert Bamboo Global Japan Office</text>
+
+      <text x="18" y="652" fill="rgba(247,242,234,0.14)" font-size="8" font-family="Jost,sans-serif" letter-spacing="2">SAUDI INSIGHT Investment Map — Desert Bamboo Global Japan Office · 2026</text>
     </svg>
   </div>
   <div style="margin-top:12px;display:flex;gap:3px;flex-wrap:wrap">
