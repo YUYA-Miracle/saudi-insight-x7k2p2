@@ -84,6 +84,15 @@
   /* Chart grids */
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
 }
+
+@media(max-width:768px){
+  /* Vision 2030 PIF推移グラフ */
+  [style*="grid-template-columns:48px 1fr 72px"]{
+    display:flex !important;
+    gap:8px;
+    flex-wrap:nowrap;
+  }
+}
 </style>
 </head>
 <body>
