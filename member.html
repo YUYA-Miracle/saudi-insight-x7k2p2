@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 .member-hero{position:relative;min-height:500px;display:flex;align-items:flex-end;overflow:hidden;margin-top:68px;}
-.member-hero .bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80') center 40%/cover;animation:heroZoom 14s ease-out forwards;}
+.member-hero .bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1548585744-0f5b97c3b3ab-5ea266f8880c?w=1800&q=80') center 40%/cover;animation:heroZoom 14s ease-out forwards;}
 .member-hero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.95) 0%,rgba(13,12,10,.4) 65%,rgba(13,12,10,.12) 100%);}
 .member-hero-inner{position:relative;z-index:2;padding:0 64px 64px;}
 .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:52px;border:1px solid var(--border);}
@@ -32,6 +32,11 @@
 .form-note{font-family:var(--fs);font-size:11px;color:rgba(247,242,234,.3);line-height:1.9;margin-top:22px;padding-top:22px;border-top:1px solid var(--border);}
 .form-submit{width:100%;padding:19px;background:var(--sand);border:none;color:var(--black);font-family:var(--fs);font-size:11px;letter-spacing:.4em;text-transform:uppercase;font-weight:400;margin-top:28px;transition:background .3s,transform .2s;}
 .form-submit:hover{background:var(--sand2);transform:translateY(-2px);}
+
+@media(max-width:768px){
+  .page-banner-text{padding:0 20px 36px;}
+  .page-title{font-size:clamp(28px,8vw,48px);}
+}
 </style>
 </head>
 <body>

@@ -23,12 +23,17 @@
 .str-bar{background:linear-gradient(180deg,var(--sand),rgba(42,74,56,.6));border-radius:2px;}
 .str-title{font-family:var(--fb);font-size:15px;font-weight:700;color:var(--ivory);margin-bottom:8px;}
 .str-text{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.62);line-height:2;}
+
+@media(max-width:768px){
+  .page-banner-text{padding:0 20px 36px;}
+  .page-title{font-size:clamp(28px,8vw,48px);}
+}
 </style>
 </head>
 <body data-nav-solid="1">
 <script src="nav.js"></script>
 <div class="page-banner">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1604964432806-254d07c11f32?w=1800&q=80')"></div>
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1548585744-0f5b97c3b3ab-254d07c11f32?w=1800&q=80')"></div>
   <div class="ov"></div>
   <div class="page-banner-text">
     <div class="page-eyebrow">About Desert Bamboo Global</div>

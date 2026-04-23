@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 .hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:flex-end;overflow:hidden;}
-.hero .bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80') center/cover;animation:heroZoom 18s ease-out forwards;}
+.hero .bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1548585744-0f5b97c3b3ab-5ea266f8880c?w=1800&q=80') center/cover;animation:heroZoom 18s ease-out forwards;}
 .hero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.97) 0%,rgba(13,12,10,.45) 42%,rgba(13,12,10,.08) 100%),linear-gradient(to right,rgba(13,12,10,.35) 0%,transparent 65%);}
 .hero-content{position:relative;z-index:2;padding:0 64px 90px;max-width:1280px;width:100%;}
 .hero-eyebrow{font-family:var(--fs);font-size:9.5px;letter-spacing:.55em;color:var(--sand);font-weight:400;margin-bottom:22px;text-transform:uppercase;display:flex;align-items:center;gap:16px;opacity:0;animation:riseIn .9s .4s ease forwards;}
@@ -51,6 +51,26 @@
 .news-card.feat .news-h2{font-size:25px;}
 .news-exc2{font-family:var(--fb);font-size:12.5px;color:rgba(247,242,234,.55);line-height:1.85;margin-top:10px;}
 .news-date2{font-family:var(--fs);font-size:9px;letter-spacing:.22em;color:rgba(247,242,234,.3);margin-top:16px;text-transform:uppercase;}
+
+@media(max-width:768px){
+  .hero-content{padding:0 20px 72px;}
+  .hero-title{font-size:clamp(44px,11vw,72px);}
+  .hero-sub{font-size:13px;}
+  .stats-bar{grid-template-columns:1fr 1fr;}
+  .stat-cell{padding:22px 16px;}
+  .stat-n{font-size:34px;}
+  .stat-d{font-size:12px;}
+  .proj-grid{grid-template-columns:1fr;height:auto;}
+  .proj-card.tall{grid-row:auto;}
+  .proj-card .bg{min-height:260px;}
+  .news-ed{grid-template-columns:1fr;}
+  .news-card.feat .news-thumb,.news-card .news-thumb{height:200px;}
+  .scroll-ind{display:none;}
+}
+@media(max-width:480px){
+  .stats-bar{grid-template-columns:1fr;}
+  .stat-cell{border-right:none;border-bottom:1px solid var(--border);}
+}
 </style>
 </head>
 <body>
@@ -72,7 +92,7 @@
   <div class="stat-cell"><div class="stat-n">2030</div><div class="stat-l">Deadline</div><div class="stat-d">参入機会のタイムリミット</div></div>
 </div>
 <div class="img-split">
-  <div class="img-panel"><div class="img-bg" style="background-image:url('https://images.unsplash.com/photo-1597435877853-5c8c433e0c51?w=1200&q=80')"></div><span class="img-caption">Riyadh Skyline, Saudi Arabia</span></div>
+  <div class="img-panel"><div class="img-bg" style="background-image:url('https://images.unsplash.com/photo-1548585744-0f5b97c3b3ab-5c8c433e0c51?w=1200&q=80')"></div><span class="img-caption">Riyadh Skyline, Saudi Arabia</span></div>
   <div class="text-panel">
     <div class="eyebrow">Concept</div>
     <h2 class="display">なぜ今、<em>サウジアラビア</em>なのか</h2>
@@ -88,7 +108,7 @@
   <div class="proj-grid">
     <a class="proj-card tall" href="neom.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=1200&q=80')"></div><div class="proj-info"><div class="proj-tag">Tabuk · Flagship</div><div class="proj-name">NEOM &amp;<br><em>The Line</em></div><div class="proj-scale">$5,000億 · 26,500km²</div></div></a>
     <a class="proj-card" href="amaala.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1601459427108-47e20b727fc6?w=900&q=80')"></div><div class="proj-info"><div class="proj-tag">Red Sea · Wellness</div><div class="proj-name"><em>AMAALA</em></div><div class="proj-scale">$2,500億</div></div></a>
-    <a class="proj-card" href="redsea.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?w=900&q=80')"></div><div class="proj-info"><div class="proj-tag">Red Sea · Eco</div><div class="proj-name"><em>Red Sea Global</em></div><div class="proj-scale">SAR 1兆+</div></div></a>
+    <a class="proj-card" href="redsea.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1568094937380-34f5e0f20ae3-3c830dcef090?w=900&q=80')"></div><div class="proj-info"><div class="proj-tag">Red Sea · Eco</div><div class="proj-name"><em>Red Sea Global</em></div><div class="proj-scale">SAR 1兆+</div></div></a>
   </div>
   <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn-ghost" href="diriyah.html">Diriyah →</a><a class="btn-ghost" href="qiddiyah.html">Qiddiyah →</a><a class="btn-ghost" href="market.html">全プロジェクト →</a></div>
 </div>
@@ -96,9 +116,9 @@
   <div class="eyebrow">Latest News</div>
   <h2 class="display">最新<em>動向</em></h2>
   <div class="news-ed">
-    <a class="news-card feat" href="news.html"><div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1604964432806-254d07c11f32?w=900&q=80')"></div><div class="news-body"><div class="news-cat2">Market Update</div><div class="news-h2">NEOM CEO交代の真相と、ギガプロジェクト縮小計画が示す「次のフェーズ」への移行</div><div class="news-exc2">象徴的インフラ整備期から外国資本誘致期へ——Desert Bamboo Global日本事務局が現地情報をもとに解説する。</div><div class="news-date2">Nov 28, 2025</div></div></a>
+    <a class="news-card feat" href="news.html"><div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1548585744-0f5b97c3b3ab-254d07c11f32?w=900&q=80')"></div><div class="news-body"><div class="news-cat2">Market Update</div><div class="news-h2">NEOM CEO交代の真相と、ギガプロジェクト縮小計画が示す「次のフェーズ」への移行</div><div class="news-exc2">象徴的インフラ整備期から外国資本誘致期へ——Desert Bamboo Global日本事務局が現地情報をもとに解説する。</div><div class="news-date2">Nov 28, 2025</div></div></a>
     <a class="news-card" href="news.html"><div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1601459427108-47e20b727fc6?w=700&q=80')"></div><div class="news-body"><div class="news-cat2">Project</div><div class="news-h2">AMAALA第一期区画販売開始。外国法人の参入要件が明確化</div><div class="news-date2">Oct 15, 2025</div></div></a>
-    <a class="news-card" href="news.html"><div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=700&q=80')"></div><div class="news-body"><div class="news-cat2">Investment</div><div class="news-h2">サウジ不動産、外国人購入が前年比+42%。ジェッダ高級コンドが牽引</div><div class="news-date2">Oct 03, 2025</div></div></a>
+    <a class="news-card" href="news.html"><div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1548585744-0f5b97c3b3ab-7efd050a4d0e?w=700&q=80')"></div><div class="news-body"><div class="news-cat2">Investment</div><div class="news-h2">サウジ不動産、外国人購入が前年比+42%。ジェッダ高級コンドが牽引</div><div class="news-date2">Oct 03, 2025</div></div></a>
   </div>
   <div style="margin-top:24px;text-align:right"><a class="btn-ghost" href="news.html">すべてのニュース →</a></div>
 </div>
