@@ -93,6 +93,11 @@
     flex-wrap:nowrap;
   }
 }
+
+/* プロジェクトカードグリッド */
+@media(max-width:1279px){
+  .proj-card-grid{grid-template-columns:1fr !important;grid-template-rows:auto !important;}
+}
 </style>
 </head>
 <body>
@@ -130,7 +135,7 @@
   <p class="body-copy" style="margin-bottom:40px">Vision 2030が生み出した国家規模のメガプロジェクト群。それぞれが独自のコンセプトを持ち、日本の投資家に異なる機会を提供している。</p>
 
   <!-- メインカード2つ + サイド2つ -->
-  <div style="display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:340px 300px;gap:3px">
+  <div class="proj-card-grid" style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:320px 280px;gap:3px">
 
     <!-- NEOM 大カード -->
     <a href="neom.html" style="position:relative;overflow:hidden;grid-row:1/2;text-decoration:none;display:block">
@@ -178,7 +183,7 @@
 
     <!-- Qiddiyah -->
     <a href="qiddiyah.html" style="position:relative;overflow:hidden;text-decoration:none;display:block">
-      <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80');background-size:cover;background-position:center;transition:transform .7s"></div>
+      <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80');background-size:cover;background-position:center;transition:transform .7s"></div>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.9) 0%,transparent 55%)"></div>
       <div style="position:absolute;bottom:0;left:0;right:0;padding:22px 26px">
         <div style="font-family:var(--fs);font-size:7.5px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:7px">Riyadh · Entertainment · SAR 500億</div>
