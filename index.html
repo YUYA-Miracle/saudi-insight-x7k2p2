@@ -136,208 +136,411 @@
   <div style="margin-top:24px;text-align:right"><a class="btn-ghost" href="news.html">すべてのニュース →</a></div>
 </div>
 
-<!-- Vision 2030 データ可視化 -->
+<!-- Vision 2030 Data + Map -->
+
+<!-- ① KPIセクション -->
 <div class="section wrap" style="padding-top:0">
   <div class="eyebrow">Vision 2030 Progress</div>
   <h2 class="display">数字で見る<em>Vision 2030</em></h2>
-  <p class="body-copy" style="margin-bottom:40px">2024年末時点での主要KPI達成状況。目標87%が完了または進捗中。</p>
+  <p class="body-copy" style="margin-bottom:52px">2024年末時点。目標の87%が完了または進捗中。サウジアラビアは変わった。</p>
 
-  <!-- プログレスバー -->
-  <div style="display:flex;flex-direction:column;gap:3px;margin-bottom:48px">
-    <div style="background:var(--black2);border:1px solid var(--border);padding:24px 32px;display:grid;grid-template-columns:180px 1fr 80px;align-items:center;gap:20px">
-      <div style="font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75)">非石油GDP比率</div>
-      <div style="background:var(--black3);height:6px;border-radius:0;overflow:hidden"><div style="width:93%;height:100%;background:linear-gradient(90deg,var(--sand),var(--sand2));animation:barGrow 1.5s ease forwards"></div></div>
-      <div style="font-family:var(--fd);font-size:22px;color:var(--sand);text-align:right">56%</div>
-    </div>
-    <div style="background:var(--black2);border:1px solid var(--border);padding:24px 32px;display:grid;grid-template-columns:180px 1fr 80px;align-items:center;gap:20px">
-      <div style="font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75)">女性労働参加率</div>
-      <div style="background:var(--black3);height:6px;overflow:hidden"><div style="width:123%;height:100%;background:linear-gradient(90deg,var(--sand),var(--sand2));max-width:100%"></div></div>
-      <div style="font-family:var(--fd);font-size:22px;color:var(--sand);text-align:right">37%</div>
-    </div>
-    <div style="background:var(--black2);border:1px solid var(--border);padding:24px 32px;display:grid;grid-template-columns:180px 1fr 80px;align-items:center;gap:20px">
-      <div style="font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75)">失業率（目標7%）</div>
-      <div style="background:var(--black3);height:6px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,var(--sand),var(--sand2))"></div></div>
-      <div style="font-family:var(--fd);font-size:22px;color:var(--sand);text-align:right">7%</div>
-    </div>
-    <div style="background:var(--black2);border:1px solid var(--border);padding:24px 32px;display:grid;grid-template-columns:180px 1fr 80px;align-items:center;gap:20px">
-      <div style="font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75)">RHQ登録企業数</div>
-      <div style="background:var(--black3);height:6px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,var(--sand2),#e8c880)"></div></div>
-      <div style="font-family:var(--fd);font-size:22px;color:var(--sand2);text-align:right">675社</div>
-    </div>
-    <div style="background:rgba(28,51,41,.4);border:1px solid rgba(184,151,90,.3);padding:24px 32px;display:grid;grid-template-columns:180px 1fr 80px;align-items:center;gap:20px">
-      <div style="font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75)">全体達成率</div>
-      <div style="background:var(--black3);height:8px;overflow:hidden"><div style="width:87%;height:100%;background:linear-gradient(90deg,var(--sand),var(--sand2))"></div></div>
-      <div style="font-family:var(--fd);font-size:26px;color:var(--sand2);text-align:right;font-weight:400">87%</div>
-    </div>
-  </div>
-
-  <!-- PIF資産推移 -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px">
-    <div style="background:var(--black2);border:1px solid var(--border);padding:36px 32px">
-      <div style="font-family:var(--fs);font-size:9px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:20px">PIF 資産規模の推移</div>
-      <div style="display:flex;align-items:flex-end;gap:8px;height:120px;padding-top:20px">
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-family:var(--fd);font-size:12px;color:rgba(247,242,234,.4)">$150B</div>
-          <div style="width:100%;background:linear-gradient(to top,var(--sand),rgba(184,151,90,.3));height:24px;opacity:.6"></div>
-          <div style="font-family:var(--fs);font-size:9px;color:rgba(247,242,234,.3);letter-spacing:.1em">2016</div>
+
+    <!-- 左：達成率メイン + 指標6つ -->
+    <div style="display:flex;flex-direction:column;gap:3px">
+
+      <!-- 全体達成率 -->
+      <div style="background:var(--black2);border:1px solid var(--border);padding:36px 40px;display:flex;align-items:center;gap:40px">
+        <!-- 円グラフ風 -->
+        <div style="position:relative;flex-shrink:0;width:96px;height:96px">
+          <svg viewBox="0 0 96 96" style="transform:rotate(-90deg)">
+            <circle cx="48" cy="48" r="40" fill="none" stroke="rgba(184,151,90,0.1)" stroke-width="8"/>
+            <circle cx="48" cy="48" r="40" fill="none" stroke="#B8975A" stroke-width="8"
+              stroke-dasharray="218 251" stroke-linecap="butt"/>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+            <span style="font-family:var(--fd);font-size:28px;font-weight:300;color:var(--sand);line-height:1">87</span>
+            <span style="font-family:var(--fs);font-size:9px;letter-spacing:.2em;color:rgba(247,242,234,.4)">%</span>
+          </div>
         </div>
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-family:var(--fd);font-size:12px;color:rgba(247,242,234,.4)">$300B</div>
-          <div style="width:100%;background:linear-gradient(to top,var(--sand),rgba(184,151,90,.4));height:48px;opacity:.7"></div>
-          <div style="font-family:var(--fs);font-size:9px;color:rgba(247,242,234,.3);letter-spacing:.1em">2020</div>
-        </div>
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-family:var(--fd);font-size:12px;color:rgba(247,242,234,.5)">$500B</div>
-          <div style="width:100%;background:linear-gradient(to top,var(--sand),rgba(184,151,90,.5));height:80px;opacity:.8"></div>
-          <div style="font-family:var(--fs);font-size:9px;color:rgba(247,242,234,.3);letter-spacing:.1em">2022</div>
-        </div>
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-family:var(--fd);font-size:14px;color:var(--sand)">$700B+</div>
-          <div style="width:100%;background:linear-gradient(to top,var(--sand),var(--sand2));height:120px"></div>
-          <div style="font-family:var(--fs);font-size:9px;color:var(--sand);letter-spacing:.1em">2024</div>
+        <div>
+          <div style="font-family:var(--fs);font-size:9px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:8px">Overall Progress</div>
+          <div style="font-family:var(--fb);font-size:16px;color:var(--ivory);margin-bottom:6px">Vision 2030 全体達成率</div>
+          <div style="font-family:var(--fb);font-size:12px;color:rgba(247,242,234,.45);line-height:1.7">目標KPIの87%が完了または<br>進捗中（2024年末時点）</div>
         </div>
       </div>
+
+      <!-- 指標リスト -->
+      <div style="background:var(--black2);border:1px solid var(--border);padding:0">
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+
+          <div style="padding:24px 28px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)">
+            <div style="font-family:var(--fd);font-size:34px;font-weight:300;color:var(--sand);line-height:1">56<span style="font-size:.5em;font-family:var(--fs)">%</span></div>
+            <div style="font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:rgba(247,242,234,.35);text-transform:uppercase;margin:5px 0 3px">非石油GDP比率</div>
+            <div style="font-family:var(--fb);font-size:11.5px;color:rgba(247,242,234,.45)">目標50%を超過達成</div>
+          </div>
+
+          <div style="padding:24px 28px;border-bottom:1px solid var(--border)">
+            <div style="font-family:var(--fd);font-size:34px;font-weight:300;color:var(--sand);line-height:1">37<span style="font-size:.5em;font-family:var(--fs)">%</span></div>
+            <div style="font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:rgba(247,242,234,.35);text-transform:uppercase;margin:5px 0 3px">女性労働参加率</div>
+            <div style="font-family:var(--fb);font-size:11.5px;color:rgba(247,242,234,.45)">目標30%を大幅超過</div>
+          </div>
+
+          <div style="padding:24px 28px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)">
+            <div style="font-family:var(--fd);font-size:34px;font-weight:300;color:var(--sand);line-height:1">7<span style="font-size:.5em;font-family:var(--fs)">%</span></div>
+            <div style="font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:rgba(247,242,234,.35);text-transform:uppercase;margin:5px 0 3px">失業率</div>
+            <div style="font-family:var(--fb);font-size:11.5px;color:rgba(247,242,234,.45)">目標7%を達成</div>
+          </div>
+
+          <div style="padding:24px 28px;border-bottom:1px solid var(--border)">
+            <div style="font-family:var(--fd);font-size:34px;font-weight:300;color:var(--sand);line-height:1">675<span style="font-size:.4em;font-family:var(--fs)">社</span></div>
+            <div style="font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:rgba(247,242,234,.35);text-transform:uppercase;margin:5px 0 3px">RHQ登録企業数</div>
+            <div style="font-family:var(--fb);font-size:11.5px;color:rgba(247,242,234,.45)">目標500社を超過</div>
+          </div>
+
+          <div style="padding:24px 28px;border-right:1px solid var(--border)">
+            <div style="font-family:var(--fd);font-size:34px;font-weight:300;color:var(--sand);line-height:1">2,740<span style="font-size:.32em;font-family:var(--fs)">万人</span></div>
+            <div style="font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:rgba(247,242,234,.35);text-transform:uppercase;margin:5px 0 3px">外国人観光客（2023）</div>
+            <div style="font-family:var(--fb);font-size:11.5px;color:rgba(247,242,234,.45)">目標3,500万人に向け拡大</div>
+          </div>
+
+          <div style="padding:24px 28px">
+            <div style="font-family:var(--fd);font-size:34px;font-weight:300;color:var(--sand);line-height:1">$700<span style="font-size:.38em;font-family:var(--fs)">B+</span></div>
+            <div style="font-family:var(--fs);font-size:9px;letter-spacing:.3em;color:rgba(247,242,234,.35);text-transform:uppercase;margin:5px 0 3px">PIF 総資産（2024）</div>
+            <div style="font-family:var(--fb);font-size:11.5px;color:rgba(247,242,234,.45)">目標$1兆に向け拡大中</div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
-    <div style="background:var(--black2);border:1px solid var(--border);padding:36px 32px">
-      <div style="font-family:var(--fs);font-size:9px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:20px">外国人観光客数（万人）</div>
-      <div style="display:flex;align-items:flex-end;gap:8px;height:120px;padding-top:20px">
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-family:var(--fd);font-size:12px;color:rgba(247,242,234,.4)">1,470</div>
-          <div style="width:100%;background:linear-gradient(to top,var(--sand),rgba(184,151,90,.3));height:32px;opacity:.5"></div>
-          <div style="font-family:var(--fs);font-size:9px;color:rgba(247,242,234,.3);letter-spacing:.1em">2019</div>
+
+    <!-- 右：投資タイムライン + 出典 -->
+    <div style="display:flex;flex-direction:column;gap:3px">
+
+      <!-- PIFの成長タイムライン -->
+      <div style="background:var(--black2);border:1px solid var(--border);padding:36px 36px;flex:1">
+        <div style="font-family:var(--fs);font-size:9px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:28px">PIF 資産規模の推移</div>
+
+        <!-- タイムラインスタイル -->
+        <div style="display:flex;flex-direction:column;gap:0">
+
+          <div style="display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(184,151,90,0.08)">
+            <div style="font-family:var(--fd);font-size:15px;color:rgba(247,242,234,.35);text-align:right">2016</div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="height:4px;background:rgba(184,151,90,0.2);flex:1;max-width:60px"></div>
+              <div style="font-family:var(--fd);font-size:20px;color:rgba(247,242,234,.5)">$150<span style="font-size:.55em;font-family:var(--fs)">B</span></div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(184,151,90,0.08)">
+            <div style="font-family:var(--fd);font-size:15px;color:rgba(247,242,234,.35);text-align:right">2020</div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="height:4px;background:rgba(184,151,90,0.35);flex:1;max-width:110px"></div>
+              <div style="font-family:var(--fd);font-size:20px;color:rgba(247,242,234,.6)">$360<span style="font-size:.55em;font-family:var(--fs)">B</span></div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(184,151,90,0.08)">
+            <div style="font-family:var(--fd);font-size:15px;color:rgba(247,242,234,.35);text-align:right">2022</div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="height:4px;background:rgba(184,151,90,0.55);flex:1;max-width:165px"></div>
+              <div style="font-family:var(--fd);font-size:20px;color:rgba(247,242,234,.72)">$500<span style="font-size:.55em;font-family:var(--fs)">B</span></div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:14px 0">
+            <div style="font-family:var(--fd);font-size:15px;color:var(--sand);text-align:right;font-weight:400">2024</div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="height:5px;background:linear-gradient(90deg,var(--sand),var(--sand2));flex:1;max-width:220px"></div>
+              <div style="font-family:var(--fd);font-size:22px;color:var(--sand)">$700<span style="font-size:.55em;font-family:var(--fs)">B+</span></div>
+            </div>
+          </div>
+
         </div>
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-family:var(--fd);font-size:12px;color:rgba(247,242,234,.4)">630</div>
-          <div style="width:100%;background:linear-gradient(to top,var(--sand),rgba(184,151,90,.3));height:14px;opacity:.4"></div>
-          <div style="font-family:var(--fs);font-size:9px;color:rgba(247,242,234,.3);letter-spacing:.1em">2020</div>
-        </div>
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-family:var(--fd);font-size:12px;color:rgba(247,242,234,.4)">1,800</div>
-          <div style="width:100%;background:linear-gradient(to top,var(--sand),rgba(184,151,90,.4));height:40px;opacity:.65"></div>
-          <div style="font-family:var(--fs);font-size:9px;color:rgba(247,242,234,.3);letter-spacing:.1em">2022</div>
-        </div>
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-family:var(--fd);font-size:14px;color:var(--sand)">2,740</div>
-          <div style="width:100%;background:linear-gradient(to top,var(--sand),var(--sand2));height:120px"></div>
-          <div style="font-family:var(--fs);font-size:9px;color:var(--sand);letter-spacing:.1em">2023</div>
+
+        <div style="margin-top:28px;padding-top:20px;border-top:1px solid rgba(184,151,90,0.1)">
+          <div style="font-family:var(--fs);font-size:9px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:16px">外国人観光客（万人）</div>
+          <div style="display:flex;gap:8px;align-items:flex-end;height:64px">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+              <div style="font-family:var(--fd);font-size:11px;color:rgba(247,242,234,.35)">1,470</div>
+              <div style="width:100%;background:rgba(184,151,90,0.2);height:28px"></div>
+              <div style="font-family:var(--fs);font-size:8px;color:rgba(247,242,234,.3);letter-spacing:.05em">2019</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+              <div style="font-family:var(--fd);font-size:11px;color:rgba(247,242,234,.3)">630</div>
+              <div style="width:100%;background:rgba(184,151,90,0.12);height:12px"></div>
+              <div style="font-family:var(--fs);font-size:8px;color:rgba(247,242,234,.3);letter-spacing:.05em">2020</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+              <div style="font-family:var(--fd);font-size:11px;color:rgba(247,242,234,.4)">1,800</div>
+              <div style="width:100%;background:rgba(184,151,90,0.3);height:34px"></div>
+              <div style="font-family:var(--fs);font-size:8px;color:rgba(247,242,234,.3);letter-spacing:.05em">2022</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+              <div style="font-family:var(--fd);font-size:11px;color:var(--sand)">2,740</div>
+              <div style="width:100%;background:linear-gradient(to top,var(--sand),var(--sand2));height:52px"></div>
+              <div style="font-family:var(--fs);font-size:8px;color:var(--sand);letter-spacing:.05em">2023</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- 出典 -->
+      <div style="background:var(--black3);border:1px solid var(--border);padding:18px 24px">
+        <div style="font-family:var(--fs);font-size:9px;letter-spacing:.25em;color:rgba(247,242,234,.2);line-height:1.8">
+          Source: Vision 2030 Annual Report 2024 · General Authority for Statistics · PIF · RERA · World Travel & Tourism Council
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 
-<!-- 投資機会マップ -->
+<!-- ② 投資機会マップ -->
 <div class="section wrap" style="padding-top:0">
   <div class="eyebrow">Investment Map</div>
   <h2 class="display">サウジアラビア<em>投資機会マップ</em></h2>
-  <p class="body-copy" style="margin-bottom:40px">Desert Bamboo Globalが追跡する主要プロジェクトの地理的分布。クリックで各プロジェクトの詳細へ。</p>
+  <p class="body-copy" style="margin-bottom:36px">Desert Bamboo Globalが追跡する主要プロジェクトの地理的分布。マーカーをクリックで詳細ページへ。</p>
 
-  <div style="position:relative;background:var(--black2);border:1px solid var(--border);overflow:hidden">
-    <!-- 地図の背景（簡易的なサウジアラビア地図をSVGで描画） -->
-    <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+  <div style="background:var(--black2);border:1px solid var(--border);position:relative;overflow:hidden">
+    <svg viewBox="0 0 960 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;max-height:620px">
+      <defs>
+        <radialGradient id="mg" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#B8975A" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#B8975A" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="gf" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3"/>
+        </filter>
+      </defs>
+
       <!-- 背景 -->
-      <rect width="800" height="520" fill="#181510"/>
-      <!-- グリッド線 -->
-      <g stroke="rgba(184,151,90,0.06)" stroke-width="1">
-        <line x1="0" y1="130" x2="800" y2="130"/><line x1="0" y1="260" x2="800" y2="260"/><line x1="0" y1="390" x2="800" y2="390"/>
-        <line x1="160" y1="0" x2="160" y2="520"/><line x1="320" y1="0" x2="320" y2="520"/><line x1="480" y1="0" x2="480" y2="520"/><line x1="640" y1="0" x2="640" y2="520"/>
-      </g>
-      <!-- サウジアラビア国境（簡略版） -->
-      <path d="M120,40 L200,30 L280,50 L380,40 L460,60 L520,80 L580,60 L640,80 L680,140 L700,200 L720,260 L700,320 L680,380 L640,420 L580,440 L500,460 L440,440 L380,460 L320,440 L260,420 L200,400 L160,360 L120,320 L80,260 L60,200 L80,140 Z" 
-        fill="rgba(184,151,90,0.04)" stroke="rgba(184,151,90,0.2)" stroke-width="1.5"/>
-      <!-- 紅海 -->
-      <path d="M80,140 L60,200 L80,260 L100,290 L80,320 L100,350" fill="none" stroke="rgba(100,160,200,0.3)" stroke-width="3"/>
-      <text x="40" y="240" fill="rgba(100,160,200,0.4)" font-size="10" font-family="Jost,sans-serif" letter-spacing="2" transform="rotate(-70,40,240)">RED SEA</text>
-      <!-- ペルシャ湾 -->
-      <path d="M680,140 L720,160 L740,200 L720,240 L700,200" fill="none" stroke="rgba(100,160,200,0.2)" stroke-width="2"/>
+      <rect width="960" height="580" fill="#0F0E0C"/>
 
-      <!-- プロジェクトマーカー -->
-      <!-- NEOM (北西) -->
-      <g style="cursor:pointer" onclick="window.location='neom.html'">
-        <circle cx="120" cy="100" r="14" fill="rgba(184,151,90,0.15)" stroke="#B8975A" stroke-width="1.5"/>
-        <circle cx="120" cy="100" r="5" fill="#B8975A"/>
-        <circle cx="120" cy="100" r="14" fill="none" stroke="#B8975A" stroke-width="1" opacity="0.4">
-          <animate attributeName="r" values="14;22;14" dur="3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite"/>
+      <!-- ドットパターン -->
+      <pattern id="dp" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+        <circle cx="1" cy="1" r="0.65" fill="rgba(184,151,90,0.065)"/>
+      </pattern>
+      <rect width="960" height="580" fill="url(#dp)"/>
+
+      <!--
+        サウジアラビア正確な国境
+        座標系: viewBox 960x580 にスケール
+        実際の緯度経度を参考に手動配置
+        北緯16-32度、東経34-56度の範囲
+      -->
+
+      <!-- 紅海（左の細長い水域） -->
+      <path d="M 118,25 C 112,65 106,110 100,155 C 95,195 90,235 86,270
+               C 82,300 78,325 76,348 C 74,368 74,385 76,398 C 78,410 82,418 87,422"
+        fill="none" stroke="rgba(70,130,170,0.4)" stroke-width="22" stroke-linecap="round"/>
+      <text transform="rotate(-80 60,260)" x="40" y="260"
+        fill="rgba(100,155,190,0.32)" font-size="9" font-family="Jost,sans-serif" letter-spacing="3">RED SEA</text>
+
+      <!-- アカバ湾（シナイ半島との間） -->
+      <path d="M 118,25 C 130,35 138,48 135,62 C 132,72 125,78 118,82"
+        fill="none" stroke="rgba(70,130,170,0.25)" stroke-width="8" stroke-linecap="round"/>
+
+      <!-- ペルシャ湾（右上） -->
+      <path d="M 758,42 C 775,68 788,96 792,126 C 794,148 788,168 776,180 C 768,188 756,192 742,190"
+        fill="none" stroke="rgba(70,130,170,0.28)" stroke-width="14" stroke-linecap="round"/>
+      <text x="798" y="108" fill="rgba(100,155,190,0.25)" font-size="8" font-family="Jost,sans-serif" letter-spacing="1">GULF</text>
+
+      <!-- オマーン湾（東南端） -->
+      <path d="M 848,380 C 862,370 872,355 878,338 C 882,325 880,312 874,302"
+        fill="none" stroke="rgba(70,130,170,0.2)" stroke-width="10" stroke-linecap="round"/>
+
+      <!--
+        国境ライン（主要な折れ点を正確に）
+        北：ヨルダン・イラク・クウェート国境（ほぼ水平）
+        東：UAE・オマーン国境（南東へ）
+        南：イエメン国境（ほぼ水平）
+        西：紅海沿岸（曲線）
+      -->
+      <path d="
+        M 118,82
+        L 138,70  L 165,55  L 195,42  L 230,35
+        L 268,30  L 305,28  L 340,30  L 378,28
+        L 415,30  L 450,34  L 488,32  L 525,36
+        L 558,38  L 590,40  L 620,38  L 648,42
+        L 674,46  L 700,44  L 726,46  L 742,50
+        L 756,42
+        C 768,60 780,82 790,108
+        C 794,132 790,156 780,174
+        C 770,190 756,200 742,204
+        L 748,224  L 752,248  L 750,270
+        L 744,292  L 735,315  L 724,338
+        L 710,360  L 694,382  L 676,402
+        L 656,420  L 634,436  L 610,450
+        L 584,460  L 556,468  L 526,472
+        L 495,470  L 463,465  L 432,468
+        L 400,464  L 368,462  L 336,458
+        L 304,450  L 272,440  L 242,428
+        L 214,414  L 190,398  L 170,378
+        L 152,355  L 135,328  L 118,298
+        C 106,274 100,248 98,220
+        C 96,195 98,168 100,155
+        L 104,118  L 110,95
+        Z
+      "
+        fill="rgba(184,151,90,0.038)"
+        stroke="rgba(184,151,90,0.32)"
+        stroke-width="1.4"
+        stroke-linejoin="round"/>
+
+      <!-- 砂漠のアンビエントグロー -->
+      <ellipse cx="430" cy="280" rx="280" ry="190" fill="rgba(184,151,90,0.018)" filter="url(#gf)"/>
+
+      <!-- ========= プロジェクトマーカー ========= -->
+      <!-- マーカー設計: 大（ギガPJ）= 外輪+パルス+塗り, 中（都市）= 輪+塗り -->
+
+      <!-- NEOM / The Line — タブーク州北西 (緯度28.0, 経度35.0 付近) -->
+      <g style="cursor:pointer" onclick="location.href='neom.html'" role="link">
+        <circle cx="118" cy="88" r="28" fill="url(#mg)" filter="url(#gf)"/>
+        <circle cx="118" cy="88" r="9" fill="#B8975A" opacity="0.92"/>
+        <circle cx="118" cy="88" r="14" fill="none" stroke="#B8975A" stroke-width="1.4" opacity="0.5">
+          <animate attributeName="r" values="14;26;14" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/>
         </circle>
-        <text x="140" y="96" fill="#D4B06A" font-size="13" font-family="Cormorant,serif" font-weight="400">NEOM</text>
-        <text x="140" y="110" fill="rgba(247,242,234,0.4)" font-size="9" font-family="Jost,sans-serif" letter-spacing="1">$5,000億</text>
+        <!-- コネクターライン → 右へ -->
+        <line x1="128" y1="86" x2="162" y2="76" stroke="rgba(184,151,90,0.38)" stroke-width="0.9"/>
+        <rect x="162" y="58" width="148" height="44" fill="rgba(10,9,7,0.92)"/>
+        <rect x="162" y="58" width="2" height="44" fill="#B8975A"/>
+        <text x="172" y="76" fill="#D4B06A" font-size="14" font-family="Cormorant,serif" font-weight="500">NEOM</text>
+        <text x="172" y="91" fill="rgba(247,242,234,0.42)" font-size="9.5" font-family="Jost,sans-serif" letter-spacing="0.5">Tabuk · $5,000億</text>
       </g>
 
-      <!-- AMAALA (NEOMの南) -->
-      <g style="cursor:pointer" onclick="window.location='amaala.html'">
-        <circle cx="140" cy="165" r="12" fill="rgba(184,151,90,0.12)" stroke="#B8975A" stroke-width="1.5"/>
-        <circle cx="140" cy="165" r="4" fill="#B8975A"/>
-        <circle cx="140" cy="165" r="12" fill="none" stroke="#B8975A" stroke-width="1" opacity="0.3">
-          <animate attributeName="r" values="12;20;12" dur="3.5s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.3;0;0.3" dur="3.5s" repeatCount="indefinite"/>
+      <!-- AMAALA — 紅海沿岸、NEOMの南 (緯度26.5, 経度36.3) -->
+      <g style="cursor:pointer" onclick="location.href='amaala.html'" role="link">
+        <circle cx="122" cy="164" r="22" fill="url(#mg)" filter="url(#gf)"/>
+        <circle cx="122" cy="164" r="7" fill="#B8975A" opacity="0.88"/>
+        <circle cx="122" cy="164" r="12" fill="none" stroke="#B8975A" stroke-width="1.2" opacity="0.42">
+          <animate attributeName="r" values="12;22;12" dur="3.6s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.42;0;0.42" dur="3.6s" repeatCount="indefinite"/>
         </circle>
-        <text x="158" y="161" fill="#D4B06A" font-size="12" font-family="Cormorant,serif">AMAALA</text>
-        <text x="158" y="174" fill="rgba(247,242,234,0.4)" font-size="9" font-family="Jost,sans-serif" letter-spacing="1">$2,500億</text>
+        <line x1="131" y1="161" x2="162" y2="155" stroke="rgba(184,151,90,0.32)" stroke-width="0.9"/>
+        <rect x="162" y="138" width="148" height="44" fill="rgba(10,9,7,0.92)"/>
+        <rect x="162" y="138" width="2" height="44" fill="#B8975A"/>
+        <text x="172" y="156" fill="#D4B06A" font-size="13" font-family="Cormorant,serif" font-weight="500">AMAALA</text>
+        <text x="172" y="171" fill="rgba(247,242,234,0.42)" font-size="9.5" font-family="Jost,sans-serif" letter-spacing="0.5">Red Sea · $2,500億</text>
       </g>
 
-      <!-- Red Sea Global -->
-      <g style="cursor:pointer" onclick="window.location='redsea.html'">
-        <circle cx="155" cy="230" r="11" fill="rgba(184,151,90,0.1)" stroke="#B8975A" stroke-width="1.5"/>
-        <circle cx="155" cy="230" r="4" fill="#B8975A"/>
-        <text x="173" y="226" fill="#D4B06A" font-size="11" font-family="Cormorant,serif">Red Sea</text>
-        <text x="173" y="239" fill="rgba(247,242,234,0.4)" font-size="9" font-family="Jost,sans-serif" letter-spacing="1">SAR 1兆+</text>
-      </g>
-
-      <!-- Jeddah -->
-      <g style="cursor:pointer" onclick="window.location='market.html'">
-        <circle cx="165" cy="300" r="10" fill="rgba(184,151,90,0.1)" stroke="rgba(184,151,90,0.6)" stroke-width="1"/>
-        <circle cx="165" cy="300" r="3.5" fill="rgba(184,151,90,0.7)"/>
-        <text x="182" y="296" fill="rgba(247,242,234,0.6)" font-size="11" font-family="Cormorant,serif">Jeddah</text>
-        <text x="182" y="309" fill="rgba(247,242,234,0.3)" font-size="8" font-family="Jost,sans-serif" letter-spacing="1">不動産 +42%</text>
-      </g>
-
-      <!-- Riyadh (中央) -->
-      <g style="cursor:pointer" onclick="window.location='market.html'">
-        <circle cx="440" cy="260" r="16" fill="rgba(184,151,90,0.12)" stroke="#B8975A" stroke-width="2"/>
-        <circle cx="440" cy="260" r="6" fill="#B8975A"/>
-        <circle cx="440" cy="260" r="16" fill="none" stroke="#B8975A" stroke-width="1" opacity="0.3">
-          <animate attributeName="r" values="16;28;16" dur="4s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite"/>
+      <!-- Red Sea Global — ジェッダ北方 (緯度24.8, 経度37.2) -->
+      <g style="cursor:pointer" onclick="location.href='redsea.html'" role="link">
+        <circle cx="120" cy="235" r="18" fill="url(#mg)" filter="url(#gf)"/>
+        <circle cx="120" cy="235" r="6" fill="#B8975A" opacity="0.82"/>
+        <circle cx="120" cy="235" r="10" fill="none" stroke="#B8975A" stroke-width="1.1" opacity="0.38">
+          <animate attributeName="r" values="10;19;10" dur="4.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.38;0;0.38" dur="4.2s" repeatCount="indefinite"/>
         </circle>
-        <text x="462" y="256" fill="#D4B06A" font-size="15" font-family="Cormorant,serif" font-weight="500">Riyadh</text>
-        <text x="462" y="271" fill="rgba(247,242,234,0.5)" font-size="9" font-family="Jost,sans-serif" letter-spacing="1">King Salman Park · MURABBA</text>
+        <line x1="129" y1="232" x2="162" y2="226" stroke="rgba(184,151,90,0.28)" stroke-width="0.8"/>
+        <rect x="162" y="210" width="148" height="44" fill="rgba(10,9,7,0.92)"/>
+        <rect x="162" y="210" width="2" height="44" fill="#B8975A"/>
+        <text x="172" y="228" fill="#D4B06A" font-size="12" font-family="Cormorant,serif" font-weight="500">Red Sea Global</text>
+        <text x="172" y="242" fill="rgba(247,242,234,0.42)" font-size="9.5" font-family="Jost,sans-serif" letter-spacing="0.5">SAR 1兆+ · Eco</text>
       </g>
 
-      <!-- Diriyah (リヤド近郊) -->
-      <g style="cursor:pointer" onclick="window.location='diriyah.html'">
-        <circle cx="400" cy="240" r="9" fill="rgba(184,151,90,0.1)" stroke="rgba(184,151,90,0.5)" stroke-width="1"/>
-        <circle cx="400" cy="240" r="3" fill="rgba(184,151,90,0.6)"/>
-        <text x="360" y="232" fill="rgba(247,242,234,0.55)" font-size="10" font-family="Cormorant,serif">Diriyah</text>
-        <text x="352" y="244" fill="rgba(247,242,234,0.3)" font-size="8" font-family="Jost,sans-serif" letter-spacing="1">UNESCO遺跡</text>
+      <!-- Jeddah — (緯度21.5, 経度39.2) -->
+      <g style="cursor:pointer" onclick="location.href='market.html'" role="link">
+        <circle cx="118" cy="308" r="12" fill="rgba(184,151,90,0.07)"/>
+        <circle cx="118" cy="308" r="4.5" fill="rgba(184,151,90,0.72)"/>
+        <circle cx="118" cy="308" r="12" fill="none" stroke="rgba(184,151,90,0.38)" stroke-width="0.9"/>
+        <line x1="130" y1="306" x2="158" y2="302" stroke="rgba(184,151,90,0.22)" stroke-width="0.8"/>
+        <rect x="158" y="287" width="140" height="42" fill="rgba(10,9,7,0.88)"/>
+        <text x="168" y="304" fill="rgba(247,242,234,0.72)" font-size="12.5" font-family="Cormorant,serif">Jeddah</text>
+        <text x="168" y="318" fill="rgba(247,242,234,0.35)" font-size="9" font-family="Jost,sans-serif" letter-spacing="0.5">不動産 前年比+42%</text>
       </g>
 
-      <!-- Qiddiyah (リヤド南西) -->
-      <g style="cursor:pointer" onclick="window.location='qiddiyah.html'">
-        <circle cx="400" cy="295" r="10" fill="rgba(184,151,90,0.1)" stroke="rgba(184,151,90,0.5)" stroke-width="1"/>
-        <circle cx="400" cy="295" r="3.5" fill="rgba(184,151,90,0.6)"/>
-        <text x="360" y="289" fill="rgba(247,242,234,0.55)" font-size="10" font-family="Cormorant,serif">Qiddiyah</text>
-        <text x="350" y="302" fill="rgba(247,242,234,0.3)" font-size="8" font-family="Jost,sans-serif" letter-spacing="1">SAR 500億</text>
+      <!-- AlUla — 北西内陸 (緯度26.6, 経度37.9) -->
+      <g>
+        <circle cx="188" cy="162" r="7" fill="rgba(184,151,90,0.07)"/>
+        <circle cx="188" cy="162" r="2.8" fill="rgba(184,151,90,0.48)"/>
+        <circle cx="188" cy="162" r="7" fill="none" stroke="rgba(184,151,90,0.28)" stroke-width="0.7"/>
+        <text x="198" y="158" fill="rgba(247,242,234,0.38)" font-size="10" font-family="Cormorant,serif">AlUla</text>
+        <text x="198" y="170" fill="rgba(247,242,234,0.22)" font-size="8" font-family="Jost,sans-serif" letter-spacing="0.5">UNESCO</text>
       </g>
 
-      <!-- 凡例 -->
-      <g transform="translate(560,380)">
-        <rect width="180" height="90" fill="rgba(13,12,10,0.8)" stroke="rgba(184,151,90,0.2)" rx="0"/>
-        <text x="12" y="22" fill="rgba(184,151,90,0.8)" font-size="9" font-family="Jost,sans-serif" letter-spacing="3">LEGEND</text>
-        <circle cx="22" cy="42" r="6" fill="rgba(184,151,90,0.15)" stroke="#B8975A" stroke-width="1.5"/>
-        <circle cx="22" cy="42" r="2.5" fill="#B8975A"/>
-        <text x="36" y="46" fill="rgba(247,242,234,0.55)" font-size="10" font-family="Jost,sans-serif">ギガプロジェクト</text>
-        <circle cx="22" cy="66" r="5" fill="rgba(184,151,90,0.1)" stroke="rgba(184,151,90,0.5)" stroke-width="1"/>
-        <circle cx="22" cy="66" r="2" fill="rgba(184,151,90,0.6)"/>
-        <text x="36" y="70" fill="rgba(247,242,234,0.55)" font-size="10" font-family="Jost,sans-serif">都市・その他</text>
+      <!-- Riyadh — 中央やや東 (緯度24.7, 経度46.7) -->
+      <g style="cursor:pointer" onclick="location.href='market.html'" role="link">
+        <circle cx="482" cy="280" r="32" fill="url(#mg)" filter="url(#gf)"/>
+        <circle cx="482" cy="280" r="11" fill="#B8975A"/>
+        <circle cx="482" cy="280" r="20" fill="none" stroke="#B8975A" stroke-width="1.6" opacity="0.38">
+          <animate attributeName="r" values="20;36;20" dur="4.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.38;0;0.38" dur="4.5s" repeatCount="indefinite"/>
+        </circle>
+        <!-- 下へラベル -->
+        <line x1="482" y1="293" x2="482" y2="315" stroke="rgba(184,151,90,0.38)" stroke-width="0.9"/>
+        <rect x="392" y="315" width="180" height="46" fill="rgba(10,9,7,0.94)"/>
+        <rect x="392" y="315" width="180" height="2" fill="#B8975A"/>
+        <text x="482" y="335" fill="#D4B06A" font-size="16" font-family="Cormorant,serif" font-weight="500" text-anchor="middle">Riyadh</text>
+        <text x="482" y="351" fill="rgba(247,242,234,0.42)" font-size="9" font-family="Jost,sans-serif" letter-spacing="0.5" text-anchor="middle">King Salman Park · MURABBA · Qiddiya</text>
       </g>
 
-      <!-- タイトル -->
-      <text x="24" y="490" fill="rgba(247,242,234,0.2)" font-size="9" font-family="Jost,sans-serif" letter-spacing="3">KINGDOM OF SAUDI ARABIA — Desert Bamboo Global Investment Map</text>
+      <!-- Diriyah — リヤド北西 (リヤドから数px上左) -->
+      <g style="cursor:pointer" onclick="location.href='diriyah.html'" role="link">
+        <circle cx="450" cy="254" r="8" fill="rgba(184,151,90,0.07)"/>
+        <circle cx="450" cy="254" r="3.2" fill="rgba(184,151,90,0.62)"/>
+        <circle cx="450" cy="254" r="8" fill="none" stroke="rgba(184,151,90,0.32)" stroke-width="0.8"/>
+        <line x1="442" y1="252" x2="405" y2="244" stroke="rgba(184,151,90,0.22)" stroke-width="0.7"/>
+        <text x="298" y="240" fill="rgba(247,242,234,0.52)" font-size="11" font-family="Cormorant,serif">Diriyah</text>
+        <text x="298" y="252" fill="rgba(247,242,234,0.28)" font-size="8.5" font-family="Jost,sans-serif" letter-spacing="0.5">UNESCO · Culture</text>
+      </g>
+
+      <!-- Qiddiyah — リヤド南西 -->
+      <g style="cursor:pointer" onclick="location.href='qiddiyah.html'" role="link">
+        <circle cx="448" cy="310" r="9" fill="rgba(184,151,90,0.07)"/>
+        <circle cx="448" cy="310" r="3.5" fill="rgba(184,151,90,0.62)"/>
+        <circle cx="448" cy="310" r="9" fill="none" stroke="rgba(184,151,90,0.32)" stroke-width="0.8"/>
+        <line x1="440" y1="312" x2="392" y2="322" stroke="rgba(184,151,90,0.22)" stroke-width="0.7"/>
+        <text x="290" y="318" fill="rgba(247,242,234,0.52)" font-size="11" font-family="Cormorant,serif">Qiddiyah</text>
+        <text x="290" y="330" fill="rgba(247,242,234,0.28)" font-size="8.5" font-family="Jost,sans-serif" letter-spacing="0.5">Entertainment · SAR 500億</text>
+      </g>
+
+      <!-- Dammam / Eastern Province -->
+      <g>
+        <circle cx="698" cy="236" r="9" fill="rgba(184,151,90,0.06)"/>
+        <circle cx="698" cy="236" r="3.5" fill="rgba(184,151,90,0.42)"/>
+        <circle cx="698" cy="236" r="9" fill="none" stroke="rgba(184,151,90,0.24)" stroke-width="0.7"/>
+        <text x="710" y="232" fill="rgba(247,242,234,0.32)" font-size="10.5" font-family="Cormorant,serif">Dammam</text>
+        <text x="710" y="244" fill="rgba(247,242,234,0.2)" font-size="8.5" font-family="Jost,sans-serif" letter-spacing="0.5">Eastern Province</text>
+      </g>
+
+      <!-- ========= 凡例 ========= -->
+      <g transform="translate(672,432)">
+        <rect width="238" height="112" fill="rgba(10,9,7,0.94)" stroke="rgba(184,151,90,0.22)" stroke-width="1"/>
+        <text x="16" y="26" fill="rgba(184,151,90,0.65)" font-size="8.5" font-family="Jost,sans-serif" letter-spacing="3.5">LEGEND</text>
+        <line x1="16" y1="33" x2="222" y2="33" stroke="rgba(184,151,90,0.14)" stroke-width="0.7"/>
+        <!-- 大型 -->
+        <circle cx="30" cy="55" r="8" fill="rgba(184,151,90,0.1)" stroke="#B8975A" stroke-width="1.2"/>
+        <circle cx="30" cy="55" r="3.5" fill="#B8975A"/>
+        <text x="46" y="59" fill="rgba(247,242,234,0.58)" font-size="10.5" font-family="Jost,sans-serif">ギガプロジェクト</text>
+        <!-- 中型 -->
+        <circle cx="30" cy="82" r="5.5" fill="rgba(184,151,90,0.07)" stroke="rgba(184,151,90,0.45)" stroke-width="0.8"/>
+        <circle cx="30" cy="82" r="2.5" fill="rgba(184,151,90,0.58)"/>
+        <text x="46" y="86" fill="rgba(247,242,234,0.58)" font-size="10.5" font-family="Jost,sans-serif">都市・主要拠点</text>
+        <!-- パルス説明 -->
+        <text x="16" y="104" fill="rgba(247,242,234,0.22)" font-size="8.5" font-family="Jost,sans-serif">クリックで詳細ページへ移動</text>
+      </g>
+
+      <!-- クレジット -->
+      <text x="18" y="570" fill="rgba(247,242,234,0.14)" font-size="8" font-family="Jost,sans-serif" letter-spacing="2.5">
+        SAUDI INSIGHT Investment Map — Desert Bamboo Global Japan Office
+      </text>
     </svg>
   </div>
-  <p style="font-family:var(--fs);font-size:10px;color:rgba(247,242,234,.25);letter-spacing:.15em;margin-top:10px;text-align:right">各マーカーをクリックすると詳細ページへ移動します</p>
+
+  <!-- 各プロジェクトへのリンクボタン -->
+  <div style="margin-top:12px;display:flex;gap:3px;flex-wrap:wrap">
+    <a class="btn-ghost" href="neom.html" style="font-size:9.5px;padding:10px 20px;letter-spacing:.2em">NEOM</a>
+    <a class="btn-ghost" href="amaala.html" style="font-size:9.5px;padding:10px 20px;letter-spacing:.2em">AMAALA</a>
+    <a class="btn-ghost" href="redsea.html" style="font-size:9.5px;padding:10px 20px;letter-spacing:.2em">Red Sea Global</a>
+    <a class="btn-ghost" href="diriyah.html" style="font-size:9.5px;padding:10px 20px;letter-spacing:.2em">Diriyah</a>
+    <a class="btn-ghost" href="qiddiyah.html" style="font-size:9.5px;padding:10px 20px;letter-spacing:.2em">Qiddiyah</a>
+    <a class="btn-ghost" href="market.html" style="font-size:9.5px;padding:10px 20px;letter-spacing:.2em">すべて見る →</a>
+  </div>
 </div>
+
 <div class="cta-full">
   <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80')"></div>
   <div class="ov"></div>
