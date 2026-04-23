@@ -173,6 +173,16 @@ img{max-width:100%;display:block;}
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    RESPONSIVE — TABLET (max 1024px)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@media(max-width:1279px){
+  /* Two-col tablet */
+  .two-col{grid-template-columns:1fr;gap:0;}
+  .img-split{grid-template-columns:1fr;}
+  .img-panel{min-height:320px;}
+  .text-panel{padding:48px 40px;}
+  .m-split{grid-template-columns:1fr !important;}
+  .m-split.reverse{direction:ltr !important;}
+}
 @media(max-width:1024px){
   /* Nav */
   #nav{padding:0 32px;}
@@ -190,6 +200,7 @@ img{max-width:100%;display:block;}
   /* Two-col */
   .two-col{grid-template-columns:1fr;gap:0;}
   .img-split{grid-template-columns:1fr;}
+  .m-split{grid-template-columns:1fr !important;}
   .text-panel{padding:48px 40px;}
   .img-panel{min-height:300px;}
 

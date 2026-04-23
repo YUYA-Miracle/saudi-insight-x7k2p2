@@ -10,21 +10,22 @@
 .g-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:heroZoom 14s ease-out forwards}
 .g-hero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.97) 0%,rgba(13,12,10,.3) 55%,rgba(13,12,10,.05) 100%)}
 .g-hero-inner{position:relative;z-index:2;padding:0 64px 72px;max-width:900px}
+
 .g-kpi{display:grid;grid-template-columns:repeat(4,1fr);background:var(--black2);border-bottom:1px solid var(--border)}
-.g-kpi-cell{padding:28px 32px;border-right:1px solid var(--border);transition:background .3s}
+.g-kpi-cell{padding:28px 32px;border-right:1px solid var(--border)}
 .g-kpi-cell:last-child{border-right:none}
-.g-kpi-cell:hover{background:var(--mist)}
 .g-kpi-n{font-family:var(--fd);font-size:38px;font-weight:300;color:var(--sand);line-height:1}
 .g-kpi-l{font-family:var(--fs);font-size:8px;letter-spacing:.4em;color:rgba(247,242,234,.32);text-transform:uppercase;margin-top:4px}
 .g-kpi-d{font-family:var(--fb);font-size:12px;color:rgba(247,242,234,.55);margin-top:5px;line-height:1.5}
+
 .g-wrap{max-width:1280px;margin:0 auto;padding:0 64px}
 .g-section{padding:72px 0}
-/* g-split: 画像＋テキストの2カラム */
-.g-split{display:grid;grid-template-columns:1fr 1fr;min-height:440px}
-/* rev: 画像を右・テキストを左にするためgrid-column指定 */
+
+/* ── 本文セクション（画像＋テキスト）── */
+.g-split{display:grid;grid-template-columns:1fr 1fr}
 .g-split.rev .g-img{order:2}
 .g-split.rev .g-text{order:1}
-.g-img{position:relative;overflow:hidden;min-height:380px}
+.g-img{position:relative;overflow:hidden;min-height:440px}
 .g-img .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s}
 .g-img:hover .bg{transform:scale(1.04)}
 .g-img-cap{position:absolute;bottom:14px;left:20px;font-family:var(--fs);font-size:8.5px;letter-spacing:.3em;color:rgba(247,242,234,.4);text-transform:uppercase;z-index:2}
@@ -34,7 +35,10 @@
 .g-text ul li{font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.68);line-height:1.85;padding-left:18px;position:relative}
 .g-text ul li::before{content:'—';position:absolute;left:0;color:var(--sand)}
 .g-text strong{color:var(--ivory);font-weight:700}
-.g-3img{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:0}
+
+/* ── データ+画像グリッド ── */
+.g-data-grid{display:grid;grid-template-columns:1fr 320px;gap:3px}
+.g-3img{display:grid;grid-template-columns:1fr 1fr;gap:3px}
 .g-3img-item{position:relative;overflow:hidden;height:260px}
 .g-3img-item .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s}
 .g-3img-item:hover .bg{transform:scale(1.06)}
@@ -47,35 +51,36 @@
 .g-data-label{font-family:var(--fb);font-size:13px;color:rgba(247,242,234,.48)}
 .g-data-val{font-family:var(--fb);font-size:13px;color:var(--ivory);text-align:right;max-width:55%}
 .g-callout{background:var(--black3);border-left:3px solid var(--sand);padding:24px 28px;margin:24px 0;font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75);line-height:1.9}
-.g-minimap-grid{display:grid;grid-template-columns:1fr 280px;gap:3px}
-.g-data-grid{display:grid;grid-template-columns:1fr 340px;gap:3px}
 
-@media(max-width:1024px){
+/* ── ミニマップ ── */
+.g-minimap-grid{display:grid;grid-template-columns:1fr 280px;gap:3px}
+
+/* ━━━ TABLET (〜1279px) ━━━ */
+@media(max-width:1279px){
   .g-kpi{grid-template-columns:1fr 1fr}
-  .g-wrap{padding:0 32px}
-  .g-3img{grid-template-columns:1fr 1fr}
+  .g-wrap{padding:0 40px}
   .g-split{grid-template-columns:1fr}
   .g-split.rev .g-img{order:0}
   .g-split.rev .g-text{order:0}
-  .g-img{min-height:300px}
-  .g-text{padding:40px 32px}
-  .g-minimap-grid{display:block}
-  .g-data-grid{display:block}
+  .g-img{min-height:340px}
+  .g-text{padding:44px 40px}
+  .g-data-grid{grid-template-columns:1fr}
+  .g-minimap-grid{grid-template-columns:1fr}
+  .g-3img{grid-template-columns:1fr 1fr}
 }
-@media(max-width:768px){
+
+/* ━━━ MOBILE (〜767px) ━━━ */
+@media(max-width:767px){
   .g-hero{margin-top:60px}
   .g-hero-inner{padding:0 20px 48px}
   .g-kpi{grid-template-columns:1fr 1fr}
   .g-kpi-cell{padding:18px 16px}
   .g-kpi-n{font-size:28px}
-  .g-split{grid-template-columns:1fr}
   .g-img{min-height:260px}
   .g-text{padding:36px 20px}
   .g-section{padding:48px 0}
   .g-wrap{padding:0 20px}
   .g-3img{grid-template-columns:1fr}
-  .g-minimap-grid{display:block}
-  .g-data-grid{display:block}
 }
 </style>
 </head>
