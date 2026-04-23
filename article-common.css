@@ -1,0 +1,54 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   記事共通スタイル
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.a-hero{position:relative;height:56vh;min-height:400px;overflow:hidden;margin-top:68px;}
+.a-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:heroZoom 14s ease-out forwards;}
+.a-hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.96) 0%,rgba(13,12,10,.25) 100%);}
+.a-hero-text{position:absolute;bottom:0;left:0;right:0;padding:0 64px 48px;}
+.a-eyebrow{font-family:var(--fs);font-size:8.5px;letter-spacing:.45em;color:var(--sand);text-transform:uppercase;margin-bottom:12px;}
+.a-title{font-family:var(--fd);font-size:clamp(26px,3.8vw,44px);font-weight:300;line-height:1.12;color:var(--ivory);}
+
+.a-wrap{max-width:800px;margin:0 auto;}
+.a-meta{font-family:var(--fs);font-size:10px;letter-spacing:.2em;color:rgba(247,242,234,.32);text-transform:uppercase;padding:28px 64px;border-bottom:1px solid var(--border);}
+
+/* 記事本文 */
+.a-body{padding:44px 64px 80px;}
+.a-body p{font-family:var(--fb);font-size:15px;color:rgba(247,242,234,.78);line-height:2.15;margin-bottom:22px;}
+.a-body h2{font-family:var(--fd);font-size:30px;font-weight:300;color:var(--ivory);margin:52px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.a-body h2 em{font-style:italic;color:var(--sand2);}
+.a-body h3{font-family:var(--fb);font-size:17px;font-weight:700;color:var(--sand2);margin:32px 0 10px;}
+.a-callout{background:var(--black3);border-left:3px solid var(--sand);padding:22px 26px;margin:28px 0;font-family:var(--fb);font-size:14px;color:rgba(247,242,234,.75);line-height:1.9;}
+
+/* 記事内CTA */
+.a-cta{background:linear-gradient(135deg,rgba(24,18,13,.99),rgba(34,28,20,.99));border:1px solid var(--border);border-left:3px solid var(--sand);padding:40px 44px;margin:52px 0;position:relative;overflow:hidden;}
+.a-cta::before{content:'MEMBERSHIP';position:absolute;right:24px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:72px;font-weight:300;color:rgba(184,151,90,.055);letter-spacing:.1em;white-space:nowrap;pointer-events:none;}
+.a-cta-tag{font-family:var(--fs);font-size:9px;letter-spacing:.5em;color:var(--sand);text-transform:uppercase;margin-bottom:12px;}
+.a-cta-title{font-family:var(--fd);font-size:25px;font-weight:300;color:var(--ivory);margin-bottom:12px;line-height:1.2;}
+.a-cta-title em{font-style:italic;color:var(--sand2);}
+.a-cta-text{font-family:var(--fb);font-size:13.5px;color:rgba(247,242,234,.65);line-height:1.85;margin-bottom:22px;}
+.a-cta-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.a-cta-tags span{font-family:var(--fs);font-size:10px;letter-spacing:.1em;color:rgba(247,242,234,.5);border:1px solid var(--border);padding:5px 13px;}
+
+/* 関連記事 */
+.a-related{border-top:1px solid var(--border);padding:52px 64px 80px;max-width:800px;margin:0 auto;}
+.a-related-title{font-family:var(--fs);font-size:9px;letter-spacing:.5em;color:var(--sand);text-transform:uppercase;margin-bottom:22px;}
+.a-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.a-related-card{background:var(--black2);border:1px solid var(--border);text-decoration:none;display:block;transition:border-color .3s;overflow:hidden;}
+.a-related-card:hover{border-color:rgba(184,151,90,.4);}
+.a-related-thumb{height:140px;background-size:cover;background-position:center;transition:transform .5s;}
+.a-related-card:hover .a-related-thumb{transform:scale(1.04);}
+.a-related-body{padding:16px 18px 20px;}
+.a-related-cat{font-family:var(--fs);font-size:8px;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:6px;}
+.a-related-h{font-family:var(--fd);font-size:15px;font-weight:400;color:var(--ivory);line-height:1.35;}
+
+/* レスポンシブ */
+@media(max-width:900px){
+  .a-hero{margin-top:60px;}
+  .a-hero-text{padding:0 20px 36px;}
+  .a-meta{padding:24px 20px;}
+  .a-body{padding:32px 20px 60px;}
+  .a-cta{padding:28px 20px;}
+  .a-cta::before{display:none;}
+  .a-related{padding:40px 20px 60px;}
+  .a-related-grid{grid-template-columns:1fr;}
+}
