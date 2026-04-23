@@ -52,13 +52,18 @@
 .news-exc2{font-family:var(--fb);font-size:12.5px;color:rgba(247,242,234,.55);line-height:1.85;margin-top:10px;}
 .news-date2{font-family:var(--fs);font-size:9px;letter-spacing:.22em;color:rgba(247,242,234,.3);margin-top:16px;text-transform:uppercase;}
 
+@media(max-width:1024px){
+  .proj-grid{height:480px;}
+  .hero-content{padding:0 40px 80px;}
+}
 @media(max-width:768px){
-  .hero-content{padding:0 20px 72px;}
-  .hero-title{font-size:clamp(44px,11vw,72px);}
-  .hero-sub{font-size:13px;}
+  .hero-content{padding:0 20px 64px;}
+  .hero-title{font-size:clamp(40px,10vw,68px);}
+  .hero-sub{font-size:13px;max-width:100%;}
   .stats-bar{grid-template-columns:1fr 1fr;}
-  .stat-cell{padding:22px 16px;}
-  .stat-n{font-size:34px;}
+  .stat-cell{padding:20px 16px;}
+  .stat-n{font-size:32px;}
+  .stat-l{font-size:8px;letter-spacing:.3em;}
   .stat-d{font-size:12px;}
   .proj-grid{grid-template-columns:1fr;height:auto;}
   .proj-card.tall{grid-row:auto;}
@@ -70,6 +75,7 @@
 @media(max-width:480px){
   .stats-bar{grid-template-columns:1fr;}
   .stat-cell{border-right:none;border-bottom:1px solid var(--border);}
+  .hero-btns{flex-direction:column;align-items:flex-start;}
 }
 </style>
 </head>
@@ -106,7 +112,7 @@
   <div class="eyebrow">Giga Projects</div>
   <h2 class="display">注目の<em>プロジェクト群</em></h2>
   <div class="proj-grid">
-    <a class="proj-card tall" href="neom.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=1200&q=80')"></div><div class="proj-info"><div class="proj-tag">Tabuk · Flagship</div><div class="proj-name">NEOM &amp;<br><em>The Line</em></div><div class="proj-scale">$5,000億 · 26,500km²</div></div></a>
+    <a class="proj-card tall" href="neom.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=1200&q=80')"></div><div class="proj-info"><div class="proj-tag">Tabuk · Flagship</div><div class="proj-name">NEOM &amp;<br><em>The Line</em></div><div class="proj-scale">$5,000億 · 26,500km²</div></div></a>
     <a class="proj-card" href="amaala.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1601459427108-47e20b727fc6?w=900&q=80')"></div><div class="proj-info"><div class="proj-tag">Red Sea · Wellness</div><div class="proj-name"><em>AMAALA</em></div><div class="proj-scale">$2,500億</div></div></a>
     <a class="proj-card" href="redsea.html"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1597435877853-5c8c433e0c51-3c830dcef090?w=900&q=80')"></div><div class="proj-info"><div class="proj-tag">Red Sea · Eco</div><div class="proj-name"><em>Red Sea Global</em></div><div class="proj-scale">SAR 1兆+</div></div></a>
   </div>

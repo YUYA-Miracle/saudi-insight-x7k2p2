@@ -24,12 +24,19 @@
   .page-banner-text{padding:0 20px 36px;}
   .page-title{font-size:clamp(28px,8vw,48px);}
 }
+
+@media(max-width:1024px){
+  .proj-detail-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .proj-detail-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body data-nav-solid="1">
 <script src="nav.js"></script>
 <div class="page-banner">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=1800&q=80')"></div>
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=1800&q=80')"></div>
   <div class="ov"></div>
   <div class="page-banner-text">
     <div class="breadcrumb"><a href="market.html">サウジ市場</a> / Giga Project — NEOM</div>
