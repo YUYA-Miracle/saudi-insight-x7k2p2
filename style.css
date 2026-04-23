@@ -188,9 +188,10 @@ img{max-width:100%;display:block;}
   .page-title{font-size:clamp(36px,5vw,60px);}
 
   /* Two-col */
-  .two-col{gap:40px;}
-  .text-panel{padding:56px 40px;}
-  .img-panel{min-height:320px;}
+  .two-col{grid-template-columns:1fr;gap:0;}
+  .img-split{grid-template-columns:1fr;}
+  .text-panel{padding:48px 40px;}
+  .img-panel{min-height:300px;}
 
   /* CTA */
   .cta-inner{padding:56px 40px;}
