@@ -61,6 +61,7 @@
           <li><a href="member.html">会員申請</a></li>
           <li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
           <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
         </ul>
       </div>
     </div>
@@ -69,7 +70,7 @@
       <div class="footer-legal">
         <a href="tokusho.html">特定商取引法</a>
         <a href="terms.html">利用規約</a>
-        <a href="member.html">プライバシーポリシー</a>
+        <a href="privacy.html">プライバシーポリシー</a>
       </div>
     </div>
   </div>
